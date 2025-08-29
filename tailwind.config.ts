@@ -52,16 +52,22 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// Halloween Extended Colors
+				'spooky-dark': 'hsl(var(--spooky-dark))',
+				'spooky-darker': 'hsl(var(--spooky-darker))',
+				'spooky-light': 'hsl(var(--spooky-light))',
+				'spooky-muted': 'hsl(var(--spooky-muted))',
+				'halloween-orange': 'hsl(var(--halloween-orange))',
+				'halloween-orange-muted': 'hsl(var(--halloween-orange-muted))',
+				'halloween-purple': 'hsl(var(--halloween-purple))',
+				'halloween-purple-muted': 'hsl(var(--halloween-purple-muted))',
+				'neon-orange': 'hsl(var(--neon-orange))',
+				'neon-green': 'hsl(var(--neon-green))',
+				'neon-glow': 'hsl(var(--neon-glow))'
+			},
+			fontFamily: {
+				spooky: ['Creepster', 'cursive'],
+				body: ['Inter', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

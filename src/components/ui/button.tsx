@@ -18,11 +18,17 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Halloween-themed variants
+        spooky: "bg-gradient-halloween text-spooky-light hover:scale-105 transform transition-all duration-300 shadow-lg glow-orange",
+        neon: "bg-neon-orange text-spooky-dark hover:bg-neon-green hover:scale-105 transform transition-all duration-300 animate-glow font-semibold",
+        ghost_spooky: "border-2 border-halloween-orange text-halloween-orange bg-transparent hover:bg-halloween-orange hover:text-spooky-dark transition-all duration-300",
+        haunted: "bg-halloween-purple text-spooky-light hover:bg-halloween-purple-muted border border-neon-green/30 hover:glow-green transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-lg px-12 text-lg",
         icon: "h-10 w-10",
       },
     },

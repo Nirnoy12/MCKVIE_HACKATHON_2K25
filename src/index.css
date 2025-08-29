@@ -1,96 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Halloween Hackathon Design System - MCKVIE */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Halloween Color Palette */
+    --spooky-dark: 252 35% 8%; /* Deep bluish-black background */
+    --spooky-darker: 248 40% 5%; /* Even darker for contrast */
+    --spooky-light: 45 15% 94%; /* Off-white text */
+    --spooky-muted: 45 8% 75%; /* Muted text */
+    
+    /* Halloween Brand Colors */
+    --halloween-orange: 22 78% 60%; /* Dusty orange */
+    --halloween-orange-muted: 22 45% 35%; /* Muted orange */
+    --halloween-purple: 274 47% 26%; /* Deep purple */
+    --halloween-purple-muted: 274 25% 15%; /* Darker purple */
+    
+    /* Neon Accents */
+    --neon-orange: 15 100% 60%; /* Bright neon orange */
+    --neon-green: 120 100% 55%; /* Bright neon green */
+    --neon-glow: 15 100% 60%; /* For glow effects */
+    
+    /* Component Colors */
+    --background: var(--spooky-dark);
+    --foreground: var(--spooky-light);
+    --card: 252 35% 10%;
+    --card-foreground: var(--spooky-light);
+    --popover: var(--spooky-darker);
+    --popover-foreground: var(--spooky-light);
+    
+    --primary: var(--halloween-orange);
+    --primary-foreground: var(--spooky-light);
+    --secondary: var(--halloween-purple);
+    --secondary-foreground: var(--spooky-light);
+    
+    --muted: var(--halloween-purple-muted);
+    --muted-foreground: var(--spooky-muted);
+    --accent: var(--neon-orange);
+    --accent-foreground: var(--spooky-dark);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--spooky-light);
+    
+    --border: var(--halloween-purple-muted);
+    --input: var(--halloween-purple-muted);
+    --ring: var(--halloween-orange);
+    
+    --radius: 12px;
+    
+    /* Spacing System (8-point grid) */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 40px;
+    --space-6: 48px;
+    --space-8: 64px;
+    --space-10: 80px;
+    --space-12: 96px;
+    --space-16: 128px;
+    --space-20: 160px;
+    
+    /* Halloween Gradients */
+    --gradient-spooky: linear-gradient(135deg, hsl(var(--spooky-dark)), hsl(var(--halloween-purple-muted)));
+    --gradient-halloween: linear-gradient(135deg, hsl(var(--halloween-orange)), hsl(var(--halloween-purple)));
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-orange)), hsl(var(--neon-green)));
+    --gradient-glow: radial-gradient(circle, hsl(var(--neon-glow) / 0.3), transparent 70%);
+    
+    /* Shadows & Glows */
+    --shadow-spooky: 0 10px 30px -10px hsl(var(--halloween-purple) / 0.4);
+    --shadow-neon: 0 0 30px hsl(var(--neon-orange) / 0.5);
+    --shadow-green-glow: 0 0 30px hsl(var(--neon-green) / 0.5);
+    --shadow-card: 0 8px 32px -8px hsl(var(--spooky-darker) / 0.8);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 }
 
@@ -98,8 +87,138 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply leading-none;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+  
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Halloween Typography Classes */
+  .font-spooky {
+    font-family: 'Creepster', cursive;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Halloween Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-flicker {
+    animation: flicker 3s linear infinite;
+  }
+  
+  .animate-bob {
+    animation: bob 4s ease-in-out infinite;
+  }
+  
+  /* Gradient Text */
+  .text-gradient-halloween {
+    background: var(--gradient-halloween);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-neon {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Glow Effects */
+  .glow-orange {
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .glow-green {
+    box-shadow: var(--shadow-green-glow);
+  }
+  
+  /* Halloween Backgrounds */
+  .bg-gradient-spooky {
+    background: var(--gradient-spooky);
+  }
+  
+  .bg-gradient-halloween {
+    background: var(--gradient-halloween);
+  }
+  
+  .bg-gradient-neon {
+    background: var(--gradient-neon);
+  }
+}
+
+@layer utilities {
+  /* 8-point Spacing System */
+  .space-1 { @apply p-2; }
+  .space-2 { @apply p-4; }
+  .space-3 { @apply p-6; }
+  .space-4 { @apply p-8; }
+  .space-5 { @apply p-10; }
+  .space-6 { @apply p-12; }
+  .space-8 { @apply p-16; }
+  .space-10 { @apply p-20; }
+  .space-12 { @apply p-24; }
+  .space-16 { @apply p-32; }
+  .space-20 { @apply p-40; }
+}
+
+/* Halloween Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 20px hsl(var(--neon-orange) / 0.5));
+  }
+  100% {
+    filter: brightness(1.2) drop-shadow(0 0 30px hsl(var(--neon-orange) / 0.8));
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(-2deg);
   }
 }

@@ -12,12 +12,18 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-spooky-dark">
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
+        <h1 className="text-6xl font-spooky text-gradient-halloween mb-4">404</h1>
+        <h2 className="text-2xl text-halloween-orange mb-4">Page Not Found in the Haunted Web</h2>
+        <p className="text-xl text-spooky-muted mb-8">
+          Looks like this page vanished into the digital graveyard!
+        </p>
+        <a 
+          href="/" 
+          className="inline-flex items-center px-6 py-3 bg-gradient-halloween text-spooky-dark font-semibold rounded-lg hover:glow-orange transition-all duration-300 animate-glow"
+        >
+          Return to the Living World
         </a>
       </div>
     </div>
