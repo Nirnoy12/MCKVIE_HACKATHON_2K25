@@ -85,7 +85,7 @@ const Index = () => {
             </Badge>
             
             {/* Main Heading */}
-            <h1 className="text-7xl md:text-7xl font-heading text-gradient-neon mb-6 leading-none animate-glow">
+            <h1 className="text-7xl md:text-10xl font-spooky text-gradient-neon mb-6 leading-none animate-glow">
               MCKVIE HACKATHON
               <br />
               <span className="text-5xl md:text-6xl">2025</span>

@@ -109,7 +109,7 @@ const Schedule = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-7xl font-heading text-gradient-neon mb-6 animate-glow">
+          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-neon mb-6 animate-glow">
             Event Schedule
           </h1>
           <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">
@@ -188,19 +188,19 @@ const Schedule = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-spooky-dark">
               <div>
-                <Users className="w-8 h-8 mx-auto mb-2" />
-                <h4 className="font-semibold mb-1">Team Size</h4>
-                <p className="text-sm">2 members per team</p>
+                <Users className="w-8 h-8 mx-auto mb-2 text-spooky-light" />
+                <h4 className="font-semibold text-spooky-light mb-1">Team Size</h4>
+                <p className="text-spooky-light">2 members per team</p>
               </div>
               <div>
-                <Clock className="w-8 h-8 mx-auto mb-2" />
-                <h4 className="font-semibold mb-1">Duration</h4>
-                <p className="text-sm">10 hours of coding time</p>
+                <Clock className="w-8 h-8 mx-auto mb-2 text-spooky-light" />
+                <h4 className="font-semibold text-spooky-light mb-1">Duration</h4>
+                <p className="text-spooky-light">10 hours of coding time</p>
               </div>
               <div>
-                <Trophy className="w-8 h-8 mx-auto mb-2" />
-                <h4 className="font-semibold mb-1">Prizes</h4>
-                <p className="text-sm">₹2,00,000+ in total rewards</p>
+                <Trophy className="w-8 h-8 mx-auto mb-2 text-spooky-light" />
+                <h4 className="font-semibold text-spooky-light mb-1">Prizes</h4>
+                <p className="text-spooky-light">₹20,000+ in total rewards</p>
               </div>
             </div>
           </Card>

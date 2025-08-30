@@ -65,7 +65,7 @@ const Problems = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-7xl font-heading text-gradient-neon mb-6 animate-glow">
+          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-neon mb-6 animate-glow">
             Problem Statements
           </h1>
           <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">

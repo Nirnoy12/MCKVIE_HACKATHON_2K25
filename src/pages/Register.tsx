@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 import { useLocation } from 'react-router-dom';
 import { generateTeamId, getNextTeamNumber, sendRegistrationEmail, initializeEmailJS } from '@/services/emailService';
 import Layout from '@/components/Layout';
-import { useForm } from '@/hooks/use-form';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -64,7 +63,6 @@ const Register = () => {
   // --- App ID for Firestore Path ---
   const appId: string = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
 
-  const { formData, handleInputChange, resetForm } = useForm<RegistrationFormData>(initialFormData);
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
@@ -304,7 +302,7 @@ const Register = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-7xl font-heading text-gradient-halloween mb-6 animate-glow">
+          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-neon mb-6 animate-glow">
             Join the Hunt
           </h1>
           <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">
@@ -315,7 +313,7 @@ const Register = () => {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Badge className="bg-neon-green text-spooky-dark text-lg p-2 animate-glow">
               <Trophy className="w-4 h-4 mr-2" />
-              ₹2L+ Prize Pool
+              ₹20k+ Prize Pool
             </Badge>
             <Badge className="bg-halloween-orange text-spooky-light text-lg p-2 animate-flicker">
               <Users className="w-4 h-4 mr-2" />
@@ -341,7 +339,7 @@ const Register = () => {
           {/* Registration Form */}
           <div className="lg:col-span-2">
             <Card className="bg-card border-halloween-purple-muted p-8 shadow-lg hover:glow-orange transition-all duration-300">
-              <h2 className="text-3xl font-spooky text-gradient-halloween mb-6 flex items-center">
+              <h2 className="text-3xl font-spooky text-gradient-ghoul mb-6 flex items-center">
                 <Code className="w-8 h-8 mr-3 animate-bob" />
                 Team Registration
               </h2>
@@ -350,7 +348,7 @@ const Register = () => {
                 {/* Team Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="teamName" className="text-spooky-light">Team Name</Label>
+                    <Label htmlFor="teamName" className="text-neon-orange">Team Name</Label>
                     <Input
                       id="teamName"
                       value={formData.teamName}
@@ -362,16 +360,13 @@ const Register = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="teamSize" className="text-spooky-light">Team Size</Label>
+                    <Label htmlFor="teamSize" className="text-neon-orange">Team Size</Label>
                     <Select onValueChange={(value) => handleInputChange('teamSize', value)} required>
                       <SelectTrigger className="bg-halloween-purple-muted border-halloween-purple text-spooky-light">
                         <SelectValue placeholder="Select team size" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="2">2 members</SelectItem>
-                        <SelectItem value="3">3 members</SelectItem>
-                        <SelectItem value="4">4 members</SelectItem>
-                        <SelectItem value="5">5 members</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -379,11 +374,11 @@ const Register = () => {
 
                 {/* Team Leader Information */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-halloween-orange">Team Leader Information</h3>
+                  <h3 className="text-xl font-heading text-halloween-orange">Team Leader Information</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="teamLeaderName" className="text-spooky-light">
+                      <Label htmlFor="teamLeaderName" className="text-neon-orange">
                         Full Name
                         {authState?.userName && (
                           <span className="text-neon-green text-xs ml-2">✓ Auto-filled from authentication</span>
@@ -402,7 +397,7 @@ const Register = () => {
                     </div>
                     
                     <div>
-                      <Label htmlFor="institution" className="text-spooky-light">Institution</Label>
+                      <Label htmlFor="institution" className="text-neon-orange">Institution</Label>
                       <Input
                         id="institution"
                         value={formData.institution}
@@ -416,7 +411,7 @@ const Register = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="teamLeaderEmail" className="text-spooky-light">
+                      <Label htmlFor="teamLeaderEmail" className="text-neon-orange">
                         Email
                         {authState?.userEmail && (
                           <span className="text-neon-green text-xs ml-2">✓ Auto-filled from authentication</span>
@@ -436,7 +431,79 @@ const Register = () => {
                     </div>
                     
                     <div>
-                      <Label htmlFor="teamLeaderPhone" className="text-spooky-light">Phone Number</Label>
+                      <Label htmlFor="teamLeaderPhone" className="text-neon-orange">Phone Number</Label>
+                      <Input
+                        id="teamLeaderPhone"
+                        type="tel"
+                        value={formData.teamLeaderPhone}
+                        onChange={(e) => handleInputChange('teamLeaderPhone', e.target.value)}
+                        placeholder="+91 XXXXX XXXXX"
+                        required
+                        className="bg-halloween-purple-muted border-halloween-purple text-spooky-light"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-xl font-heading text-halloween-orange">Teammate's Information</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="teamLeaderName" className="text-neon-orange">
+                        Full Name
+                        {authState?.userName && (
+                          <span className="text-neon-green text-xs ml-2">✓ Auto-filled from authentication</span>
+                        )}
+                      </Label>
+                      <Input
+                        id="teamLeaderName"
+                        value={formData.teamLeaderName}
+                        onChange={(e) => handleInputChange('teamLeaderName', e.target.value)}
+                        placeholder="Teammate's name"
+                        required
+                        className={`bg-halloween-purple-muted border-halloween-purple text-spooky-light ${
+                          authState?.userName ? 'border-neon-green' : ''
+                        }`}
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="institution" className="text-neon-orange">Institution</Label>
+                      <Input
+                        id="institution"
+                        value={formData.institution}
+                        onChange={(e) => handleInputChange('institution', e.target.value)}
+                        placeholder=" college/university"
+                        required
+                        className="bg-halloween-purple-muted border-halloween-purple text-spooky-light"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="teamLeaderEmail" className="text-neon-orange">
+                        Email
+                        {authState?.userEmail && (
+                          <span className="text-neon-green text-xs ml-2">✓ Auto-filled from authentication</span>
+                        )}
+                      </Label>
+                      <Input
+                        id="teamLeaderEmail"
+                        type="email"
+                        value={formData.teamLeaderEmail}
+                        onChange={(e) => handleInputChange('teamLeaderEmail', e.target.value)}
+                        placeholder=" email@example.com"
+                        required
+                        className={`bg-halloween-purple-muted border-halloween-purple text-spooky-light ${
+                          authState?.userEmail ? 'border-neon-green' : ''
+                        }`}
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="teamLeaderPhone" className="text-neon-orange">Phone Number</Label>
                       <Input
                         id="teamLeaderPhone"
                         type="tel"
@@ -454,42 +521,42 @@ const Register = () => {
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="problemCategory" className="text-spooky-light">Preferred Problem Category</Label>
+                      <Label htmlFor="problemCategory" className="text-spooky-light">Preferred Problem ID</Label>
                       <Select onValueChange={(value) => handleInputChange('problemCategory', value)} required>
                         <SelectTrigger className="bg-halloween-purple-muted border-halloween-purple text-spooky-light">
                           <SelectValue placeholder="Choose your challenge" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="web">Web Development Spook</SelectItem>
-                          <SelectItem value="ai">AI Phantom Challenge</SelectItem>
-                          <SelectItem value="blockchain">Blockchain Boo</SelectItem>
-                          <SelectItem value="mobile">Mobile Monster Maker</SelectItem>
+                          <SelectItem value="web">PS_1</SelectItem>
+                          <SelectItem value="ai">PS_2</SelectItem>
+                          <SelectItem value="blockchain">PS_3</SelectItem>
+                          <SelectItem value="mobile">PS_4</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     
                     <div>
-                      <Label htmlFor="experience" className="text-spooky-light">Team Experience Level</Label>
+                      <Label htmlFor="experience" className="text-spooky-light">Team Experience</Label>
                       <Select onValueChange={(value) => handleInputChange('experience', value)} required>
                         <SelectTrigger className="bg-halloween-purple-muted border-halloween-purple text-spooky-light">
-                          <SelectValue placeholder="Select experience" />
+                          <SelectValue placeholder="Previous experience" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="beginner">Beginner</SelectItem>
-                          <SelectItem value="intermediate">Intermediate</SelectItem>
-                          <SelectItem value="advanced">Advanced</SelectItem>
+                          <SelectItem value="beginner">Beginner 0-1 Hackathon</SelectItem>
+                          <SelectItem value="intermediate">Intermediate 2-4 Hackathon</SelectItem>
+                          <SelectItem value="advanced">Advanced 4+ Hackathon</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                   </div>
                   
                   <div>
-                    <Label htmlFor="dietaryRequirements" className="text-spooky-light">Dietary Requirements (Optional)</Label>
+                    <Label htmlFor="dietaryRequirements" className="text-spooky-light">Any Query (Optional)</Label>
                     <Textarea
                       id="dietaryRequirements"
                       value={formData.dietaryRequirements}
                       onChange={(e) => handleInputChange('dietaryRequirements', e.target.value)}
-                      placeholder="Any special dietary requirements or allergies"
+                      placeholder="Have questions about the hackathon? Go ahead and ask it."
                       className="bg-halloween-purple-muted border-halloween-purple text-spooky-light"
                     />
                   </div>
@@ -564,7 +631,7 @@ const Register = () => {
                   disabled={loading}
                   className="w-full text-lg animate-glow"
                 >
-                  {loading ? 'Registering Team...' : 'Register Team for Halloween Hackathon'}
+                  {loading ? 'Registering Team...' : 'Register Team for MCKVIE HACKATHON 2025'}
                 </Button>
               </form>
             </Card>

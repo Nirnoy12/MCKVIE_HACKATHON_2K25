@@ -2,12 +2,19 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { cn, openExternalLink } from '@/lib/utils';
-import { NAVIGATION_ITEMS, APP_CONFIG, RULEBOOK_URL } from '@/lib/constants';
+import { cn } from '@/lib/utils';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Problems', path: '/problems' },
+    { name: 'Schedule', path: '/schedule' },
+    { name: 'Team', path: '/team' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
   const isActive = (path: string) => {
     if (path === '/' && location.pathname === '/') return true;
@@ -24,16 +31,16 @@ const Navigation = () => {
               <span className="text-spooky-dark font-bold text-lg">M</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-spooky text-xl text-gradient-halloween">
-                {APP_CONFIG.name}
+              <h1 className="font-heading text-xl text-gradient-ghoul">
+                MCKVIE HACKATHON
               </h1>
-              <p className="text-xs text-spooky-muted -mt-1">Hackathon 2025</p>
+              <p className="text-xl text-center text-gradient-ghoul -mt-1">2025</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {NAVIGATION_ITEMS.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
@@ -53,7 +60,7 @@ const Navigation = () => {
               variant="ghost_spooky" 
               size="sm"
               className="animate-flicker"
-              onClick={() => openExternalLink(RULEBOOK_URL)}
+              onClick={() => window.open('/rulebook.pdf', '_blank')}
             >
               <Download className="w-4 h-4 mr-2" />
               Rules
@@ -73,7 +80,7 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-halloween-purple-muted">
             <div className="flex flex-col space-y-4">
-              {NAVIGATION_ITEMS.map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
@@ -94,7 +101,7 @@ const Navigation = () => {
                 size="sm"
                 className="mx-4 animate-flicker"
                 onClick={() => {
-                  openExternalLink(RULEBOOK_URL);
+                  window.open('/rulebook.pdf', '_blank');
                   setIsMenuOpen(false);
                 }}
               >
