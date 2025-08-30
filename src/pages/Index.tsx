@@ -2,6 +2,8 @@ import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import Countdown from '@/components/ui/countdown';
+import EventCountdown from '@/components/ui/EventCountdown';
 import { 
   Calendar, 
   Users, 
@@ -90,7 +92,9 @@ const Index = () => {
               <br />
               <span className="text-5xl md:text-7xl">Halloween Hackathon</span>
             </h1>
-            
+
+            {/* Countdown Timer */}
+            <Countdown />
             {/* Subtitle */}
             <p className="text-2xl md:text-3xl text-spooky-light mb-4 font-light">
               Where Code Meets <span className="text-gradient-neon font-bold animate-flicker">Spookiness</span>

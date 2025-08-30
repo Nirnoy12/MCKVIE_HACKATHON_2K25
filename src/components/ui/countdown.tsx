@@ -1,0 +1,42 @@
+
+import React, { useEffect, useState } from 'react';
+
+const Countdown = () => {
+  // Set your event date/time here (Oct 09, 2025, 9:30 AM)
+  const eventDate = new Date('2025-10-09T09:30:00+05:30').getTime();
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+
+  function getTimeLeft() {
+    const now = new Date().getTime();
+    const diff = eventDate - now;
+    if (diff <= 0) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+      };
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    return { days, hours, minutes, seconds };
+  }
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="text-3xl md:text-4xl text-spooky-light mb-8 font-mono animate-flicker">
+      {`${timeLeft.days.toString().padStart(2, '0')} Days : ${timeLeft.hours.toString().padStart(2, '0')} Hours : ${timeLeft.minutes.toString().padStart(2, '0')} Minutes : ${timeLeft.seconds.toString().padStart(2, '0')} Seconds`}
+    </div>
+  );
+};
+
+export default Countdown;
+export { Countdown };
