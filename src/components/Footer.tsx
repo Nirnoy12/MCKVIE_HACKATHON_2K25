@@ -1,6 +1,14 @@
-import { Github, Mail, MapPin, Calendar } from 'lucide-react';
+import { Github, Mail, MapPin, Calendar, Play } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleResetIntro = () => {
+    localStorage.removeItem('hasSeenVideoIntro');
+    window.location.reload();
+  };
+
   return (
     <footer className="bg-spooky-darker border-t border-halloween-purple-muted mt-20">
       <div className="container mx-auto px-4 py-12">
@@ -51,12 +59,21 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-halloween-purple-muted mt-8 pt-8 text-center">
-          <p className="text-spooky-muted text-sm">
-            © 2025 MCKV Institute of Engineering. All rights reserved. 
-            <span className="text-halloween-orange animate-flicker ml-2">
-              👻 Happy Coding! 🎃
-            </span>
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-spooky-muted text-sm">
+              © 2025 MCKV Institute of Engineering. All rights reserved. 
+              <span className="text-halloween-orange animate-flicker ml-2">
+                👻 Happy Coding! 🎃
+              </span>
+            </p>
+                         <button
+               onClick={handleResetIntro}
+               className="flex items-center space-x-2 text-spooky-muted hover:text-red-400 transition-colors text-sm"
+             >
+               <Play className="w-4 h-4" />
+               <span>Reset for Testing</span>
+             </button>
+          </div>
         </div>
       </div>
     </footer>
