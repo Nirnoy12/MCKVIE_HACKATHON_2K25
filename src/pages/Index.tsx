@@ -103,7 +103,7 @@ const Index = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <Link to="/register">
+              <Link to="/auth">
                 <Button variant="neon" size="xl" className="text-xl px-12 py-4 animate-glow">
                   Register Now
                 </Button>
@@ -224,7 +224,7 @@ const Index = () => {
               and be part of the most exciting hackathon experience at MCKVIE.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/register">
+              <Link to="/auth">
                 <Button variant="haunted" size="xl" className="text-xl px-12 py-4 bg-spooky-dark border-spooky-dark text-spooky-light hover:bg-spooky-light hover:text-spooky-dark glow-green">
                   Register Your Team
                 </Button>
