@@ -1,73 +1,174 @@
-# Welcome to your Lovable project
+# MCKVIE Halloween Hackathon 2025
 
-## Project info
+A spooky-themed hackathon website built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/8fa773a1-89c7-4953-b589-5381d1bb19fa
+## 🚀 Features
 
-## How can I edit this code?
+- **Responsive Design**: Mobile-first approach with Halloween theme
+- **Type Safety**: Full TypeScript implementation with strict type checking
+- **Modern UI**: Built with shadcn/ui components and Radix UI primitives
+- **Form Validation**: Comprehensive client-side validation with custom hooks
+- **Performance**: Optimized with React Query and efficient state management
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Routing**: React Router DOM
+- **State Management**: React Query + Custom Hooks
+- **Icons**: Lucide React
+- **Forms**: React Hook Form + Zod validation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8fa773a1-89c7-4953-b589-5381d1bb19fa) and start prompting.
+## 📁 Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── Layout.tsx      # Main layout wrapper
+│   ├── Navigation.tsx  # Navigation component
+│   └── Footer.tsx      # Footer component
+├── hooks/              # Custom React hooks
+│   ├── use-form.ts     # Form handling hook
+│   └── use-toast.ts    # Toast notification hook
+├── lib/                # Utility functions and types
+│   ├── constants.ts    # App constants
+│   ├── types.ts        # TypeScript type definitions
+│   ├── utils.ts        # Utility functions
+│   └── validation.ts   # Form validation logic
+├── pages/              # Page components
+│   ├── Index.tsx       # Home page
+│   ├── Problems.tsx    # Problems page
+│   ├── Schedule.tsx    # Schedule page
+│   ├── Register.tsx    # Registration page
+│   ├── Contact.tsx     # Contact page
+│   └── NotFound.tsx    # 404 page
+└── assets/             # Static assets
+```
 
-**Use your preferred IDE**
+## 🎨 Design System
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The app uses a custom Halloween-themed design system with:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Colors**: Spooky dark theme with orange and purple accents
+- **Typography**: Custom fonts (Creepster for headings, Inter for body)
+- **Animations**: Glow effects and spooky animations
+- **Components**: Consistent UI components with Halloween styling
 
-Follow these steps:
+## 🚀 Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Node.js 18+ 
+- npm or yarn
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd spooky-code-crawl
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open [http://localhost:8080](http://localhost:8080) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔧 Development Guidelines
 
-## What technologies are used for this project?
+### Code Quality
 
-This project is built with:
+- **TypeScript**: Strict type checking enabled
+- **ESLint**: Configured with React and TypeScript rules
+- **Prettier**: Code formatting (configure in your editor)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Component Structure
 
-## How can I deploy this project?
+- Use functional components with hooks
+- Implement proper TypeScript interfaces
+- Follow the established naming conventions
+- Use the custom `useForm` hook for form handling
 
-Simply open [Lovable](https://lovable.dev/projects/8fa773a1-89c7-4953-b589-5381d1bb19fa) and click on Share -> Publish.
+### State Management
 
-## Can I connect a custom domain to my Lovable project?
+- Use React Query for server state
+- Use custom hooks for complex local state
+- Keep components focused and single-responsibility
 
-Yes, you can!
+### Styling
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Use Tailwind CSS classes
+- Leverage the custom design system
+- Use the `cn` utility for conditional classes
+- Follow mobile-first responsive design
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📝 Recent Improvements
+
+### Code Cleanup (Latest)
+
+1. **Centralized Constants**: Moved navigation items and app config to `src/lib/constants.ts`
+2. **Type Safety**: Enhanced TypeScript configuration with strict mode
+3. **Custom Hooks**: Created reusable `useForm` hook for form handling
+4. **Validation**: Added comprehensive form validation with custom utilities
+5. **Utility Functions**: Added safe external link handling and other utilities
+6. **Removed Console Logs**: Cleaned up development artifacts
+7. **Better Error Handling**: Improved form validation and error messages
+
+### Type Definitions
+
+- Added comprehensive TypeScript interfaces in `src/lib/types.ts`
+- Improved type safety across all components
+- Better IntelliSense support
+
+### Form Handling
+
+- Created reusable form hook (`useForm`)
+- Added validation utilities (`validateRegistrationForm`)
+- Improved error handling and user feedback
+
+### Security
+
+- Added safe external link handling
+- Improved input validation
+- Better error boundaries
+
+## 🤝 Contributing
+
+1. Follow the established code style and conventions
+2. Add proper TypeScript types for new features
+3. Use the existing design system and components
+4. Test your changes thoroughly
+5. Update documentation as needed
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🎃 Halloween Theme
+
+The app features a spooky Halloween theme with:
+- Dark color scheme with orange and purple accents
+- Custom animations and glow effects
+- Halloween-themed content and messaging
+- Responsive design optimized for all devices
+
+---
+
+**Happy Coding! 👻💻**

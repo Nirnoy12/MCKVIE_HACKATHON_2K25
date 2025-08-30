@@ -1,5 +1,6 @@
 import Navigation from './Navigation';
 import Footer from './Footer';
+import AudioControls from './AudioControls';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      <AudioControls />
     </div>
   );
 };

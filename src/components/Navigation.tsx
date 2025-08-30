@@ -12,7 +12,7 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'Problems', path: '/problems' },
     { name: 'Schedule', path: '/schedule' },
-    { name: 'Register', path: '/register' },
+    { name: 'Team', path: '/team' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -31,10 +31,10 @@ const Navigation = () => {
               <span className="text-spooky-dark font-bold text-lg">M</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-spooky text-xl text-gradient-halloween">
-                MCKVIE
+              <h1 className="font-heading text-xl text-gradient-ghoul">
+                MCKVIE HACKATHON
               </h1>
-              <p className="text-xs text-spooky-muted -mt-1">Hackathon 2024</p>
+              <p className="text-xl text-center text-gradient-ghoul -mt-1">2025</p>
             </div>
           </Link>
 

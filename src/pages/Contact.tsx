@@ -102,7 +102,7 @@ const Contact = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-halloween mb-6 animate-glow">
+          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-neon mb-6 animate-glow">
             Get in Touch
           </h1>
           <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">
@@ -115,7 +115,7 @@ const Contact = () => {
           
           {/* Contact Methods */}
           <div className="lg:col-span-2 space-y-6">
-            <h2 className="text-3xl font-spooky text-gradient-halloween mb-6">
+            <h2 className="text-3xl font-spooky text-gradient-ghoul mb-6">
               Contact Information
             </h2>
             
@@ -134,7 +134,7 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-spooky-light mb-1">
+                      <h3 className="text-lg font-heading text-spooky-light mb-1">
                         {method.label}
                       </h3>
                       <p className="text-halloween-orange font-medium mb-1">
@@ -147,43 +147,6 @@ const Contact = () => {
                   </div>
                 </Card>
               ))}
-            </div>
-
-            {/* Organizers */}
-            <div className="mt-12">
-              <h2 className="text-3xl font-spooky text-gradient-halloween mb-6">
-                Meet the Organizers
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {organizers.map((organizer, index) => (
-                  <Card 
-                    key={index}
-                    className="bg-card border-halloween-purple-muted hover:border-halloween-orange transition-all duration-300 hover:glow-orange p-6 text-center animate-float"
-                    style={{ animationDelay: `${index * 0.3}s` }}
-                  >
-                    <div className="text-6xl mb-4 animate-bob">
-                      {organizer.image}
-                    </div>
-                    <h3 className="text-xl font-semibold text-spooky-light mb-2">
-                      {organizer.name}
-                    </h3>
-                    <Badge className="bg-halloween-orange text-spooky-dark mb-3">
-                      {organizer.role}
-                    </Badge>
-                    <div className="space-y-2 text-sm text-spooky-muted">
-                      <div className="flex items-center justify-center space-x-2">
-                        <Mail className="w-4 h-4 text-halloween-orange" />
-                        <span>{organizer.email}</span>
-                      </div>
-                      <div className="flex items-center justify-center space-x-2">
-                        <Phone className="w-4 h-4 text-halloween-orange" />
-                        <span>{organizer.phone}</span>
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
             </div>
           </div>
 
