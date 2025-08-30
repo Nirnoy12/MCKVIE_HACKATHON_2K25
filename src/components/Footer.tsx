@@ -9,12 +9,12 @@ const Footer = () => {
           {/* Event Info */}
           <div className="space-y-4">
             <h3 className="text-xl font-spooky text-gradient-halloween">
-              MCKVIE Hackathon 2024
+              MCKVIE Hackathon 2025
             </h3>
             <div className="space-y-2 text-spooky-muted">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-4 h-4 text-halloween-orange" />
-                <span>Oct 9-17, 2024</span>
+                <span>Oct 9-17, 2025</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-halloween-orange" />
@@ -52,7 +52,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-halloween-purple-muted mt-8 pt-8 text-center">
           <p className="text-spooky-muted text-sm">
-            © 2024 MCKV Institute of Engineering. All rights reserved. 
+            © 2025 MCKV Institute of Engineering. All rights reserved. 
             <span className="text-halloween-orange animate-flicker ml-2">
               👻 Happy Coding! 🎃
             </span>

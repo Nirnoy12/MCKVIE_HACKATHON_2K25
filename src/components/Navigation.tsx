@@ -34,7 +34,7 @@ const Navigation = () => {
               <h1 className="font-spooky text-xl text-gradient-halloween">
                 MCKVIE
               </h1>
-              <p className="text-xs text-spooky-muted -mt-1">Hackathon 2024</p>
+              <p className="text-xs text-spooky-muted -mt-1">Hackathon 2025</p>
             </div>
           </Link>
 

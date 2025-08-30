@@ -6,7 +6,7 @@ import { Clock, MapPin, Trophy, Users, Zap } from 'lucide-react';
 const Schedule = () => {
   const events = [
     {
-      date: "October 9-10, 2024",
+      date: "October 9-10, 2025",
       title: "First Screening Phase",
       type: "Online",
       events: [
@@ -27,7 +27,7 @@ const Schedule = () => {
       ]
     },
     {
-      date: "October 17, 2024",
+      date: "October 17, 2025",
       title: "Main Hackathon Day",
       type: "Offline",
       events: [
