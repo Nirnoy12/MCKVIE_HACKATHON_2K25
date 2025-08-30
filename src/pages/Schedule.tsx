@@ -101,7 +101,7 @@ const Schedule = () => {
   const getEventTypeColor = (type: string) => {
     return type === "Online" 
       ? "bg-neon-green text-spooky-dark"
-      : "bg-neon-orange text-spooky-dark";
+      : "bg-neon-green text-spooky-dark";
   };
 
   return (
@@ -109,7 +109,7 @@ const Schedule = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-halloween mb-6 animate-glow">
+          <h1 className="text-6xl md:text-7xl font-heading text-gradient-neon mb-6 animate-glow">
             Event Schedule
           </h1>
           <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">
@@ -125,7 +125,7 @@ const Schedule = () => {
               {/* Phase Header */}
               <div className="flex flex-col md:flex-row items-center justify-between mb-8">
                 <div>
-                  <h2 className="text-4xl font-spooky text-gradient-halloween mb-2">
+                  <h2 className="text-4xl font-spooky text-gradient-ghoul mb-2">
                     {phase.title}
                   </h2>
                   <p className="text-xl text-spooky-light">{phase.date}</p>
@@ -154,7 +154,7 @@ const Schedule = () => {
                       {/* Content */}
                       <div className="flex-1">
                         <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                          <h3 className="text-xl font-semibold text-spooky-light">
+                          <h3 className="text-xl font-heading text-neon-orange">
                             {event.title}
                           </h3>
                           <div className="flex items-center space-x-2 text-halloween-orange font-medium">
@@ -167,7 +167,7 @@ const Schedule = () => {
                           {event.description}
                         </p>
                         
-                        <div className="flex items-center space-x-2 text-sm text-halloween-orange">
+                        <div className="flex items-center space-x-2 text-sm text-gradient-ghoul">
                           <MapPin className="w-4 h-4" />
                           <span>{event.location}</span>
                         </div>
@@ -183,14 +183,14 @@ const Schedule = () => {
         {/* Important Notes */}
         <div className="mt-16">
           <Card className="bg-gradient-halloween p-8 text-center shadow-lg glow-orange">
-            <h3 className="text-3xl font-spooky text-spooky-dark mb-4">
+            <h3 className="text-6xl font-spooky text-gradient-ghoul mb-4">
               Important Reminders
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-spooky-dark">
               <div>
                 <Users className="w-8 h-8 mx-auto mb-2" />
                 <h4 className="font-semibold mb-1">Team Size</h4>
-                <p className="text-sm">2-5 members per team</p>
+                <p className="text-sm">2 members per team</p>
               </div>
               <div>
                 <Clock className="w-8 h-8 mx-auto mb-2" />

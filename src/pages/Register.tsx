@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import Layout from '@/components/Layout';
+import { useForm } from '@/hooks/use-form';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -10,9 +10,11 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { Users, Mail, Phone, Code, Trophy, CheckCircle } from 'lucide-react';
+import type { RegistrationFormData } from '@/lib/types';
+import { validateRegistrationForm } from '@/lib/validation';
 
 const Register = () => {
-  const [formData, setFormData] = useState({
+  const initialFormData: RegistrationFormData = {
     teamName: '',
     teamLeaderName: '',
     teamLeaderEmail: '',
@@ -25,17 +27,20 @@ const Register = () => {
     emergencyContact: '',
     agreeToTerms: false,
     agreeToPhotography: false
-  });
+  };
 
+  const { formData, handleInputChange, resetForm } = useForm<RegistrationFormData>(initialFormData);
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.agreeToTerms) {
+    const validation = validateRegistrationForm(formData);
+    
+    if (!validation.isValid) {
       toast({
-        title: "Terms Required",
-        description: "Please agree to the terms and conditions to register.",
+        title: "Validation Error",
+        description: validation.errors.join(', '),
         variant: "destructive"
       });
       return;
@@ -47,11 +52,11 @@ const Register = () => {
       description: "Your Halloween hackathon registration has been submitted successfully. Check your email for confirmation.",
     });
     
-    console.log('Registration Data:', formData);
-  };
-
-  const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    // TODO: Send registration data to backend API
+    // console.log('Registration Data:', formData);
+    
+    // Reset form after successful submission
+    resetForm();
   };
 
   const benefits = [
@@ -68,7 +73,7 @@ const Register = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-halloween mb-6 animate-glow">
+          <h1 className="text-6xl md:text-7xl font-heading text-gradient-halloween mb-6 animate-glow">
             Join the Hunt
           </h1>
           <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">

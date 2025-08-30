@@ -81,19 +81,19 @@ const Index = () => {
             {/* Event Badge */}
             <Badge className="bg-neon-orange text-spooky-dark text-lg px-6 py-2 mb-8 animate-glow">
               <Calendar className="w-5 h-5 mr-2" />
-              October 9-17, 2024
+              October 9-17, 2025
             </Badge>
             
             {/* Main Heading */}
-            <h1 className="text-7xl md:text-9xl font-spooky text-gradient-halloween mb-6 leading-none animate-glow">
-              MCKVIE
+            <h1 className="text-7xl md:text-7xl font-heading text-gradient-neon mb-6 leading-none animate-glow">
+              MCKVIE HACKATHON
               <br />
-              <span className="text-5xl md:text-7xl">Halloween Hackathon</span>
+              <span className="text-5xl md:text-6xl">2025</span>
             </h1>
             
             {/* Subtitle */}
             <p className="text-2xl md:text-3xl text-spooky-light mb-4 font-light">
-              Where Code Meets <span className="text-gradient-neon font-bold animate-flicker">Spookiness</span>
+              Where Code Meets <span className="text-gradient-spooky font-bold animate-flicker">Spookiness</span>
             </p>
             
             <p className="text-lg text-spooky-muted mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -141,7 +141,7 @@ const Index = () => {
       <section className="py-20 bg-spooky-darker">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-spooky text-gradient-halloween mb-6">
+            <h2 className="text-5xl md:text-6xl font-spooky text-gradient-ghoul mb-6">
               Event Timeline
             </h2>
             <p className="text-xl text-spooky-muted max-w-2xl mx-auto">
@@ -159,7 +159,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-halloween rounded-full flex items-center justify-center mx-auto mb-6 animate-bob">
                   <item.icon className="w-8 h-8 text-spooky-dark" />
                 </div>
-                <h3 className="text-xl font-spooky text-gradient-halloween mb-2">
+                <h3 className="text-xl font-spooky text-gradient-spooky mb-2">
                   {item.title}
                 </h3>
                 <p className="text-halloween-orange font-bold text-lg">
@@ -175,7 +175,7 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-spooky text-gradient-halloween mb-6">
+            <h2 className="text-5xl md:text-6xl font-spooky text-gradient-ghoul mb-6">
               Why Join Our Hackathon?
             </h2>
             <p className="text-xl text-spooky-muted max-w-3xl mx-auto">
@@ -198,10 +198,10 @@ const Index = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-spooky-light mb-3">
+                    <h3 className="text-xl font-heading text-neon-glow mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-spooky-muted leading-relaxed">
+                    <p className="text-neon-green leading-relaxed mb-1">
                       {feature.description}
                     </p>
                   </div>
@@ -216,10 +216,10 @@ const Index = () => {
       <section className="py-20 bg-gradient-halloween">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-spooky text-spooky-dark mb-6">
+            <h2 className="text-5xl md:text-6xl font-spooky text-gradient-ghoul mb-6">
               Ready to Join the Hunt?
             </h2>
-            <p className="text-xl text-spooky-dark mb-8 leading-relaxed">
+            <p className="text-xl text-spooky-light mb-8 leading-relaxed">
               Don't let this opportunity vanish into the night! Register your team now 
               and be part of the most exciting hackathon experience at MCKVIE.
             </p>

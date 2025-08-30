@@ -102,7 +102,7 @@ const Contact = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-halloween mb-6 animate-glow">
+          <h1 className="text-6xl md:text-7xl font-heading text-gradient-halloween mb-6 animate-glow">
             Get in Touch
           </h1>
           <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">
