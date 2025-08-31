@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/halloween-hero-bg.jpg';
+import Countdown from '@/components/ui/countdown';
 
 const Index = () => {
   const stats = [
@@ -124,6 +125,11 @@ const Index = () => {
               Join MCKV Institute of Engineering for the most spine-tingling hackathon of the year.
               Code, compete, and conquer in our Halloween-themed coding challenge!
             </p>
+
+            {/*countdown timer */}
+            <p className="text-2xl md:text-3xl text-[#A3FF03] mb-4 font-light">Event Starts In:</p>
+            <Countdown />
+
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">

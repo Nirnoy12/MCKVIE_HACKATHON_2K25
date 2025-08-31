@@ -147,9 +147,26 @@ const Contact = () => {
                   </div>
                 </Card>
               ))}
+              {/* Map */}
+              <div className="col-span-1 md:col-span-2">
+                <h2 className="text-3xl font-spooky text-gradient-ghoul mb-6">
+                  Our Location
+                </h2>
+                <Card className="bg-card border-halloween-purple-muted p-2 overflow-hidden shadow-lg">
+                  <iframe
+                    title="MCKVIE Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1179.9289977725145!2d88.34797474294864!3d22.61976036850415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89d65da7b3775%3A0x30915f7e98f1b0d5!2sMCKV%20Institute%20of%20Engineering!5e0!3m2!1sen!2sin!4v1756609585992!5m2!1sen!2sin"
+                    width="100%"
+                    height="438"
+                    className="border-0 rounded-md"
+                    allowFullScreen={false}
+                    loading="lazy"
+                  ></iframe>
+                </Card>
+              </div>
+
             </div>
           </div>
-
           {/* Sidebar */}
           <div className="space-y-6">
             
