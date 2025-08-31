@@ -1,107 +1,389 @@
 import Layout from '@/components/Layout';
-import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, Users } from 'lucide-react';
+import LightBulbToggle from '@/components/LightBulbToggle';
+
+type TeamMember = {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  github?: string;
+  linkedin?: string;
+  email?: string;
+  tags: string[];
+};
+
+const team: TeamMember[] = [
+  {
+    name: "Dr. Spooky Singh",
+    role: "Faculty Coordinator",
+    bio: "Guiding the spooky spirits of innovation with wisdom and mentorship.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/spooky-singh",
+    linkedin: "https://linkedin.com/in/spooky-singh",
+    email: "spooky.singh@mckvie.edu.in",
+    tags: ["Mentor", "Leader"]
+  },
+  {
+    name: "Phantom Patel",
+    role: "Student Coordinator",
+    bio: "Ensures smooth hauntings… I mean operations, keeping the hackathon alive and kicking.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/phantom-patel",
+    linkedin: "https://linkedin.com/in/phantom-patel",
+    email: "phantom.patel@student.mckvie.edu.in",
+    tags: ["Organizer", "Manager"]
+  },
+  {
+    name: "Ghoulish Gupta",
+    role: "Technical Lead",
+    bio: "Architect of eerie algorithms and the mastermind behind the tech stack.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/ghoulish-gupta",
+    linkedin: "https://linkedin.com/in/ghoulish-gupta",
+    email: "ghoulish.gupta@mckvie.edu.in",
+    tags: ["Developer", "Tech"]
+  },
+  {
+    name: "Witchy Williams",
+    role: "Design Lead",
+    bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/witchy-williams",
+    linkedin: "https://linkedin.com/in/witchy-williams",
+    email: "witchy.williams@mckvie.edu.in",
+    tags: ["Designer", "UX"]
+  },
+  {
+    name: "Zombie Zhang",
+    role: "Marketing Coordinator",
+    bio: "Raising awareness from the digital grave with viral marketing strategies.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/zombie-zhang",
+    linkedin: "https://linkedin.com/in/zombie-zhang",
+    email: "zombie.zhang@mckvie.edu.in",
+    tags: ["Marketing", "Social"]
+  }
+];
+
+function SkewedTeamPage({ member, index, isActive, isInactive }: { 
+  member: TeamMember; 
+  index: number; 
+  isActive: boolean; 
+  isInactive: boolean; 
+}) {
+  const isEven = index % 2 === 0;
+  
+  return (
+    <div className={`skw-page skw-page-${index + 1} ${isActive ? 'active' : ''} ${isInactive ? 'inactive' : ''}`}>
+      <div className="skw-page__half skw-page__half--left">
+        <div className="skw-page__skewed">
+          <div 
+            className="skw-page__content"
+            style={{
+              backgroundImage: isEven ? `url(${member.image})` : 'none',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            {!isEven && (
+              <div className="text-center">
+                <h2 className="skw-page__heading text-gradient-neon">{member.name}</h2>
+                <p className="skw-page__role text-halloween-orange font-semibold mb-4">{member.role}</p>
+                <p className="skw-page__description text-spooky-muted mb-6">{member.bio}</p>
+                
+                {/* Tags */}
+                <div className="flex flex-wrap justify-center gap-2 mb-6">
+                  {member.tags.map((tag, i) => (
+                    <span key={i} className="px-3 py-1 bg-halloween-orange/20 text-halloween-orange text-sm rounded-full border border-halloween-orange/30">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Social Links */}
+                <div className="flex justify-center gap-4">
+                  {member.github && (
+                    <a 
+                      href={member.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-spooky-muted hover:text-white transition-colors duration-300 hover:scale-110"
+                    >
+                      <Github className="w-6 h-6" />
+                    </a>
+                  )}
+                  {member.linkedin && (
+                    <a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-spooky-muted hover:text-blue-400 transition-colors duration-300 hover:scale-110"
+                    >
+                      <Linkedin className="w-6 h-6" />
+                    </a>
+                  )}
+                  {member.email && (
+                    <a 
+                      href={`mailto:${member.email}`}
+                      className="text-spooky-muted hover:text-halloween-orange transition-colors duration-300 hover:scale-110"
+                    >
+                      <Mail className="w-6 h-6" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+      <div className="skw-page__half skw-page__half--right">
+        <div className="skw-page__skewed">
+          <div 
+            className="skw-page__content"
+            style={{
+              backgroundImage: isEven ? 'none' : `url(${member.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            {isEven && (
+              <div className="text-center">
+                <h2 className="skw-page__heading text-gradient-neon">{member.name}</h2>
+                <p className="skw-page__role text-halloween-orange font-semibold mb-4">{member.role}</p>
+                <p className="skw-page__description text-spooky-muted mb-6">{member.bio}</p>
+                
+                {/* Tags */}
+                <div className="flex flex-wrap justify-center gap-2 mb-6">
+                  {member.tags.map((tag, i) => (
+                    <span key={i} className="px-3 py-1 bg-halloween-orange/20 text-halloween-orange text-sm rounded-full border border-halloween-orange/30">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Social Links */}
+                <div className="flex justify-center gap-4">
+                  {member.github && (
+                    <a 
+                      href={member.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-spooky-muted hover:text-white transition-colors duration-300 hover:scale-110"
+                    >
+                      <Github className="w-6 h-6" />
+                    </a>
+                  )}
+                  {member.linkedin && (
+                    <a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-spooky-muted hover:text-blue-400 transition-colors duration-300 hover:scale-110"
+                    >
+                      <Linkedin className="w-6 h-6" />
+                    </a>
+                  )}
+                  {member.email && (
+                    <a 
+                      href={`mailto:${member.email}`}
+                      className="text-spooky-muted hover:text-halloween-orange transition-colors duration-300 hover:scale-110"
+                    >
+                      <Mail className="w-6 h-6" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const Team = () => {
-  const members = [
-    {
-      name: "Dr. Spooky Singh",
-      role: "Faculty Coordinator",
-      bio: "Guiding the spooky spirits of innovation with wisdom and mentorship.",
-      image: "👨‍🏫",
-      github: "https://github.com/spooky-singh",
-      linkedin: "https://linkedin.com/in/spooky-singh",
-      email: "spooky.singh@mckvie.edu.in",
-      tags: ["Mentor", "Leader"]
-    },
-    {
-      name: "Phantom Patel",
-      role: "Student Coordinator",
-      bio: "Ensures smooth hauntings… I mean operations, keeping the hackathon alive and kicking.",
-      image: "🧑‍💻",
-      github: "https://github.com/phantom-patel",
-      linkedin: "https://linkedin.com/in/phantom-patel",
-      email: "phantom.patel@student.mckvie.edu.in",
-      tags: ["Organizer", "Manager"]
-    },
-    {
-      name: "Ghoulish Gupta",
-      role: "Technical Lead",
-      bio: "Architect of eerie algorithms and the mastermind behind the tech stack.",
-      image: "🧙‍♂️",
-      github: "https://github.com/ghoulish-gupta",
-      linkedin: "https://linkedin.com/in/ghoulish-gupta",
-      email: "ghoulish.gupta@mckvie.edu.in",
-      tags: ["Developer", "Tech"]
+  const [scrollY, setScrollY] = useState(0);
+  const [showLightBulb, setShowLightBulb] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const image1Ref = useRef<HTMLImageElement>(null);
+  const image2Ref = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!showLightBulb && headerRef.current && image1Ref.current && image2Ref.current) {
+      const images = [image1Ref.current, image2Ref.current];
+      
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const headerHeight = headerRef.current?.offsetHeight || windowHeight;
+        
+        // Calculate scroll progress (0 to 1)
+        const scrollProgress = Math.min(scrollY / (headerHeight * 0.5), 1);
+        
+        // Apply transform to each image
+        images.forEach((el, index) => {
+          const direction = index % 2 === 0 ? 1 : -1;
+          const translateX = scrollProgress * 100 * direction;
+          el.style.transform = `translateX(${translateX}%)`;
+        });
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      
+      // Initial call to set starting position
+      handleScroll();
+      
+      return () => window.removeEventListener('scroll', handleScroll);
     }
-  ];
+  }, [showLightBulb]);
+
+  // Skewed page navigation
+  useEffect(() => {
+    if (showLightBulb) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (isScrolling) return;
+      
+      setIsScrolling(true);
+      
+      if (e.deltaY > 0) {
+        // Scroll down
+        setCurrentPage(prev => Math.min(prev + 1, team.length));
+      } else {
+        // Scroll up
+        setCurrentPage(prev => Math.max(prev - 1, 1));
+      }
+      
+      setTimeout(() => setIsScrolling(false), 1000);
+    };
+
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (isScrolling) return;
+      
+      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        setIsScrolling(true);
+        setCurrentPage(prev => Math.min(prev + 1, team.length));
+        setTimeout(() => setIsScrolling(false), 1000);
+      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        setIsScrolling(true);
+        setCurrentPage(prev => Math.max(prev - 1, 1));
+        setTimeout(() => setIsScrolling(false), 1000);
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeydown);
+    
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeydown);
+    };
+  }, [showLightBulb, isScrolling]);
+
+  const handleTeamButtonClick = () => {
+    setShowLightBulb(false);
+  };
+
+  if (showLightBulb) {
+    return <LightBulbToggle onTeamButtonClick={handleTeamButtonClick} />;
+  }
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-16">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl font-spooky text-gradient-neon mb-6 animate-glow">
+      <div className="relative min-h-screen bg-black overflow-hidden">
+        {/* Animated Header with Split Images */}
+        <header 
+          ref={headerRef}
+          className="relative w-full min-h-screen overflow-x-hidden flex justify-center items-center"
+        >
+          <img 
+            ref={image1Ref}
+            src="https://images.unsplash.com/photo-1448518184296-a22facb4446f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+            alt=""
+            className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000"
+            style={{
+              clipPath: 'polygon(100% 100%, 0% 100%, 100% 0)',
+            }}
+          />
+          <img 
+            ref={image2Ref}
+            src="https://images.unsplash.com/photo-1448518184296-a22facb4446f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+            alt=""
+            className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000"
+            style={{
+              clipPath: 'polygon(0 0, 0% 100%, 100% 0)',
+            }}
+          />
+          <h1 className="relative z-10 text-6xl md:text-8xl font-spooky text-gradient-neon transform -rotate-12 font-extrabold">
             Meet the Team
           </h1>
-          <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">
-            Behind every spooky hackathon, there’s a team of ghosts, ghouls, and geeks
-            working tirelessly to bring the magic to life.
+        </header>
+
+        {/* Content Section */}
+        <div className="relative z-20 bg-black">
+          <p className="px-12 py-16 text-lg text-spooky-muted leading-relaxed max-w-4xl mx-auto">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis quia beatae error vitae possimus neque, autem corrupti, suscipit, officia eligendi quisquam accusamus architecto debitis consectetur iure aperiam eum voluptas pariatur.
+            Quae, ducimus sed? Ipsam mollitia consequatur cum optio atque velit laboriosam in ullam autem, quo distinctio libero vel magnam, quibusdam aut deleniti assumenda porro. Nostrum adipisci nesciunt at doloremque quaerat.
+            Asperiores voluptatibus autem maxime nihil quibusdam accusamus doloribus corrupti tenetur veniam quis laborum illo sapiente excepturi ut aperiam, exercitationem nulla. In similique expedita odio voluptatum unde excepturi reiciendis magni dicta?
+            Animi nesciunt cupiditate officiis tenetur ipsam, sint ex inventore perferendis repellat fugiat maiores laudantium vitae aliquid praesentium dolore facilis eum quasi odio enim sapiente numquam cum aliquam temporibus reprehenderit. Vero!
           </p>
-        </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {members.map((member, index) => (
-            <Card 
-              key={index} 
-              className="bg-card border-halloween-purple-muted hover:border-halloween-orange transition-all duration-300 hover:glow-orange p-8 text-center animate-float"
-              style={{ animationDelay: `${index * 0.3}s` }}
-            >
-              <div className="text-6xl mb-4">{member.image}</div>
-              <h3 className="text-2xl font-heading text-halloween-orange">{member.name}</h3>
-              <p className="text-spooky-light font-medium mb-2">{member.role}</p>
-              <p className="text-sm text-spooky-muted mb-4">{member.bio}</p>
+          {/* Skewed Pages Container */}
+          <div className="skw-pages">
+            {team.map((member, index) => (
+              <SkewedTeamPage
+                key={index}
+                member={member}
+                index={index}
+                isActive={currentPage === index + 1}
+                isInactive={currentPage !== index + 1}
+              />
+            ))}
+          </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                {member.tags.map((tag, i) => (
-                  <Badge key={i} variant="secondary" className="bg-halloween-orange/20 text-halloween-orange">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
+          {/* Navigation Indicators */}
+          <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-2">
+            {team.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPage(index + 1)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentPage === index + 1 
+                    ? 'bg-halloween-orange scale-125' 
+                    : 'bg-white/30 hover:bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
 
-              {/* Social Links */}
-              <div className="flex justify-center gap-5 mt-2">
-                {member.github && (
-                  <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-spooky-muted hover:text-white transition">
-                    <Github className="w-5 h-5" />
-                  </a>
-                )}
-                {member.linkedin && (
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-spooky-muted hover:text-blue-400 transition">
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                )}
-                {member.email && (
-                  <a href={`mailto:${member.email}`} className="text-spooky-muted hover:text-halloween-orange transition">
-                    <Mail className="w-5 h-5" />
-                  </a>
-                )}
-              </div>
-            </Card>
-          ))}
+          {/* Scroll Instructions */}
+          <div className="fixed bottom-8 left-8 z-50 text-white/60 text-sm">
+            <p>Scroll or use arrow keys to navigate</p>
+          </div>
         </div>
 
         {/* Closing Note */}
-        <div className="text-center mt-20">
+        <div className="relative z-20 text-center py-20 bg-black">
           <Users className="w-10 h-10 text-halloween-orange mx-auto mb-4" />
           <h2 className="text-3xl font-spooky text-gradient-halloween mb-2">
             And many more volunteers...
           </h2>
-          <p className="text-spooky-muted max-w-2xl mx-auto">
+          <p className="text-spooky-muted max-w-2xl mx-auto px-4">
             From mentors to organizers, our entire community is the real magic
             that powers the MCKVIE Halloween Hackathon.
           </p>
