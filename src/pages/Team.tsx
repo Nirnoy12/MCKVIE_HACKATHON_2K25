@@ -64,6 +64,76 @@ const team: TeamMember[] = [
     linkedin: "https://linkedin.com/in/zombie-zhang",
     email: "zombie.zhang@mckvie.edu.in",
     tags: ["Marketing", "Social"]
+  },
+  {
+    name: "Vampire Verma",
+    role: "Frontend Developer",
+    bio: "Crafting blood-red interfaces that make users' hearts skip a beat.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/vampire-verma",
+    linkedin: "https://linkedin.com/in/vampire-verma",
+    email: "vampire.verma@mckvie.edu.in",
+    tags: ["Frontend", "React"]
+  },
+  {
+    name: "Skeleton Sharma",
+    role: "Backend Developer",
+    bio: "Building the bones of our infrastructure with robust APIs and databases.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/skeleton-sharma",
+    linkedin: "https://linkedin.com/in/skeleton-sharma",
+    email: "skeleton.sharma@mckvie.edu.in",
+    tags: ["Backend", "API"]
+  },
+  {
+    name: "Ghost Garcia",
+    role: "DevOps Engineer",
+    bio: "Floating through the cloud infrastructure, ensuring seamless deployments.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/ghost-garcia",
+    linkedin: "https://linkedin.com/in/ghost-garcia",
+    email: "ghost.garcia@mckvie.edu.in",
+    tags: ["DevOps", "Cloud"]
+  },
+  {
+    name: "Mummy Mistry",
+    role: "Content Creator",
+    bio: "Wrapping our message in engaging content that keeps everyone wrapped up.",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/mummy-mistry",
+    linkedin: "https://linkedin.com/in/mummy-mistry",
+    email: "mummy.mistry@mckvie.edu.in",
+    tags: ["Content", "Writing"]
+  },
+  {
+    name: "Werewolf Wilson",
+    role: "Security Specialist",
+    bio: "Protecting our digital realm with sharp security practices and full-moon vigilance.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/werewolf-wilson",
+    linkedin: "https://linkedin.com/in/werewolf-wilson",
+    email: "werewolf.wilson@mckvie.edu.in",
+    tags: ["Security", "Cybersecurity"]
+  },
+  {
+    name: "Frankenstein Fernandez",
+    role: "AI/ML Engineer",
+    bio: "Bringing artificial intelligence to life with monstrously good machine learning models.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/frankenstein-fernandez",
+    linkedin: "https://linkedin.com/in/frankenstein-fernandez",
+    email: "frankenstein.fernandez@mckvie.edu.in",
+    tags: ["AI", "Machine Learning"]
+  },
+  {
+    name: "Banshee Bhattacharya",
+    role: "Community Manager",
+    bio: "Screaming announcements across all platforms to keep our community engaged and informed.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    github: "https://github.com/banshee-bhattacharya",
+    linkedin: "https://linkedin.com/in/banshee-bhattacharya",
+    email: "banshee.bhattacharya@mckvie.edu.in",
+    tags: ["Community", "Engagement"]
   }
 ];
 
