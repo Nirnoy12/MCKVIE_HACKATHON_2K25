@@ -753,3 +753,15 @@
     font-size: 1.5rem;
   }
 }
+@layer utilities {
+  @keyframes particle {
+    0% {
+      transform: translateY(0);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+}
