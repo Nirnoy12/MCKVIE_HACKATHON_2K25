@@ -27,7 +27,7 @@ const Contact = () => {
     },
     {
       name: "Mr. Kevin Steve Domingo",
-      phone: "+917654321098",
+      phone: "+919088998444",
     }
   ];
 
