@@ -28,9 +28,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-halloween rounded-lg flex items-center justify-center animate-glow">
-              <span className="text-spooky-dark font-bold text-lg">M</span>
-            </div>
+            <img
+              src="/public/logo.jpg" // <-- IMPORTANT: Change this to the path of your image
+              alt="MCKVIE Hackathon Logo"
+              className="w-10 h-10 rounded-lg animate-glow" // Kept relevant styles
+            />
             <div className="hidden sm:block">
               <h1 className="font-heading text-xl text-gradient-ghoul">
                 MCKVIE HACKATHON
@@ -55,10 +57,10 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            
+
             {/* Rule Book Button */}
-            <Button 
-              variant="ghost_spooky" 
+            <Button
+              variant="ghost_spooky"
               size="sm"
               className="animate-flicker"
               onClick={() => window.open('/rulebook.pdf', '_blank')}
@@ -96,9 +98,9 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              
-              <Button 
-                variant="ghost_spooky" 
+
+              <Button
+                variant="ghost_spooky"
                 size="sm"
                 className="mx-4 animate-flicker"
                 onClick={() => {

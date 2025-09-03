@@ -23,7 +23,7 @@ const Index = () => {
     { icon: Users, label: "Participants", value: "200+", color: "text-neon-green" },
     { icon: Trophy, label: "Prize Pool", value: "₹2L+", color: "text-neon-orange" },
     { icon: Clock, label: "Coding Hours", value: "48", color: "text-halloween-orange" },
-    { icon: Code, label: "Projects", value: "50+", color: "text-halloween-purple" }
+    { icon: Code, label: "Projects", value: "50+", color: "text-neon-green" }
   ];
 
   const features = [
@@ -74,9 +74,9 @@ const Index = () => {
 
 
   const timeline = [
-    { date: "Oct 9-10", title: "First Screening", icon: Ghost },
-    { date: "Oct 17, 8 AM", title: "Hackathon Begins", icon: Code },
-    { date: "Oct 17, 8 PM", title: "Results Announced", icon: Trophy }
+    { date: "Oct 9-10", title: "First Screening", imageUrl: "/public/ghost plan.png" },
+    { date: "Oct 17, 8 AM", title: "Hackathon Begins", imageUrl: "/public/ghost code.png" },
+    { date: "Oct 17, 8 PM", title: "Results Announced", imageUrl:"/public/ghost plan.png" }
   ];
 
   return (
@@ -187,7 +187,11 @@ const Index = () => {
                 style={{ animationDelay: `${index * 0.3}s` }}
               >
                 <div className="w-16 h-16 bg-gradient-halloween rounded-full flex items-center justify-center mx-auto mb-6 animate-bob">
-                  <item.icon className="w-8 h-8 text-spooky-dark" />
+                  <img
+                    src={item.imageUrl} // <-- IMPORTANT: 'imageUrl' should be a property in your timeline item
+                    alt={item.title}    // Alt text for accessibility
+                    className="w-8 h-8 object-contain" // Adjusted for images. 'object-contain' ensures the image fits within the bounds without cropping.
+                  />
                 </div>
                 <h3 className="text-xl font-spooky text-gradient-spooky mb-2">
                   {item.title}
@@ -245,7 +249,7 @@ const Index = () => {
       { /* sponsors section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16"> 
+          <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-spooky text-gradient-ghoul mb-6">
               Our Great Sponsors
             </h2>
