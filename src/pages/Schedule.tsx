@@ -105,14 +105,18 @@ const Schedule = () => {
   };
 
   return (
+    
     <Layout>
+      
+      <div className="bg-[url('/public/spooky-bg-2.png')] bg-cover bg-center bg-fixed" >
+      
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-6xl md:text-8xl font-spooky text-gradient-neon mb-6 animate-glow">
             Event Schedule
           </h1>
-          <p className="text-xl text-spooky-muted max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-spooky-orange max-w-3xl mx-auto leading-relaxed">
             Your complete guide to the Halloween hackathon timeline. 
             From spooky registration to spine-chilling presentations!
           </p>
@@ -206,6 +210,7 @@ const Schedule = () => {
           </Card>
         </div>
       </div>
+    </div>
     </Layout>
   );
 };

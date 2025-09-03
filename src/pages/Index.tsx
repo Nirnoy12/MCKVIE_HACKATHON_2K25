@@ -6,7 +6,6 @@ import {
   Calendar,
   Users,
   Trophy,
-  MapPin,
   Clock,
   Zap,
   Code,
@@ -21,9 +20,9 @@ import Countdown from '@/components/ui/countdown';
 const Index = () => {
   const stats = [
     { icon: Users, label: "Participants", value: "200+", color: "text-neon-green" },
-    { icon: Trophy, label: "Prize Pool", value: "₹2L+", color: "text-neon-orange" },
-    { icon: Clock, label: "Coding Hours", value: "48", color: "text-halloween-orange" },
-    { icon: Code, label: "Projects", value: "50+", color: "text-halloween-purple" }
+    { icon: Trophy, label: "Prize Pool", value: "₹20k+", color: "text-neon-orange" },
+    { icon: Clock, label: "Coding Hours", value: "12", color: "text-halloween-orange" },
+    { icon: Code, label: "Projects", value: "10+", color: "text-neon-green" },
   ];
 
   const features = [
@@ -46,38 +45,27 @@ const Index = () => {
       icon: Star,
       title: "Networking Opportunities",
       description: "Connect with like-minded developers and potential employers"
-    }
+    },
   ];
-
-  const sponsors = [
-    {
-      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-      name: "Amazon Web Services",
-      description: "Empowering innovation with scalable cloud solutions"
-    },
-    {
-      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-      name: "Microsoft",
-      description: "Driving digital transformation with cutting-edge technology"
-    },
-    {
-      logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Google_Cloud_logo.svg",
-      name: "Google Cloud",
-      description: "Building smarter solutions with AI, ML, and cloud computing"
-    },
-    {
-      logo: "https://upload.wikimedia.org/wikipedia/commons/0/02/Intel_logo_%282020%29.svg",
-      name: "Intel",
-      description: "Powering performance and innovation in hardware and AI"
-    }
-  ];
-
 
   const timeline = [
-    { date: "Oct 9-10", title: "First Screening", icon: Ghost },
-    { date: "Oct 17, 8 AM", title: "Hackathon Begins", icon: Code },
-    { date: "Oct 17, 8 PM", title: "Results Announced", icon: Trophy }
+    { date: "Oct 9-10", title: "First Screening", imageUrl: "/public/ghost plan.png" },
+    { date: "Oct 17, 9 AM", title: "Hackathon Begins", imageUrl: "/public/ghost code.png" },
+    { date: "Oct 17, 8 PM", title: "Results Announced", imageUrl: "/public/ghost trophy.png" },
   ];
+
+  const sponsorsByCategory = {
+    "Printing": [
+      { name: 'PrintCo', logoUrl: '/images/sponsors/printco.svg' },
+    ],
+    "Media": [
+      { name: 'SocialConnect', logoUrl: '/images/sponsors/social-connect.svg' },
+    ],
+    "Food": [
+      { name: 'Pizza Palace', logoUrl: '/images/sponsors/pizza-palace.png' },
+      { name: 'Energy Drink Co', logoUrl: '/images/sponsors/energy-drink.svg' },
+    ]
+  };
 
   return (
     <Layout>
@@ -102,21 +90,17 @@ const Index = () => {
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-
-            {/* Event Badge */}
             <Badge className="bg-neon-orange text-spooky-dark text-lg px-6 py-2 mb-8 animate-glow">
               <Calendar className="w-5 h-5 mr-2" />
               October 9-17, 2025
             </Badge>
 
-            {/* Main Heading */}
             <h1 className="text-7xl md:text-10xl font-spooky text-gradient-neon mb-6 leading-none animate-glow">
               MCKVIE HACKATHON
               <br />
               <span className="text-5xl md:text-6xl">2025</span>
             </h1>
 
-            {/* Subtitle */}
             <p className="text-2xl md:text-3xl text-spooky-light mb-4 font-light">
               Where Code Meets <span className="text-gradient-spooky font-bold animate-flicker">Spookiness</span>
             </p>
@@ -126,12 +110,9 @@ const Index = () => {
               Code, compete, and conquer in our Halloween-themed coding challenge!
             </p>
 
-            {/*countdown timer */}
             <p className="text-2xl md:text-3xl text-[#A3FF03] mb-4 font-light">Event Starts In:</p>
             <Countdown />
 
-
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Link to="/auth">
                 <Button variant="neon" size="xl" className="text-xl px-12 py-4 animate-glow">
@@ -145,7 +126,6 @@ const Index = () => {
               </Link>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div
@@ -186,8 +166,12 @@ const Index = () => {
                 className="bg-card border-halloween-purple-muted hover:border-halloween-orange transition-all duration-300 hover:glow-orange p-8 text-center animate-float"
                 style={{ animationDelay: `${index * 0.3}s` }}
               >
-                <div className="w-16 h-16 bg-gradient-halloween rounded-full flex items-center justify-center mx-auto mb-6 animate-bob">
-                  <item.icon className="w-8 h-8 text-spooky-dark" />
+                <div className="w-24 h-16 bg-gradient-neon  flex items-center justify-center mx-auto mb-6 animate-bob">
+                  <img
+                    src={item.imageUrl} // <-- IMPORTANT: 'imageUrl' should be a property in your timeline item
+                    alt={item.title}    // Alt text for accessibility
+                    className="w-24 h-21 object-contain" // Adjusted for images. 'object-contain' ensures the image fits within the bounds without cropping.
+                  />
                 </div>
                 <h3 className="text-xl font-spooky text-gradient-spooky mb-2">
                   {item.title}
@@ -242,49 +226,76 @@ const Index = () => {
         </div>
       </section>
 
-      { /* sponsors section */}
-      <section className="py-20">
+      {/* Sponsors Section */}
+      <section className="py-20 bg-spooky-darker">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16"> 
+          <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-spooky text-gradient-ghoul mb-6">
-              Our Great Sponsors
+              Our Sponsors & Partners
             </h2>
             <p className="text-xl text-spooky-muted max-w-3xl mx-auto">
-              Without these amazing partners, this event would not have been possible.
-              A big shoutout from our MCKVIE community for making this event a reality.
+              A big shoutout to all our amazing sponsors and partners who make this event possible!
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {sponsors.map((sponsor, index) => (
-              <Card
-                key={index}
-                className="bg-card border-halloween-purple-muted hover:border-halloween-orange transition-all duration-300 hover:glow-orange p-8 animate-float"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="flex items-center space-x-6">
-                  <div className="flex-shrink-0">
+          {/* Powered By */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-heading text-neon-glow mb-3 text-center">Powered By</h3>
+            <div className="flex flex-wrap justify-center items-center gap-10">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                alt="Amazon Web Services"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                alt="Microsoft"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+            </div>
+          </div>
+
+          {/* Printing, Food, Media Sponsorship */}
+          <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-around items-start gap-8">
+
+            {/* Loop through each category */}
+            {Object.entries(sponsorsByCategory).map(([categoryTitle, sponsorList]) => (
+              <div key={categoryTitle} className="mb-8">
+                {/* Category Heading */}
+                <h3 className="text-2xl font-heading text-neon-glow mb-8 text-center">
+                  {categoryTitle}
+                </h3>
+
+                {/* Container for logos in this category */}
+                <div className="flex flex-wrap justify-center items-center gap-10">
+                  {/* Loop through the sponsors in the current category */}
+                  {sponsorList.map((sponsor) => (
                     <img
-                      src={sponsor.logo}
+                      key={sponsor.name}
+                      src={sponsor.logoUrl}
                       alt={sponsor.name}
-                      className="w-20 h-20 object-contain rounded-lg bg-white p-2 shadow-md animate-bob"
+                      className="w-40 h-24 object-contain bg-white rounded-lg p-1 shadow-md transition-transform hover:scale-110 animate-bob"
                     />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-heading text-neon-glow mb-2">
-                      {sponsor.name}
-                    </h3>
-                    <p className="text-neon-green leading-relaxed">
-                      {sponsor.description}
-                    </p>
-                  </div>
+                  ))}
                 </div>
-              </Card>
+              </div>
             ))}
+            </div>
+          </div>
+
+          {/* Community Partners */}
+          <div>
+            <h3 className="text-2xl font-heading text-neon-glow mb-6 text-center">Community Partners</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <img
+                  key={i}
+                  src={`https://via.placeholder.com/100x100?text=Logo+${i + 1}`}
+                  alt={`Community Partner ${i + 1}`}
+                  className="w-40 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
-
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-halloween">

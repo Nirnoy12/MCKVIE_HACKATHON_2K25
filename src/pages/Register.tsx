@@ -238,7 +238,6 @@ const Register = () => {
   };
 
   const benefits = [
-    "Free hackathon kit with Halloween goodies",
     "Meals and refreshments throughout the event", 
     "Mentorship from industry experts",
     "Networking opportunities with tech professionals",
