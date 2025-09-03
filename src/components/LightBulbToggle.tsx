@@ -197,12 +197,32 @@ const LightBulbToggle = ({ onTeamButtonClick }: LightBulbToggleProps) => {
           />
         </g>
       </svg>
+      
+      {/* ===========================================================
+        == NEW SECTION: Image that appears when light is on ==
+        ===========================================================
+      */}
+      <div
+        className={`absolute bottom-1/4 left-2/3 -translate-x-1/2 w-full max-w-[150px] sm:max-w-xs transition-all duration-700 ease-out ${
+          isOn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
+      >
+        <img
+            src="skeleton-code.png" // Replace with your image URL
+            alt="A spooky hackathon team meeting"
+            className="rounded-lg shadow-2xl w-full"
+            style={{ boxShadow: '0 10px 40px rgba(245, 158, 11, 0.4)' }} // A soft orange glow
+        />
+      </div>
+      {/* =========================================================== */}
+
 
       {/* Team Button */}
       <div 
-        className={`team-button-wrapper absolute bottom-5 left-1/2 transform -translate-x-1/2 transition-all duration-500 ease-out ${
+        className={`team-button-wrapper absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-500 ease-out ${
           showTeamButton ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
+        style={{ transitionDelay: showTeamButton ? '200ms' : '0ms' }}
       >
         <button 
           onClick={handleTeamButtonClick}
@@ -213,7 +233,7 @@ const LightBulbToggle = ({ onTeamButtonClick }: LightBulbToggleProps) => {
       </div>
 
       {/* Instructions */}
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 text-center text-white/80">
+      <div className={`absolute top-8 left-1/2 transform -translate-x-1/2 text-center text-white/80 transition-opacity duration-500 ${isOn ? 'opacity-0' : 'opacity-100'}`}>
         <p className="text-lg font-medium mb-2">🎃 Spooky Light Bulb</p>
         <p className="text-sm">Drag the cord to turn on the light and reveal the team!</p>
       </div>
