@@ -110,7 +110,7 @@ const Index = () => {
               Code, compete, and conquer in our Halloween-themed coding challenge!
             </p>
 
-            <p className="text-2xl md:text-3xl text-[#A3FF03] mb-4 font-light">Event Starts In:</p>
+            <p className="text-2xl md:text-3xl text-[#A3FF03] mb-4 font-light">Registration Ends In:</p>
             <Countdown />
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
