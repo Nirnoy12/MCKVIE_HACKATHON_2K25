@@ -6,96 +6,97 @@ import { Clock, MapPin, Trophy, Users, Zap } from 'lucide-react';
 const Schedule = () => {
   const events = [
     {
-      date: "October 9-10, 2025",
-      title: "First Screening Phase",
-      type: "Online",
-      events: [
-        {
-          time: "All Day",
-          title: "Registration & Initial Submission",
-          description: "Submit your team registration and initial project proposal",
-          icon: Users,
-          location: "Online Portal"
-        },
-        {
-          time: "6:00 PM",
-          title: "Welcome & Orientation",
-          description: "Meet the organizers and understand the hackathon rules",
-          icon: Zap,
-          location: "Virtual Meeting"
-        }
-      ]
+  date: "Before September 27, 2025",
+  title: "Idea Submission & Registration",
+  type: "Online",
+  events: [
+    {
+      time: "All Day",
+      title: "Registration & First Idea Submission",
+      description: "Submit your team registration and initial project idea before the deadline",
+      icon: Users,
+      location: "Online Portal"
+    }
+  ]
+},
+{
+  date: "October 9-10, 2025",
+  title: "Online Screening Phase",
+  type: "Online",
+  events: [
+    {
+      time: "9.30 AM - 5.00 PM",
+      title: "Screening & Evaluation",
+      description: "Online screening of submitted ideas by judges",
+      icon: Zap,
+      location: "GOOGLE MEET"
+    }
+  ]
+},
+{
+  date: "October 17, 2025",
+  title: "Main Hackathon Day",
+  type: "Offline",
+  events: [
+    {
+      time: "8:30 AM",
+      title: "Registration & Check-in",
+      description: "Check-in and complete the registration process",
+      icon: Users,
+      location: "3rd Floor - A BLOCK"
     },
     {
-      date: "October 17, 2025",
-      title: "Main Hackathon Day",
-      type: "Offline",
-      events: [
-        {
-          time: "8:00 AM",
-          title: "Registration & Check-in",
-          description: "Collect your hackathon kit and team badges",
-          icon: Users,
-          location: "MCKVIE Campus - Main Auditorium"
-        },
-        {
-          time: "9:00 AM",
-          title: "Opening Ceremony",
-          description: "Welcome address, sponsor presentations, and problem statement release",
-          icon: Zap,
-          location: "Main Auditorium"
-        },
-        {
-          time: "10:00 AM",
-          title: "Hackathon Begins!",
-          description: "Start coding your spooky solutions",
-          icon: Clock,
-          location: "Computer Labs & Designated Areas"
-        },
-        {
-          time: "12:30 PM",
-          title: "Lunch Break",
-          description: "Halloween-themed lunch with networking opportunities",
-          icon: MapPin,
-          location: "Institute Cafeteria"
-        },
-        {
-          time: "1:30 PM",
-          title: "Mentorship Sessions",
-          description: "Get guidance from industry experts and faculty",
-          icon: Users,
-          location: "Various Rooms"
-        },
-        {
-          time: "4:00 PM",
-          title: "Final Submission Deadline",
-          description: "Submit your projects and prepare for presentations",
-          icon: Clock,
-          location: "Online Portal"
-        },
-        {
-          time: "4:30 PM",
-          title: "Project Presentations",
-          description: "Present your Halloween hackathon projects to judges",
-          icon: Zap,
-          location: "Main Auditorium"
-        },
-        {
-          time: "6:00 PM",
-          title: "Judging & Networking",
-          description: "Judge evaluations and participant networking",
-          icon: Users,
-          location: "Various Venues"
-        },
-        {
-          time: "8:00 PM",
-          title: "Results & Closing Ceremony",
-          description: "Winner announcement and prize distribution",
-          icon: Trophy,
-          location: "Main Auditorium"
-        }
-      ]
+      time: "9:00 AM",
+      title: "Hackathon Begins!",
+      description: "Start coding your spooky solutions",
+      icon: Clock,
+      location: "A317 and A318"
+    },
+    {
+      time: "10:00 PM",
+      title: "Breakfast Break",
+      description: "Breakfast with networking opportunities",
+      icon: MapPin,
+      location: "Institute Cafeteria"
+    },
+    {
+      time: "1:00 PM",
+      title: "Lunch Break",
+      description: "Lunch with networking opportunities",
+      icon: MapPin,
+      location: "Institute Cafeteria"
+    },
+    {
+      time: "6:00 PM",
+      title: "Final Submission Deadline",
+      description: "Submit your projects and prepare for presentations",
+      icon: Clock,
+      location: "Online Portal"
+    },
+    {
+      time: "6:30 PM",
+      title: "Project Presentations",
+      description: "Present your  projects to judges",
+      icon: Zap,
+      location: "Departmental Library (A307A)"
+    },
+    {
+      time: "7:00 PM",
+      title: "Evening Snack",
+      description: "Snack break and Judge Discussions",
+      icon: Users,
+      location: "A317 and A318"
+    },
+    {
+      time: "8:00 PM",
+      title: "Results & Closing Ceremony",
+      description: "Winner announcement and prize distribution",
+      icon: Trophy,
+      location: "SIT HALL"
     }
+  ]
+}
+
   ];
 
   const getEventTypeColor = (type: string) => {

@@ -274,23 +274,20 @@ function SkewedTeamPage({ member, index, isActive, isInactive }: {
 }
 
 const Team = () => {
-  const [scrollY, setScrollY] = useState(0);
+  // REMOVED: scrollY and isScrolling state
+  // const [scrollY, setScrollY] = useState(0);
+  // const [isScrolling, setIsScrolling] = useState(false);
+
   const [showLightBulb, setShowLightBulb] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isScrolling, setIsScrolling] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const image1Ref = useRef<HTMLImageElement>(null);
   const image2Ref = useRef<HTMLImageElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  // NEW: ref for the tall scroll container that drives pages
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  // Header parallax (simplified, still uses window.scrollY)
   useEffect(() => {
     if (!showLightBulb && headerRef.current && image1Ref.current && image2Ref.current) {
       const images = [image1Ref.current, image2Ref.current];
@@ -320,50 +317,35 @@ const Team = () => {
     }
   }, [showLightBulb]);
 
-  // Skewed page navigation
+  // REPLACED: scroll-driven page calculation (no wheel/keydown)
   useEffect(() => {
-    if (showLightBulb) return;
+    if (showLightBulb || !scrollContainerRef.current) return;
 
-    const handleWheel = (e: WheelEvent) => {
-      if (isScrolling) return;
+    const handleScroll = () => {
+      const container = scrollContainerRef.current;
+      if (!container) return;
       
-      setIsScrolling(true);
+      const { top, height } = container.getBoundingClientRect();
+      const scrollableHeight = height - window.innerHeight;
       
-      if (e.deltaY > 0) {
-        // Scroll down
-        setCurrentPage(prev => Math.min(prev + 1, team.length));
-      } else {
-        // Scroll up
-        setCurrentPage(prev => Math.max(prev - 1, 1));
-      }
+      // Calculate scroll progress within the container (0 to 1)
+      const progress = Math.max(0, Math.min(1, -top / (scrollableHeight || 1)));
       
-      setTimeout(() => setIsScrolling(false), 1000);
+      // Determine the current page based on progress
+      const newPage = Math.floor(progress * team.length) + 1;
+      
+      // Ensure we don't go beyond the last page
+      setCurrentPage(Math.min(newPage, team.length));
     };
 
-    const handleKeydown = (e: KeyboardEvent) => {
-      if (isScrolling) return;
-      
-      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-        e.preventDefault();
-        setIsScrolling(true);
-        setCurrentPage(prev => Math.min(prev + 1, team.length));
-        setTimeout(() => setIsScrolling(false), 1000);
-      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-        e.preventDefault();
-        setIsScrolling(true);
-        setCurrentPage(prev => Math.max(prev - 1, 1));
-        setTimeout(() => setIsScrolling(false), 1000);
-      }
-    };
+    // run once to sync
+    handleScroll();
 
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('keydown', handleKeydown);
-    
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('keydown', handleKeydown);
-    };
-  }, [showLightBulb, isScrolling]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+
+  }, [showLightBulb, team.length]);
+
 
   const handleTeamButtonClick = () => {
     setShowLightBulb(false);
@@ -375,7 +357,7 @@ const Team = () => {
 
   return (
     <Layout>
-      <div className="relative min-h-screen bg-black overflow-hidden">
+      <div className="relative bg-black"> {/* Removed min-h-screen and overflow-hidden as requested */}
         {/* Animated Header with Split Images */}
         <header 
           ref={headerRef}
@@ -413,17 +395,27 @@ const Team = () => {
             Animi nesciunt cupiditate officiis tenetur ipsam, sint ex inventore perferendis repellat fugiat maiores laudantium vitae aliquid praesentium dolore facilis eum quasi odio enim sapiente numquam cum aliquam temporibus reprehenderit. Vero!
           </p>
 
-          {/* Skewed Pages Container */}
-          <div className="skw-pages">
-            {team.map((member, index) => (
-              <SkewedTeamPage
-                key={index}
-                member={member}
-                index={index}
-                isActive={currentPage === index + 1}
-                isInactive={currentPage !== index + 1}
-              />
-            ))}
+          {/* NEW: Scroll Container Wrapper */}
+          <div
+            ref={scrollContainerRef}
+            // Set a height that gives us room to scroll through all members
+            style={{ height: `${team.length * 100}vh` }} 
+            className="relative"
+          >
+            {/* Skewed Pages Container is now sticky inside this wrapper */}
+            <div className="skw-pages sticky top-0 h-screen">
+              {team.map((member, index) => (
+                <SkewedTeamPage
+                  key={index}
+                  member={member}
+                  index={index}
+                  isActive={currentPage === index + 1}
+                  isInactive={currentPage !== index + 1}
+                />
+              ))}
+            </div>
+
+            {/* Navigation and instructions can stay, but they are inside the main layout flow now */}
           </div>
 
           {/* Navigation Indicators */}
@@ -443,7 +435,7 @@ const Team = () => {
 
           {/* Scroll Instructions */}
           <div className="fixed bottom-8 left-8 z-50 text-white/60 text-sm">
-            <p>Scroll or use arrow keys to navigate</p>
+            <p>Scroll to navigate</p>
           </div>
         </div>
 
