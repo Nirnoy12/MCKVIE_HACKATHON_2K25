@@ -63,7 +63,7 @@ const Navigation = () => {
               variant="ghost_spooky"
               size="sm"
               className="animate-flicker"
-              onClick={() => window.open('/rulebook.pdf', '_blank')}
+              onClick={() => window.open('https://docs.google.com/document/d/1lwzWk2CWIpjDr25E2vpcS4pt4fCh-Mcac_pndgFD29o/edit?usp=sharing', '_blank')}
             >
               <Download className="w-4 h-4 mr-2" />
               Rules
@@ -104,7 +104,7 @@ const Navigation = () => {
                 size="sm"
                 className="mx-4 animate-flicker"
                 onClick={() => {
-                  window.open('/rulebook.pdf', '_blank');
+                  window.open('https://docs.google.com/document/d/1lwzWk2CWIpjDr25E2vpcS4pt4fCh-Mcac_pndgFD29o/edit?usp=sharing', '_blank');
                   setIsMenuOpen(false);
                 }}
               >

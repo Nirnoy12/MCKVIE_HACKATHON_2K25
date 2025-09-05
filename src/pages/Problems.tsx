@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Clock, Users, Trophy, Code, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Problems = () => {
   const [openProblem, setOpenProblem] = useState<number | null>(null);
@@ -200,13 +201,16 @@ const Problems = () => {
               Form your team and register now to secure your spot in this spine-tingling hackathon!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="neon" size="xl" className="text-lg">
-                Register Your Team
-              </Button>
+              <Link to="/auth">
+                <Button variant="neon" size="xl" className="text-lg">
+                  Register Your Team
+                </Button>
+              </Link>
               <Button
                 variant="ghost_spooky"
                 size="xl"
                 className="bg-spooky-dark border-spooky-dark text-spooky-light hover:bg-spooky-light hover:text-spooky-dark"
+                onClick={() => window.open('https://docs.google.com/document/d/1lwzWk2CWIpjDr25E2vpcS4pt4fCh-Mcac_pndgFD29o/edit?usp=sharing', '_blank')}
               >
                 Download Detailed Rules
               </Button>

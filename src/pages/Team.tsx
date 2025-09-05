@@ -387,12 +387,11 @@ const Team = () => {
         </header>
 
         {/* Content Section */}
-        <div className="relative z-20 bg-black">
-          <p className="px-12 py-16 text-lg text-spooky-muted leading-relaxed max-w-4xl mx-auto">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis quia beatae error vitae possimus neque, autem corrupti, suscipit, officia eligendi quisquam accusamus architecto debitis consectetur iure aperiam eum voluptas pariatur.
-            Quae, ducimus sed? Ipsam mollitia consequatur cum optio atque velit laboriosam in ullam autem, quo distinctio libero vel magnam, quibusdam aut deleniti assumenda porro. Nostrum adipisci nesciunt at doloremque quaerat.
-            Asperiores voluptatibus autem maxime nihil quibusdam accusamus doloribus corrupti tenetur veniam quis laborum illo sapiente excepturi ut aperiam, exercitationem nulla. In similique expedita odio voluptatum unde excepturi reiciendis magni dicta?
-            Animi nesciunt cupiditate officiis tenetur ipsam, sint ex inventore perferendis repellat fugiat maiores laudantium vitae aliquid praesentium dolore facilis eum quasi odio enim sapiente numquam cum aliquam temporibus reprehenderit. Vero!
+        <div className="relative z-20 bg-gradient-spooky">
+          <p className="px-12 py-16 text-xl text-neon-orange leading-relaxed max-w-6xl mx-auto">
+            Every great hackathon project begins with a team that dares to dream, build, and innovate together.
+            Our team brings together diverse skill sets, creative thinking, and a passion for solving real-world problems with technology.
+            Together, we are more than just a hackathon team, we are a group of curious minds, builders, and dreamers who believe in creating solutions that matter.
           </p>
 
           {/* NEW: Scroll Container Wrapper */}
@@ -442,7 +441,7 @@ const Team = () => {
         {/* Closing Note */}
         <div className="relative z-20 text-center py-20 bg-black">
           <Users className="w-10 h-10 text-halloween-orange mx-auto mb-4" />
-          <h2 className="text-3xl font-spooky text-gradient-halloween mb-2">
+          <h2 className="text-3xl font-spooky text-gradient-ghoul mb-2">
             And many more volunteers...
           </h2>
           <p className="text-spooky-muted max-w-2xl mx-auto px-4">
