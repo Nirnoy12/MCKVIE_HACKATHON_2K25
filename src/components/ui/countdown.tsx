@@ -3,7 +3,7 @@ import { AlignJustify } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 const Countdown = () => {
-  // Set your event date/time here (Sep 27, 2025, 12:00 AM)
+  // Set your event date/time here (Sep 27, 2025, 11:59 PM)
   const eventDate = new Date('2025-09-27T23:59:59+05:30').getTime();
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 

@@ -16,44 +16,66 @@ type TeamMember = {
 
 const team: TeamMember[] = [
   {
-    name: "Dr. Spooky Singh",
+    name: "Mr. Soumya Paul",
     role: "Faculty Coordinator",
     bio: "Guiding the spooky spirits of innovation with wisdom and mentorship.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/spooky-singh",
     linkedin: "https://linkedin.com/in/spooky-singh",
-    email: "spooky.singh@mckvie.edu.in",
     tags: ["Mentor", "Leader"]
   },
   {
-    name: "Phantom Patel",
+    name: "Debayan Ghosh",
     role: "Student Coordinator",
     bio: "Ensures smooth hauntings… I mean operations, keeping the hackathon alive and kicking.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     github: "https://github.com/phantom-patel",
     linkedin: "https://linkedin.com/in/phantom-patel",
-    email: "phantom.patel@student.mckvie.edu.in",
     tags: ["Organizer", "Manager"]
   },
   {
-    name: "Ghoulish Gupta",
+    name: "Nirnoy Chatterjee",
     role: "Technical Lead",
     bio: "Architect of eerie algorithms and the mastermind behind the tech stack.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/ghoulish-gupta",
-    linkedin: "https://linkedin.com/in/ghoulish-gupta",
-    email: "ghoulish.gupta@mckvie.edu.in",
+    image: "src/assets/NirnoyChatterjee.jpg",
+    github: "https://github.com/Nirnoy12",
+    linkedin: "https://www.linkedin.com/in/nirnoy-chatterjee-903431357",
     tags: ["Developer", "Tech"]
   },
   {
-    name: "Witchy Williams",
+    name: "Soumyajit Chatterjee",
+    role: "Backend Developer",
+    bio: "Building the bones of our infrastructure with robust APIs and databases.",
+    image: "src/assets/SoumyajitChatterjee.jpg",
+    github: "https://github.com/Soumyajit-Chatterjee",
+    linkedin: "https://www.linkedin.com/in/soumyajit-chatterjee-ad",
+    tags: ["Backend", "API"]
+  },
+  {
+    name: "Indrajit Biswas",
     role: "Design Lead",
     bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/witchy-williams",
-    linkedin: "https://linkedin.com/in/witchy-williams",
-    email: "witchy.williams@mckvie.edu.in",
-    tags: ["Designer", "UX"]
+    image: "src/assets/IndrajitBiswas.jpg",
+    github: "https://github.com/Indra-dev404",
+    linkedin: "https://www.linkedin.com/in/indrajit-biswas404",
+    tags: ["Designer"]
+  },
+  {
+    name: "Soumodip Ghosh",
+    role: "Frontend Developer",
+    bio: "Crafting blood-red interfaces that make users' hearts skip a beat.",
+    image: "src/assets/SoumodipGhosh.png",
+    github: "https://github.com/soumodip-ghosh",
+    linkedin: "https://www.linkedin.com/in/soumodipghosh",
+    tags: ["Frontend", "React"]
+  },
+  {
+    name: "Suchetana Mukherjee ",
+    role: "Designer",
+    bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
+    image: "src/assets/SuchetanaMukherjee.jpg",
+    github: "https://github.com/mukherjeesuchetana514-maker",
+    linkedin: "https://www.linkedin.com/in/suchetana-mukherjee-5a7873366",
+    tags: ["Designer"]
   },
   {
     name: "Zombie Zhang",
@@ -66,24 +88,14 @@ const team: TeamMember[] = [
     tags: ["Marketing", "Social"]
   },
   {
-    name: "Vampire Verma",
-    role: "Frontend Developer",
-    bio: "Crafting blood-red interfaces that make users' hearts skip a beat.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/vampire-verma",
-    linkedin: "https://linkedin.com/in/vampire-verma",
-    email: "vampire.verma@mckvie.edu.in",
-    tags: ["Frontend", "React"]
-  },
-  {
-    name: "Skeleton Sharma",
-    role: "Backend Developer",
-    bio: "Building the bones of our infrastructure with robust APIs and databases.",
+    name: "Banshee Bhattacharya",
+    role: "Community Manager",
+    bio: "Screaming announcements across all platforms to keep our community engaged and informed.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/skeleton-sharma",
-    linkedin: "https://linkedin.com/in/skeleton-sharma",
-    email: "skeleton.sharma@mckvie.edu.in",
-    tags: ["Backend", "API"]
+    github: "https://github.com/banshee-bhattacharya",
+    linkedin: "https://linkedin.com/in/banshee-bhattacharya",
+    email: "banshee.bhattacharya@mckvie.edu.in",
+    tags: ["Community", "Engagement"]
   },
   {
     name: "Ghost Garcia",
@@ -104,36 +116,6 @@ const team: TeamMember[] = [
     linkedin: "https://linkedin.com/in/mummy-mistry",
     email: "mummy.mistry@mckvie.edu.in",
     tags: ["Content", "Writing"]
-  },
-  {
-    name: "Werewolf Wilson",
-    role: "Security Specialist",
-    bio: "Protecting our digital realm with sharp security practices and full-moon vigilance.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/werewolf-wilson",
-    linkedin: "https://linkedin.com/in/werewolf-wilson",
-    email: "werewolf.wilson@mckvie.edu.in",
-    tags: ["Security", "Cybersecurity"]
-  },
-  {
-    name: "Frankenstein Fernandez",
-    role: "AI/ML Engineer",
-    bio: "Bringing artificial intelligence to life with monstrously good machine learning models.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/frankenstein-fernandez",
-    linkedin: "https://linkedin.com/in/frankenstein-fernandez",
-    email: "frankenstein.fernandez@mckvie.edu.in",
-    tags: ["AI", "Machine Learning"]
-  },
-  {
-    name: "Banshee Bhattacharya",
-    role: "Community Manager",
-    bio: "Screaming announcements across all platforms to keep our community engaged and informed.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/banshee-bhattacharya",
-    linkedin: "https://linkedin.com/in/banshee-bhattacharya",
-    email: "banshee.bhattacharya@mckvie.edu.in",
-    tags: ["Community", "Engagement"]
   }
 ];
 
