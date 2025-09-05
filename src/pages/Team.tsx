@@ -16,14 +16,6 @@ type TeamMember = {
 
 const team: TeamMember[] = [
   {
-    name: "Mr. Soumya Paul",
-    role: "Faculty Coordinator",
-    bio: "Guiding the spooky spirits of innovation with wisdom and mentorship.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    linkedin: "https://linkedin.com/in/spooky-singh",
-    tags: ["Mentor", "Leader"]
-  },
-  {
     name: "Debayan Ghosh",
     role: "Student Coordinator",
     bio: "Ensures smooth hauntings… I mean operations, keeping the hackathon alive and kicking.",
