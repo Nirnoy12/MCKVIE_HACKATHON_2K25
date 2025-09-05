@@ -65,7 +65,7 @@ const team: TeamMember[] = [
     role: "PR & Outreach",
     bio: "Driving Engagement Through Successful Promotions",
     image: "/src/assets/kevin.jpg",
-    github: "",
+    email: "kevindomingo1800@gmail.com",
     linkedin: "https://www.linkedin.com/in/kevin-domingo-8587862a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=an",
     tags: ["Promotion", "Marketing"]
   },
