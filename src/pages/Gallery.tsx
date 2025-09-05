@@ -17,11 +17,11 @@ const galleryData: GalleryItem[] = [
   {
     id: 1,
     place: 'Liluah, Howrah',
-    title: 'Costume',
-    title2: 'Code Jam',
+    title: 'Our College',
+    title2: 'MCKVIE',
     description: 'Join us for a thrilling coding event with spooky themes and creative costumes. Perfect for AI and ML enthusiasts.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    date: 'Oct 10, 2025',
+    image: '/public/college_building.jpg',
+    date: 'Oct 17, 2025',
     category: 'AI & ML Showcase'
   },
   {
@@ -30,18 +30,18 @@ const galleryData: GalleryItem[] = [
     title: 'Haunted',
     title2: 'Hackathon',
     description: 'Code your way through challenges with a spooky twist during our annual Halloween Hackathon.',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    date: 'Oct 12, 2025',
+    image: '/public/1st_sitting.jpg',
+    date: 'Oct 17, 2025',
     category: 'Hackathon'
   },
   {
     id: 3,
     place: 'Liluah, Howrah',
-    title: 'AI & ML',
+    title: 'Innovation',
     title2: 'Showcase',
-    description: 'Witness cutting-edge innovations in AI and ML as our students showcase their projects.',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    date: 'Oct 14, 2025',
+    description: 'Witness cutting-edge innovations in AI and ML as students showcase their projects.',
+    image: '/public/2nd_sitting.jpg',
+    date: 'Oct 17, 2025',
     category: 'Showcase'
   }
 ];
@@ -70,14 +70,7 @@ function GalleryCard({ item, isActive }: { item: GalleryItem; isActive: boolean 
           <Calendar className="w-5 h-5 text-orange-500" />
           <span className="text-sm text-gray-200">{item.date}</span>
         </div>
-        <div className="mt-6 flex items-center gap-4">
-          <button className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white hover:bg-orange-600 transition-colors">
-            <Bookmark className="w-5 h-5" />
-          </button>
-          <button className="px-6 py-2 border border-white text-white rounded-full text-sm uppercase hover:bg-white hover:text-black transition-colors">
-            Explore Location
-          </button>
-        </div>
+        
       </div>
     </div>
   );
