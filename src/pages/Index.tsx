@@ -106,8 +106,7 @@ const Index = () => {
             </p>
 
             <p className="text-lg text-spooky-muted mb-12 max-w-2xl mx-auto leading-relaxed">
-              Join MCKV Institute of Engineering for the most spine-tingling hackathon of the year.
-              Code, compete, and conquer in our Halloween-themed coding challenge!
+              Where ideas spark, prototypes shine, and Vibe Coding turns vision into reality — welcome to MCKVIE Hackathon 2K25!
             </p>
 
             <p className="text-2xl md:text-3xl text-[#A3FF03] mb-4 font-light">Registration Ends In:</p>

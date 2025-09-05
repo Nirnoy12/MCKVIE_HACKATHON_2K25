@@ -69,9 +69,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-heading text-spooky-light">Institute</h3>
             <p className="text-spooky-muted text-sm leading-relaxed">
-              MCKV Institute of Engineering is committed to fostering innovation 
-              and technical excellence among students through exciting challenges 
-              like this Halloween-themed hackathon.
+              MCKV Institute of Engineering is committed to fostering innovation and technical excellence among students through exciting challenges like the Halloween-themed Hackathon. The Department of Computer Science & Engineering, established in 1999, is one of the oldest and most reputed departments of the institute, supported by qualified faculty with expertise across diverse domains of computer science and allied fields.
             </p>
           </div>
         </div>

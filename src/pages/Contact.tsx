@@ -63,22 +63,33 @@ const Contact = () => {
   ];
 
   const faqs = [
-    {
-      question: "What should I bring to the hackathon?",
-      answer: "Bring your laptop, charger, government-issued ID, and lots of enthusiasm! We'll provide meals, snacks, and all the spooky vibes you need."
-    },
-    {
-      question: "Can I participate if I'm a beginner?",
-      answer: "Absolutely! We have problem statements for all skill levels. Our mentors will be available to guide beginners throughout the event."
-    },
-    {
-      question: "Is there any registration fee?",
-      answer: "No! The MCKVIE Halloween Hackathon is completely free to participate. We believe in making coding accessible to everyone."
-    },
-    {
-      question: "What if I don't have a team?",
-      answer: "Don't worry! We'll have a team formation session during registration where you can find like-minded teammates."
-    }
+  {
+    question: "How can I register for MCKVIE Hackathon 2K25?",
+    answer: "You can register through the official event portal.",
+  },
+  {
+    question: "Can I participate across different departments and years?",
+    answer: "Yes, participation across departments and years is allowed. Cross-college participation is also permitted.",
+  },
+  {
+    question: "Can I participate across different colleges?",
+    answer: "Yes, participation from different colleges is permitted, but not in teams mixed with MCKVIE students.",
+  },
+  {
+    question: "What is the registration fee for the hackathon?",
+    answer: "There is no registration fee! The MCKVIE Halloween Hackathon is completely free to participate. We believe in making coding accessible to everyone.",
+  },
+  {
+    question: "What is the last day to register?",
+    answer: "The last date for registration is 27th of September, 2025.",
+  },
+
+  {
+    question: "What should I bring to the hackathon?",
+    answer: "Bring your laptop, charger, government-issued ID, and lots of enthusiasm! We'll provide meals, snacks, and all the spooky vibes you need.",
+  },
+
+
   ];
 
   return (
