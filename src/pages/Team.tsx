@@ -64,10 +64,9 @@ const team: TeamMember[] = [
     name: "Kevin Steve Domingo",
     role: "PR & Outreach",
     bio: "Driving Engagement Through Successful Promotions",
-    image: "/src/assets/ARGHAKAMALSAHA.jpg",
-    github: "https://github.com/pushanargha23",
-    linkedin: "https://www.linkedin.com/in/argha-kamal-saha-1a1318305/",
-    email: "ghost.garcia@mckvie.edu.in",
+    image: "/src/assets/kevin.jpg",
+    github: "",
+    linkedin: "https://www.linkedin.com/in/kevin-domingo-8587862a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=an",
     tags: ["Promotion", "Marketing"]
   },
   {
@@ -77,7 +76,6 @@ const team: TeamMember[] = [
     image: "/src/assets/ARGHAKAMALSAHA.png",
     github: "https://github.com/pushanargha23",
     linkedin: "https://www.linkedin.com/in/argha-kamal-saha-1a1318305/",
-    email: "ghost.garcia@mckvie.edu.in",
     tags: ["Promotion", "Marketing"]
   },
   {
@@ -87,7 +85,6 @@ const team: TeamMember[] = [
     image: "/src/assets/ADIOGRAPHY.jpeg",
     github: "http://github.com/adityastark10",
     linkedin: "https://www.linkedin.com/in/aditya-sing-716502331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    email: "mummy.mistry@mckvie.edu.in",
     tags: ["Content", "Writing"]
   },
   {
@@ -106,7 +103,6 @@ const team: TeamMember[] = [
     image: "/src/assets/SOUL.webp",
     github: "https://github.com/Code-WithSohan/Projects.-Exe?fbclid=PAdGRjcAMlf0ZleHRuA2FlbQIxMQABp90_IMSQquTcapJROdSV9BhyMuXc1wIeKa05UDwItyeun7efu3K023NfQedG_aem_wE8qcCOOycesEHu_1jUIgA",
     linkedin: "https://www.linkedin.com/in/sohan-kundu-6b012b315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    email: "ghost.garcia@mckvie.edu.in",
     tags: ["Video Editing","Media"]
   },
 ];
