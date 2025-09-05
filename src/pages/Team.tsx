@@ -64,9 +64,9 @@ const team: TeamMember[] = [
     name: "Kevin Steve Domingo",
     role: "PR & Outreach",
     bio: "Driving Engagement Through Successful Promotions",
-    image: "/src/assets/kevin.jpg",
+    image: "/src/assets/kevin.png",
     email: "kevindomingo1800@gmail.com",
-    linkedin: "https://www.linkedin.com/in/kevin-domingo-8587862a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=an",
+    linkedin: "https://www.linkedin.com/in/kevin-domingo-8587862a6",
     tags: ["Promotion", "Marketing"]
   },
   {
@@ -84,7 +84,7 @@ const team: TeamMember[] = [
     bio: "Wrapping our message in engaging content that keeps everyone wrapped up.",
     image: "/src/assets/ADIOGRAPHY.jpeg",
     github: "http://github.com/adityastark10",
-    linkedin: "https://www.linkedin.com/in/aditya-sing-716502331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    linkedin: "https://www.linkedin.com/in/aditya-sing-716502331",
     tags: ["Content", "Writing"]
   },
   {
@@ -101,8 +101,8 @@ const team: TeamMember[] = [
     role: "Content Creator",
     bio: "Transforming our message into content that pulls people in and doesn’t let go.",
     image: "/src/assets/SOUL.webp",
-    github: "https://github.com/Code-WithSohan/Projects.-Exe?fbclid=PAdGRjcAMlf0ZleHRuA2FlbQIxMQABp90_IMSQquTcapJROdSV9BhyMuXc1wIeKa05UDwItyeun7efu3K023NfQedG_aem_wE8qcCOOycesEHu_1jUIgA",
-    linkedin: "https://www.linkedin.com/in/sohan-kundu-6b012b315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com/Code-WithSohan",
+    linkedin: "https://www.linkedin.com/in/sohan-kundu-6b012b315",
     tags: ["Video Editing","Media"]
   },
 ];
@@ -335,7 +335,7 @@ const Team = () => {
         >
           <img 
             ref={image1Ref}
-            src="/public/ghost-org.png" 
+            src="public/ghost-org1.jpg" 
             alt=""
             className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000"
             style={{
@@ -344,7 +344,7 @@ const Team = () => {
           />
           <img 
             ref={image2Ref}
-            src="/public/ghost-org.png" 
+            src="public/ghost-org1.jpg" 
             alt=""
             className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000"
             style={{
