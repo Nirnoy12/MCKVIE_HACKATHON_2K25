@@ -46,7 +46,7 @@ const team: TeamMember[] = [
     name: "Indrajit Biswas",
     role: "Design Lead",
     bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
-    image: "src/assets/IndrajitBiswas.jpg",
+    image: "src/assets/IndrajitBiswas.png",
     github: "https://github.com/Indra-dev404",
     linkedin: "https://www.linkedin.com/in/indrajit-biswas404",
     tags: ["Designer"]
