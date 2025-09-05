@@ -64,8 +64,8 @@ const team: TeamMember[] = [
     name: "Kevin Steve Domingo",
     role: "PR & Outreach",
     bio: "Driving Engagement Through Successful Promotions",
-    image: "/src/assets/kevin.png",
-    github: "",
+    image: "/src/assets/kevin.jpg",
+    email: "kevindomingo1800@gmail.com",
     linkedin: "https://www.linkedin.com/in/kevin-domingo-8587862a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=an",
     tags: ["Promotion", "Marketing"]
   },
@@ -335,7 +335,7 @@ const Team = () => {
         >
           <img 
             ref={image1Ref}
-            src="https://images.unsplash.com/photo-1448518184296-a22facb4446f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+            src="/public/ghost-org.png" 
             alt=""
             className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000"
             style={{
@@ -344,7 +344,7 @@ const Team = () => {
           />
           <img 
             ref={image2Ref}
-            src="https://images.unsplash.com/photo-1448518184296-a22facb4446f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+            src="/public/ghost-org.png" 
             alt=""
             className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000"
             style={{
