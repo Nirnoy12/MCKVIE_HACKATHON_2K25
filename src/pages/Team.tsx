@@ -64,7 +64,7 @@ const team: TeamMember[] = [
     name: "Kevin Steve Domingo",
     role: "PR & Outreach",
     bio: "Driving Engagement Through Successful Promotions",
-    image: "/src/assets/kevin.jpg",
+    image: "/src/assets/kevin.png",
     github: "",
     linkedin: "https://www.linkedin.com/in/kevin-domingo-8587862a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=an",
     tags: ["Promotion", "Marketing"]
@@ -91,7 +91,7 @@ const team: TeamMember[] = [
     name: "Suchetana Mukherjee ",
     role: "Designer",
     bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
-    image: "src/assets/SuchetanaMukherjee.jpg",
+    image: "src/assets/SuchetanaMukherjee.png",
     github: "https://github.com/mukherjeesuchetana514-maker",
     linkedin: "https://www.linkedin.com/in/suchetana-mukherjee-5a7873366",
     tags: ["Designer"]
