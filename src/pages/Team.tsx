@@ -74,7 +74,7 @@ const team: TeamMember[] = [
     name: "Argha Kamal Saha",
     role: "PR & Outreach",
     bio: "Floating through the cloud, roads, and digital media ensuring seamless funds.",
-    image: "/src/assets/ARGHAKAMALSAHA.jpg",
+    image: "/src/assets/ARGHAKAMALSAHA.png",
     github: "https://github.com/pushanargha23",
     linkedin: "https://www.linkedin.com/in/argha-kamal-saha-1a1318305/",
     email: "ghost.garcia@mckvie.edu.in",
