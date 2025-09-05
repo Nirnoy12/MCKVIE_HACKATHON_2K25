@@ -19,9 +19,9 @@ const team: TeamMember[] = [
     name: "Debayan Ghosh",
     role: "Student Coordinator",
     bio: "Ensures smooth hauntings… I mean operations, keeping the hackathon alive and kicking.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/phantom-patel",
-    linkedin: "https://linkedin.com/in/phantom-patel",
+    image: "/src/assets/Debayan.jpg",
+    github: "https://github.com/Debayan-Ghosh2005",
+    linkedin: "https://www.linkedin.com/in/myself-debayan-ghosh/",
     tags: ["Organizer", "Manager"]
   },
   {
@@ -49,7 +49,7 @@ const team: TeamMember[] = [
     image: "src/assets/IndrajitBiswas.jpg",
     github: "https://github.com/Indra-dev404",
     linkedin: "https://www.linkedin.com/in/indrajit-biswas404",
-    tags: ["Designer"]
+    tags: ["Designer","Canva"]
   },
   {
     name: "Soumodip Ghosh",
@@ -61,6 +61,36 @@ const team: TeamMember[] = [
     tags: ["Frontend", "React"]
   },
   {
+    name: "Kevin Steve Domingo",
+    role: "PR & Outreach",
+    bio: "Driving Engagement Through Successful Promotions",
+    image: "/src/assets/ARGHAKAMALSAHA.jpg",
+    github: "https://github.com/pushanargha23",
+    linkedin: "https://www.linkedin.com/in/argha-kamal-saha-1a1318305/",
+    email: "ghost.garcia@mckvie.edu.in",
+    tags: ["Promotion", "Marketing"]
+  },
+  {
+    name: "Argha Kamal Saha",
+    role: "PR & Outreach",
+    bio: "Floating through the cloud, roads, and digital media ensuring seamless funds.",
+    image: "/src/assets/ARGHAKAMALSAHA.jpg",
+    github: "https://github.com/pushanargha23",
+    linkedin: "https://www.linkedin.com/in/argha-kamal-saha-1a1318305/",
+    email: "ghost.garcia@mckvie.edu.in",
+    tags: ["Promotion", "Marketing"]
+  },
+  {
+    name: "Aditya Sing",
+    role: "Lead Content Creator",
+    bio: "Wrapping our message in engaging content that keeps everyone wrapped up.",
+    image: "/src/assets/ADIOGRAPHY.jpeg",
+    github: "http://github.com/adityastark10",
+    linkedin: "https://www.linkedin.com/in/aditya-sing-716502331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    email: "mummy.mistry@mckvie.edu.in",
+    tags: ["Content", "Writing"]
+  },
+  {
     name: "Suchetana Mukherjee ",
     role: "Designer",
     bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
@@ -70,45 +100,15 @@ const team: TeamMember[] = [
     tags: ["Designer"]
   },
   {
-    name: "Zombie Zhang",
-    role: "Marketing Coordinator",
-    bio: "Raising awareness from the digital grave with viral marketing strategies.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/zombie-zhang",
-    linkedin: "https://linkedin.com/in/zombie-zhang",
-    email: "zombie.zhang@mckvie.edu.in",
-    tags: ["Marketing", "Social"]
-  },
-  {
-    name: "Banshee Bhattacharya",
-    role: "Community Manager",
-    bio: "Screaming announcements across all platforms to keep our community engaged and informed.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/banshee-bhattacharya",
-    linkedin: "https://linkedin.com/in/banshee-bhattacharya",
-    email: "banshee.bhattacharya@mckvie.edu.in",
-    tags: ["Community", "Engagement"]
-  },
-  {
-    name: "Ghost Garcia",
-    role: "DevOps Engineer",
-    bio: "Floating through the cloud infrastructure, ensuring seamless deployments.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/ghost-garcia",
-    linkedin: "https://linkedin.com/in/ghost-garcia",
-    email: "ghost.garcia@mckvie.edu.in",
-    tags: ["DevOps", "Cloud"]
-  },
-  {
-    name: "Mummy Mistry",
+    name: "Sohan Kundu",
     role: "Content Creator",
-    bio: "Wrapping our message in engaging content that keeps everyone wrapped up.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    github: "https://github.com/mummy-mistry",
-    linkedin: "https://linkedin.com/in/mummy-mistry",
-    email: "mummy.mistry@mckvie.edu.in",
-    tags: ["Content", "Writing"]
-  }
+    bio: "Transforming our message into content that pulls people in and doesn’t let go.",
+    image: "/src/assets/SOUL.webp",
+    github: "https://github.com/Code-WithSohan/Projects.-Exe?fbclid=PAdGRjcAMlf0ZleHRuA2FlbQIxMQABp90_IMSQquTcapJROdSV9BhyMuXc1wIeKa05UDwItyeun7efu3K023NfQedG_aem_wE8qcCOOycesEHu_1jUIgA",
+    linkedin: "https://www.linkedin.com/in/sohan-kundu-6b012b315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    email: "ghost.garcia@mckvie.edu.in",
+    tags: ["Video Editing","Media"]
+  },
 ];
 
 function SkewedTeamPage({ member, index, isActive, isInactive }: { 
