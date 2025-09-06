@@ -92,7 +92,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <Badge className="bg-neon-orange text-spooky-dark text-lg px-6 py-2 mb-8 animate-glow">
               <Calendar className="w-5 h-5 mr-2" />
-              October 9-17, 2025
+              October 17, 2025
             </Badge>
 
             <h1 className="text-7xl md:text-10xl font-spooky text-gradient-neon mb-6 leading-none animate-glow">
