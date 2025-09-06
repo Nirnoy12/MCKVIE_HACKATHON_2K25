@@ -9,6 +9,7 @@ A spooky-themed hackathon website built with React, TypeScript, and Tailwind CSS
 - **Modern UI**: Built with shadcn/ui components and Radix UI primitives
 - **Form Validation**: Comprehensive client-side validation with custom hooks
 - **Performance**: Optimized with React Query and efficient state management
+- **Free Hosting**: Deployed on Firebase Hosting and GitHub Pages
 
 ## 🛠️ Tech Stack
 
@@ -46,6 +47,24 @@ src/
 │   └── NotFound.tsx    # 404 page
 └── assets/             # Static assets
 ```
+
+## 🌐 Live Deployment
+
+- **Firebase Hosting**: https://mckvie-hackathon2k25.web.app
+- **GitHub Pages**: https://[your-username].github.io/spooky-code-crawl
+
+## 🚀 Deployment Options
+
+### Firebase Hosting (Current)
+```bash
+npm run build
+firebase deploy --only hosting
+```
+
+### GitHub Pages (Automatic)
+1. Push code to GitHub
+2. GitHub Actions automatically builds and deploys
+3. Enable GitHub Pages in repository settings
 
 ## 🎨 Design System
 
