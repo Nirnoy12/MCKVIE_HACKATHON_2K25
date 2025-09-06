@@ -44,7 +44,7 @@ const Contact = () => {
       label: "Instagram",
       value: "mckvie_hackathon",
       description: "Follow us for the latest updates",
-      action: "https://www.instagram.com/mckvie_hackathon?igsh=c21nbXJkanVldm1v"
+      action: "https://www.instagram.com/mckvie_hackathon2k25?igsh=c21nbXJkanVldm1v"
     },
     {
       icon: SiWhatsapp,

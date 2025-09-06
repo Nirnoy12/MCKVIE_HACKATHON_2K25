@@ -54,7 +54,7 @@ const Footer = () => {
               <div className="flex items-center space-x-2">
                 <Instagram className="w-4 h-4 text-halloween-orange" />
                 <a
-                  href="https://www.instagram.com/mckvie_hackathon?igsh=c21nbXJkanVldm1v"
+                  href="https://www.instagram.com/mckvie_hackathon2k25?igsh=c21nbXJkanVldm1v"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-halloween-orange hover:underline"
