@@ -43,6 +43,16 @@ const galleryData: GalleryItem[] = [
     image: '/public/2nd_sitting.jpg',
     date: 'Oct 17, 2025',
     category: 'Showcase'
+  },
+  {
+    id: 4,
+    place: 'Liluah, Howrah',
+    title: 'Gen AI',
+    title2: 'Workshop',
+    description: 'Witness cutting-edge Gen AI in AI and ML as students showcase their projects made using Gen AI.',
+    image: '/public/gen-ai.jpg',
+    date: 'Oct 17, 2025',
+    category: 'Showcase'
   }
 ];
 
