@@ -33,8 +33,28 @@ export const validateRegistrationForm = (formData: RegistrationFormData): { isVa
     errors.push('Please enter a valid phone number');
   }
 
-  if (!formData.institution.trim()) {
-    errors.push('Institution is required');
+  if (!formData.teamLeaderInstitution.trim()) {
+    errors.push('Team leader institution is required');
+  }
+
+  if (!formData.teammateName.trim()) {
+    errors.push('Teammate name is required');
+  }
+
+  if (!formData.teammateEmail.trim()) {
+    errors.push('Teammate email is required');
+  } else if (!validateEmail(formData.teammateEmail)) {
+    errors.push('Please enter a valid teammate email address');
+  }
+
+  if (!formData.teammatePhone.trim()) {
+    errors.push('Teammate phone is required');
+  } else if (!validatePhone(formData.teammatePhone)) {
+    errors.push('Please enter a valid teammate phone number');
+  }
+
+  if (!formData.teammateInstitution.trim()) {
+    errors.push('Teammate institution is required');
   }
 
   if (!formData.teamSize) {
