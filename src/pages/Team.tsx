@@ -35,12 +35,12 @@ const team: TeamMember[] = [
   },
   {
     name: "Soumyajit Chatterjee",
-    role: "Backend Developer",
+    role: "Database Developer",
     bio: "Building the bones of our infrastructure with robust APIs and databases.",
     image: "src/assets/SoumyajitChatterjee.jpg",
     github: "https://github.com/Soumyajit-Chatterjee",
     linkedin: "https://www.linkedin.com/in/soumyajit-chatterjee-ad",
-    tags: ["Backend", "API"]
+    tags: ["Database", "API"]
   },
   {
     name: "Indrajit Biswas",
