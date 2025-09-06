@@ -59,7 +59,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-halloween-orange hover:underline"
                 >
-                  instagram.com/mhack_2k25
+                  instagram.com/mckvie_hackathon2k25
                 </a>
               </div>
             </div>

@@ -661,15 +661,16 @@ const Register = () => {
               </h3>
               <p className="text-spooky-dark mb-4 text-sm">
                 Having trouble with registration? Our spooky support team is here to help!
+                Take screenshot of your problem and mail it to us.
               </p>
               <div className="space-y-2 text-sm text-spooky-dark">
                 <div className="flex items-center justify-center space-x-2">
                   <Mail className="w-4 h-4" />
-                  <span>help@mckvie-hackathon.edu.in</span>
+                  <span>mckvie.hackathon.2k25@gmail.com</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Phone className="w-4 h-4" />
-                  <span>+91 98765 43210</span>
+                  <span></span>
                 </div>
               </div>
             </Card>
