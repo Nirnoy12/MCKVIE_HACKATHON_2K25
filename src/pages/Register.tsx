@@ -518,10 +518,18 @@ const Register = () => {
                           <SelectValue placeholder="Choose your challenge" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="web">PS_1</SelectItem>
-                          <SelectItem value="ai">PS_2</SelectItem>
-                          <SelectItem value="blockchain">PS_3</SelectItem>
-                          <SelectItem value="mobile">PS_4</SelectItem>
+                          <SelectItem value="web">A</SelectItem>
+                          <SelectItem value="web">B</SelectItem>
+                          <SelectItem value="web">C</SelectItem>
+                          <SelectItem value="web">D</SelectItem>
+                          <SelectItem value="web">E</SelectItem>
+                          <SelectItem value="web">F</SelectItem>
+                          <SelectItem value="web">G</SelectItem>
+                          <SelectItem value="web">H</SelectItem>
+                          <SelectItem value="web">I</SelectItem>
+                          <SelectItem value="web">J</SelectItem>
+                          <SelectItem value="web">K</SelectItem>
+                          <SelectItem value="web">L</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -659,10 +667,6 @@ const Register = () => {
                 <div className="flex items-center justify-center space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>mckvie.hackathon.2k25@gmail.com</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span></span>
                 </div>
               </div>
             </Card>
