@@ -91,7 +91,7 @@ const team: TeamMember[] = [
     name: "Suchetana Mukherjee ",
     role: "Designer",
     bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
-    image: "src/assets/SuchetanaMukherjee.png",
+    image: "src/assets/SuchetanaMukherjee.jpg",
     github: "https://github.com/mukherjeesuchetana514-maker",
     linkedin: "https://www.linkedin.com/in/suchetana-mukherjee-5a7873366",
     tags: ["Designer"]
@@ -100,7 +100,7 @@ const team: TeamMember[] = [
     name: "Sohan Kundu",
     role: "Content Creator",
     bio: "Transforming our message into content that pulls people in and doesn’t let go.",
-    image: "/src/assets/SOUL.webp",
+    image: "/src/assets/SOUL.png",
     github: "https://github.com/Code-WithSohan",
     linkedin: "https://www.linkedin.com/in/sohan-kundu-6b012b315",
     tags: ["Video Editing","Media"]
