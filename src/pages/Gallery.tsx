@@ -20,7 +20,7 @@ const galleryData: GalleryItem[] = [
     title: 'Our College',
     title2: 'MCKVIE',
     description: 'Join us for a thrilling coding event with spooky themes and creative costumes. Perfect for AI and ML enthusiasts.',
-    image: '/public/college_building.jpg',
+    image: '/college_building.jpg',
     date: 'Oct 17, 2025',
     category: 'AI & ML Showcase'
   },
@@ -30,7 +30,7 @@ const galleryData: GalleryItem[] = [
     title: 'Haunted',
     title2: 'Hackathon',
     description: 'Code your way through challenges with a spooky twist during our annual Halloween Hackathon.',
-    image: '/public/1st_sitting.jpg',
+    image: '/1st_sitting.jpg',
     date: 'Oct 17, 2025',
     category: 'Hackathon'
   },
@@ -40,7 +40,7 @@ const galleryData: GalleryItem[] = [
     title: 'Innovation',
     title2: 'Showcase',
     description: 'Witness cutting-edge innovations in AI and ML as students showcase their projects.',
-    image: '/public/2nd_sitting.jpg',
+    image: '/2nd_sitting.jpg',
     date: 'Oct 17, 2025',
     category: 'Showcase'
   },
@@ -50,7 +50,7 @@ const galleryData: GalleryItem[] = [
     title: 'Gen AI',
     title2: 'Workshop',
     description: 'Witness cutting-edge Gen AI in AI and ML as students showcase their projects made using Gen AI.',
-    image: '/public/gen-ai.jpg',
+    image: '/gen-ai.jpg',
     date: 'Oct 17, 2025',
     category: 'Showcase'
   }
