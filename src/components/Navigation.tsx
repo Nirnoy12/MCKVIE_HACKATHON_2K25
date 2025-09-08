@@ -29,7 +29,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src="/public/logo.jpg" // <-- IMPORTANT: Change this to the path of your image
+              src="/logo.jpg" // <-- IMPORTANT: Change this to the path of your image
               alt="MCKVIE Hackathon Logo"
               className="w-10 h-10 rounded-lg animate-glow" // Kept relevant styles
             />
