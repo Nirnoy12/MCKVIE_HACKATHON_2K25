@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, Users } from 'lucide-react';
 import LightBulbToggle from '@/components/LightBulbToggle';
 import imgDebayan from '@/assets/Debayan.jpg';
 import imgNirnoy from '@/assets/NirnoyChatterjee.jpg';
-import imgSoumyajit from '@/assets/SoumyajitChatterjee.jpg';
+import imgSoumyajit from '@/assets/Soumyajit.jpg';
 import imgIndrajit from '@/assets/IndrajitBiswas.png';
 import imgSoumodip from '@/assets/SoumodipGhosh.png';
 import imgKevin from '@/assets/kevin.png';
