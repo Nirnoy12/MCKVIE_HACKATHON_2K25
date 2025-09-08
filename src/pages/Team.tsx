@@ -88,6 +88,15 @@ const team: TeamMember[] = [
     tags: ["Content", "Writing"]
   },
   {
+    name: "Abhrojit Sarkar ",
+    role: "Photographer/Videographer",
+    bio: "Wrapping our present in engaging images that keeps everyone thinking about the present in our future.",
+    image: "/src/assets/AbhrojitSarkar.png",
+    github: "https://github.com/abhro05",
+    linkedin: "https://www.linkedin.com/in/abhrojit-sarkar",
+    tags: ["Photographer", "Designer"]
+  },
+  {
     name: "Suchetana Mukherjee ",
     role: "Designer",
     bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
