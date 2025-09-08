@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/halloween-hero-bg.jpg';
+import timelogo from '@/assets/timelogo.jpg';
 import Countdown from '@/components/ui/countdown';
 
 const Index = () => {
@@ -240,7 +241,7 @@ const Index = () => {
           <div className="mb-8">
             <h3 className="text-3xl font-heading text-neon-glow mb-3 text-center">Powered By</h3>
             <div className="flex flex-wrap justify-center items-center gap-10">
-              <img src="/timelogo.jpg"
+              <img src={timelogo}
                 alt="Triumphant Institute of Management Education Pvt. Ltd"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
               <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
@@ -285,7 +286,7 @@ const Index = () => {
           <div className="mb-8">
             <h3 className="text-xl font-heading text-neon-glow mb-3 text-center">Community Partners</h3>
             <div className="flex flex-wrap justify-center items-center gap-10">
-              <img src="src\assets\timelogo.jpg"
+              <img src={timelogo}
                 alt="Triumphant Institute of Management Education Pvt. Ltd"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
               <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"

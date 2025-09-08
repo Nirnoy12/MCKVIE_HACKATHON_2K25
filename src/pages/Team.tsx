@@ -2,6 +2,17 @@ import Layout from '@/components/Layout';
 import { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Mail, Users } from 'lucide-react';
 import LightBulbToggle from '@/components/LightBulbToggle';
+import imgDebayan from '@/assets/Debayan.jpg';
+import imgNirnoy from '@/assets/NirnoyChatterjee.jpg';
+import imgSoumyajit from '@/assets/SoumyajitChatterjee.jpg';
+import imgIndrajit from '@/assets/IndrajitBiswas.png';
+import imgSoumodip from '@/assets/SoumodipGhosh.png';
+import imgKevin from '@/assets/kevin.png';
+import imgArgha from '@/assets/ARGHAKAMALSAHA.png';
+import imgAditya from '@/assets/ADIOGRAPHY.jpeg';
+import imgAbhrojit from '@/assets/AbhrojitSarkar.png';
+import imgSuchetana from '@/assets/SuchetanaMukherjee.jpg';
+import imgSoul from '@/assets/SOUL.png';
 
 type TeamMember = {
   name: string;
@@ -19,7 +30,7 @@ const team: TeamMember[] = [
     name: "Debayan Ghosh",
     role: "Student Coordinator",
     bio: "Ensures smooth hauntings… I mean from coding to managing, keeping the hackathon alive and kicking.",
-    image: "/src/assets/Debayan.jpg",
+    image: imgDebayan,
     github: "https://github.com/Debayan-Ghosh2005",
     linkedin: "https://www.linkedin.com/in/myself-debayan-ghosh/",
     tags: ["Organizer", "Manager","Coder"]
@@ -28,7 +39,7 @@ const team: TeamMember[] = [
     name: "Nirnoy Chatterjee",
     role: "Technical Lead",
     bio: "Architect of eerie algorithms and the mastermind behind the tech stack.",
-    image: "src/assets/NirnoyChatterjee.jpg",
+    image: imgNirnoy,
     github: "https://github.com/Nirnoy12",
     linkedin: "https://www.linkedin.com/in/nirnoy-chatterjee-903431357",
     tags: ["Developer", "Tech"]
@@ -37,7 +48,7 @@ const team: TeamMember[] = [
     name: "Soumyajit Chatterjee",
     role: "Database Developer",
     bio: "Building the bones of our infrastructure with robust APIs and databases.",
-    image: "src/assets/SoumyajitChatterjee.jpg",
+    image: imgSoumyajit,
     github: "https://github.com/Soumyajit-Chatterjee",
     linkedin: "https://www.linkedin.com/in/soumyajit-chatterjee-ad",
     tags: ["Database", "API"]
@@ -46,7 +57,7 @@ const team: TeamMember[] = [
     name: "Indrajit Biswas",
     role: "Design Lead",
     bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
-    image: "src/assets/IndrajitBiswas.png",
+    image: imgIndrajit,
     github: "https://github.com/Indra-dev404",
     linkedin: "https://www.linkedin.com/in/indrajit-biswas404",
     tags: ["Designer","Canva"]
@@ -55,7 +66,7 @@ const team: TeamMember[] = [
     name: "Soumodip Ghosh",
     role: "Frontend Developer",
     bio: "Crafting blood-red interfaces that make users' hearts skip a beat.",
-    image: "src/assets/SoumodipGhosh.png",
+    image: imgSoumodip,
     github: "https://github.com/soumodip-ghosh",
     linkedin: "https://www.linkedin.com/in/soumodipghosh",
     tags: ["Frontend", "React"]
@@ -64,7 +75,7 @@ const team: TeamMember[] = [
     name: "Kevin Steve Domingo",
     role: "PR & Outreach",
     bio: "Driving Engagement Through Successful Promotions",
-    image: "/src/assets/kevin.png",
+    image: imgKevin,
     email: "kevindomingo1800@gmail.com",
     linkedin: "https://www.linkedin.com/in/kevin-domingo-8587862a6",
     tags: ["Promotion", "Marketing"]
@@ -73,7 +84,7 @@ const team: TeamMember[] = [
     name: "Argha Kamal Saha",
     role: "PR & Outreach",
     bio: "Floating through the cloud, roads, and digital media ensuring seamless funds.",
-    image: "/src/assets/ARGHAKAMALSAHA.png",
+    image: imgArgha,
     github: "https://github.com/pushanargha23",
     linkedin: "https://www.linkedin.com/in/argha-kamal-saha-1a1318305/",
     tags: ["Promotion", "Marketing"]
@@ -82,16 +93,25 @@ const team: TeamMember[] = [
     name: "Aditya Sing",
     role: "Lead Content Creator",
     bio: "Wrapping our message in engaging content that keeps everyone wrapped up.",
-    image: "/src/assets/ADIOGRAPHY.jpeg",
+    image: imgAditya,
     github: "http://github.com/adityastark10",
     linkedin: "https://www.linkedin.com/in/aditya-sing-716502331",
     tags: ["Content", "Writing"]
   },
   {
+    name: "Abhrojit Sarkar ",
+    role: "Photographer/Videographer",
+    bio: "Wrapping our present in engaging images that keeps everyone thinking about the present in our future.",
+    image: imgAbhrojit,
+    github: "https://github.com/abhro05",
+    linkedin: "https://www.linkedin.com/in/abhrojit-sarkar",
+    tags: ["Photographer", "Designer"]
+  },
+  {
     name: "Suchetana Mukherjee ",
     role: "Designer",
     bio: "Crafting spooky user experiences with dark magic and pixel perfection.",
-    image: "src/assets/SuchetanaMukherjee.jpg",
+    image: imgSuchetana,
     github: "https://github.com/mukherjeesuchetana514-maker",
     linkedin: "https://www.linkedin.com/in/suchetana-mukherjee-5a7873366",
     tags: ["Designer"]
@@ -100,7 +120,7 @@ const team: TeamMember[] = [
     name: "Sohan Kundu",
     role: "Content Creator",
     bio: "Transforming our message into content that pulls people in and doesn’t let go.",
-    image: "/src/assets/SOUL.png",
+    image: imgSoul,
     github: "https://github.com/Code-WithSohan",
     linkedin: "https://www.linkedin.com/in/sohan-kundu-6b012b315",
     tags: ["Video Editing","Media"]
@@ -376,7 +396,7 @@ const Team = () => {
         >
           <img
             ref={image1Ref}
-            src="public/ghost-org1.jpg"
+            src="/ghost-org1.jpg"
             alt=""
             className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000"
             style={{
@@ -385,7 +405,7 @@ const Team = () => {
           />
           <img
             ref={image2Ref}
-            src="public/ghost-org1.jpg"
+            src="/ghost-org1.jpg"
             alt=""
             className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-1000"
             style={{
