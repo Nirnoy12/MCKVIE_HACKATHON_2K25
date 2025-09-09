@@ -244,10 +244,10 @@ const Index = () => {
               <img src={timelogo}
                 alt="Triumphant Institute of Management Education Pvt. Ltd"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+              <img src=""
                 alt="Amazon Web Services"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+              <img src=""
                 alt="Microsoft"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
             </div>
@@ -286,16 +286,16 @@ const Index = () => {
           <div className="mb-8">
             <h3 className="text-xl font-heading text-neon-glow mb-3 text-center">Community Partners</h3>
             <div className="flex flex-wrap justify-center items-center gap-10">
-              <img src={timelogo}
+              <img src=""
                 alt="Triumphant Institute of Management Education Pvt. Ltd"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+              <img src=""
                 alt="Amazon Web Services"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+              <img src=""
                 alt="Microsoft"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+              <img src=""
                 alt="Microsoft"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
             </div>

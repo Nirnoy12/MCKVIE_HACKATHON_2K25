@@ -27,19 +27,28 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img
-              src="/logo.jpg" // <-- IMPORTANT: Change this to the path of your image
-              alt="MCKVIE Hackathon Logo"
-              className="w-10 h-10 rounded-lg animate-glow" // Kept relevant styles
-            />
-            <div className="hidden sm:block">
-              <h1 className="font-heading text-xl text-gradient-ghoul">
-                MCKVIE HACKATHON
-              </h1>
-              <p className="text-xl text-center text-gradient-ghoul -mt-1">2025</p>
-            </div>
-          </Link>
+          <div className="flex items-center space-x-4">
+            <a href="https://www.mckvie.edu.in" target="_blank" className="flex items-center space-x-3">
+              <img
+                src="/mckvie logo.jpg" // <-- IMPORTANT: Change this to the path of your image
+                alt="MCKVIE Logo"
+                className="w-10 h-10 rounded-lg animate-glow" // Kept relevant styles
+              />
+            </a>
+            <Link to="/" className="flex items-center space-x-3">
+              <img
+                src="/logo.jpg" // <-- IMPORTANT: Change this to the path of your image
+                alt="MCKVIE Hackathon Logo"
+                className="w-10 h-10 rounded-lg animate-glow" // Kept relevant styles
+              />
+              <div className="hidden sm:block">
+                <h1 className="font-heading text-xl text-gradient-ghoul">
+                  MCKVIE HACKATHON
+                </h1>
+                <p className="text-xl text-center text-gradient-ghoul -mt-1">2025</p>
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
