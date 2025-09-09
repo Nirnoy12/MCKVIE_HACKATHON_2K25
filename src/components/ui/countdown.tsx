@@ -35,9 +35,8 @@ const Countdown = () => {
   return (
     <div className="text-3xl md:text-4xl text-[#A3FF03] mb-8 font-mono animate-flicker">
       <div className="inline-block text-center space-x-20">
-        <span>{timeLeft.days.toString().padStart(2, '0')}</span> <span>{timeLeft.hours.toString().padStart(2, '0')}</span> <span>{timeLeft.minutes.toString().padStart(2, '0')}</span> <span>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+        {`${timeLeft.days.toString().padStart(2, '0')} Days : ${timeLeft.hours.toString().padStart(2, '0')} Hours : ${timeLeft.minutes.toString().padStart(2, '0')} Minutes : ${timeLeft.seconds.toString().padStart(2, '0')} Seconds`}
       </div>
-      <p className="mb-2 text-2xl md:text-3xl font-light">&nbsp;&nbsp; Days : &nbsp;Hours : Minutes : Seconds</p>
     </div>
   );
 };
