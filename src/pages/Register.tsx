@@ -26,7 +26,11 @@ const Register = () => {
     teamLeaderName: authState?.userName || '',
     teamLeaderEmail: authState?.userEmail || '',
     teamLeaderPhone: '',
-    institution: '',
+    teamLeaderInstitution: '',
+    teammateName: '',
+    teammateEmail: '',
+    teammatePhone: '',
+    teammateInstitution: '',
     teamSize: '',
     problemCategory: '',
     experience: '',
@@ -101,8 +105,9 @@ const Register = () => {
 
     // Check required fields first
     const requiredFields = [
-      'teamName', 'teamLeaderName', 'teamLeaderEmail', 'teamLeaderPhone',
-      'institution', 'teamSize', 'problemCategory', 'experience', 'emergencyContact'
+      'teamName', 'teamLeaderName', 'teamLeaderEmail', 'teamLeaderPhone', 'teamLeaderInstitution',
+      'teammateName', 'teammateEmail', 'teammatePhone', 'teammateInstitution',
+      'teamSize', 'problemCategory', 'experience', 'emergencyContact'
     ];
 
     for (const field of requiredFields) {
@@ -216,8 +221,9 @@ const Register = () => {
 
       // Reset form data only on successful submission
       setFormData({
-        teamName: '', teamLeaderName: '', teamLeaderEmail: '', teamLeaderPhone: '',
-        institution: '', teamSize: '', problemCategory: '', experience: '',
+        teamName: '', teamLeaderName: '', teamLeaderEmail: '', teamLeaderPhone: '', teamLeaderInstitution: '',
+        teammateName: '', teammateEmail: '', teammatePhone: '', teammateInstitution: '',
+        teamSize: '', problemCategory: '', experience: '',
         dietaryRequirements: '', emergencyContact: '', agreeToTerms: false, agreeToPhotography: false
       });
 
@@ -267,7 +273,7 @@ const Register = () => {
             </div>
 
             <div className="space-y-4 text-spooky-light">
-              <p>🎉 Congratulations! Your team is now registered for the MCKVIE Halloween Hackathon 2025!</p>
+              <p>🎉 Congratulations! Your team is now registered for the MCKVIE Hackathon 2025!</p>
               <p>📧 Check your email for detailed information and next steps.</p>
               
               <div className="bg-neon-green/20 border border-neon-green rounded-lg p-4 mt-6">
@@ -396,11 +402,11 @@ const Register = () => {
                     </div>
                     
                     <div>
-                      <Label htmlFor="institution" className="text-neon-orange">Institution</Label>
+                      <Label htmlFor="teamLeaderInstitution" className="text-neon-orange">Institution</Label>
                       <Input
-                        id="institution"
-                        value={formData.institution}
-                        onChange={(e) => handleInputChange('institution', e.target.value)}
+                        id="teamLeaderInstitution"
+                        value={formData.teamLeaderInstitution}
+                        onChange={(e) => handleInputChange('teamLeaderInstitution', e.target.value)}
                         placeholder="Your college/university"
                         required
                         className="bg-halloween-purple-muted border-halloween-purple text-spooky-light"
@@ -449,31 +455,24 @@ const Register = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="teamLeaderName" className="text-neon-orange">
-                        Full Name
-                        {authState?.userName && (
-                          <span className="text-neon-green text-xs ml-2">✓ Auto-filled from authentication</span>
-                        )}
-                      </Label>
+                      <Label htmlFor="teammateName" className="text-neon-orange">Full Name</Label>
                       <Input
-                        id="teamLeaderName"
-                        value={formData.teamLeaderName}
-                        onChange={(e) => handleInputChange('teamLeaderName', e.target.value)}
+                        id="teammateName"
+                        value={formData.teammateName}
+                        onChange={(e) => handleInputChange('teammateName', e.target.value)}
                         placeholder="Teammate's name"
                         required
-                        className={`bg-halloween-purple-muted border-halloween-purple text-spooky-light ${
-                          authState?.userName ? 'border-neon-green' : ''
-                        }`}
+                        className="bg-halloween-purple-muted border-halloween-purple text-spooky-light"
                       />
                     </div>
                     
                     <div>
-                      <Label htmlFor="institution" className="text-neon-orange">Institution</Label>
+                      <Label htmlFor="teammateInstitution" className="text-neon-orange">Institution</Label>
                       <Input
-                        id="institution"
-                        value={formData.institution}
-                        onChange={(e) => handleInputChange('institution', e.target.value)}
-                        placeholder=" college/university"
+                        id="teammateInstitution"
+                        value={formData.teammateInstitution}
+                        onChange={(e) => handleInputChange('teammateInstitution', e.target.value)}
+                        placeholder="Teammate's college/university"
                         required
                         className="bg-halloween-purple-muted border-halloween-purple text-spooky-light"
                       />
@@ -482,32 +481,25 @@ const Register = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="teamLeaderEmail" className="text-neon-orange">
-                        Email
-                        {authState?.userEmail && (
-                          <span className="text-neon-green text-xs ml-2">✓ Auto-filled from authentication</span>
-                        )}
-                      </Label>
+                      <Label htmlFor="teammateEmail" className="text-neon-orange">Email</Label>
                       <Input
-                        id="teamLeaderEmail"
+                        id="teammateEmail"
                         type="email"
-                        value={formData.teamLeaderEmail}
-                        onChange={(e) => handleInputChange('teamLeaderEmail', e.target.value)}
-                        placeholder=" email@example.com"
+                        value={formData.teammateEmail}
+                        onChange={(e) => handleInputChange('teammateEmail', e.target.value)}
+                        placeholder="teammate@example.com"
                         required
-                        className={`bg-halloween-purple-muted border-halloween-purple text-spooky-light ${
-                          authState?.userEmail ? 'border-neon-green' : ''
-                        }`}
+                        className="bg-halloween-purple-muted border-halloween-purple text-spooky-light"
                       />
                     </div>
                     
                     <div>
-                      <Label htmlFor="teamLeaderPhone" className="text-neon-orange">Phone Number</Label>
+                      <Label htmlFor="teammatePhone" className="text-neon-orange">Phone Number</Label>
                       <Input
-                        id="teamLeaderPhone"
+                        id="teammatePhone"
                         type="tel"
-                        value={formData.teamLeaderPhone}
-                        onChange={(e) => handleInputChange('teamLeaderPhone', e.target.value)}
+                        value={formData.teammatePhone}
+                        onChange={(e) => handleInputChange('teammatePhone', e.target.value)}
                         placeholder="+91 XXXXX XXXXX"
                         required
                         className="bg-halloween-purple-muted border-halloween-purple text-spooky-light"
@@ -520,22 +512,30 @@ const Register = () => {
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="problemCategory" className="text-spooky-light">Preferred Problem ID</Label>
+                      <Label htmlFor="problemCategory" className="text-neon-orange">Preferred Problem ID</Label>
                       <Select onValueChange={(value) => handleInputChange('problemCategory', value)} required>
                         <SelectTrigger className="bg-halloween-purple-muted border-halloween-purple text-spooky-light">
                           <SelectValue placeholder="Choose your challenge" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="web">PS_1</SelectItem>
-                          <SelectItem value="ai">PS_2</SelectItem>
-                          <SelectItem value="blockchain">PS_3</SelectItem>
-                          <SelectItem value="mobile">PS_4</SelectItem>
+                          <SelectItem value="web">A</SelectItem>
+                          <SelectItem value="web">B</SelectItem>
+                          <SelectItem value="web">C</SelectItem>
+                          <SelectItem value="web">D</SelectItem>
+                          <SelectItem value="web">E</SelectItem>
+                          <SelectItem value="web">F</SelectItem>
+                          <SelectItem value="web">G</SelectItem>
+                          <SelectItem value="web">H</SelectItem>
+                          <SelectItem value="web">I</SelectItem>
+                          <SelectItem value="web">J</SelectItem>
+                          <SelectItem value="web">K</SelectItem>
+                          <SelectItem value="web">L</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     
                     <div>
-                      <Label htmlFor="experience" className="text-spooky-light">Team Experience</Label>
+                      <Label htmlFor="experience" className="text-neon-orange">Team Experience</Label>
                       <Select onValueChange={(value) => handleInputChange('experience', value)} required>
                         <SelectTrigger className="bg-halloween-purple-muted border-halloween-purple text-spooky-light">
                           <SelectValue placeholder="Previous experience" />
@@ -550,7 +550,7 @@ const Register = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="dietaryRequirements" className="text-spooky-light">Any Query (Optional)</Label>
+                    <Label htmlFor="dietaryRequirements" className="text-neon-orange">Dietary Requirements (Veg/Non-Veg)</Label>
                     <Textarea
                       id="dietaryRequirements"
                       value={formData.dietaryRequirements}
@@ -561,7 +561,7 @@ const Register = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="emergencyContact" className="text-spooky-light">Emergency Contact Number</Label>
+                    <Label htmlFor="emergencyContact" className="text-neon-orange">Emergency Contact Number</Label>
                     <Input
                       id="emergencyContact"
                       type="tel"
@@ -667,10 +667,6 @@ const Register = () => {
                 <div className="flex items-center justify-center space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>mckvie.hackathon.2k25@gmail.com</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span></span>
                 </div>
               </div>
             </Card>

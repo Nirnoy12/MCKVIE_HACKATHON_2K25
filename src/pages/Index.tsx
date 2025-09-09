@@ -10,11 +10,11 @@ import {
   Zap,
   Code,
   Rocket,
-  Star,
-  Ghost
+  Star
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/halloween-hero-bg.jpg';
+import timelogo from '@/assets/timelogo.jpg';
 import Countdown from '@/components/ui/countdown';
 
 const Index = () => {
@@ -49,9 +49,9 @@ const Index = () => {
   ];
 
   const timeline = [
-    { date: "Oct 9-10", title: "First Screening", imageUrl: "/public/ghost plan.png" },
-    { date: "Oct 17, 9 AM", title: "Hackathon Begins", imageUrl: "/public/ghost code.png" },
-    { date: "Oct 17, 8 PM", title: "Results Announced", imageUrl: "/public/ghost trophy.png" },
+    { date: "Oct 9-10", title: "First Screening", imageUrl: "/ghost plan.png" },
+    { date: "Oct 17, 9 AM", title: "Hackathon Begins", imageUrl: "/ghost code.png" },
+    { date: "Oct 17, 8 PM", title: "Results Announced", imageUrl: "/ghost trophy.png" },
   ];
 
   const sponsorsByCategory = {
@@ -239,9 +239,9 @@ const Index = () => {
 
           {/* Powered By */}
           <div className="mb-8">
-            <h3 className="text-2xl font-heading text-neon-glow mb-3 text-center">Powered By</h3>
+            <h3 className="text-3xl font-heading text-neon-glow mb-3 text-center">Powered By</h3>
             <div className="flex flex-wrap justify-center items-center gap-10">
-              <img src="src\assets\timelogo.jpg"
+              <img src={timelogo}
                 alt="Triumphant Institute of Management Education Pvt. Ltd"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
               <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
@@ -255,45 +255,49 @@ const Index = () => {
 
           {/* Printing, Food, Media Sponsorship */}
           <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-around items-start gap-8">
+            <div className="flex flex-col md:flex-row justify-around items-start gap-8">
 
-            {/* Loop through each category */}
-            {Object.entries(sponsorsByCategory).map(([categoryTitle, sponsorList]) => (
-              <div key={categoryTitle} className="mb-8">
-                {/* Category Heading */}
-                <h3 className="text-2xl font-heading text-neon-glow mb-8 text-center">
-                  {categoryTitle}
-                </h3>
+              {/* Loop through each category */}
+              {Object.entries(sponsorsByCategory).map(([categoryTitle, sponsorList]) => (
+                <div key={categoryTitle} className="mb-8">
+                  {/* Category Heading */}
+                  <h3 className="text-2xl font-heading text-neon-glow mb-8 text-center">
+                    {categoryTitle}
+                  </h3>
 
-                {/* Container for logos in this category */}
-                <div className="flex flex-wrap justify-center items-center gap-10">
-                  {/* Loop through the sponsors in the current category */}
-                  {sponsorList.map((sponsor) => (
-                    <img
-                      key={sponsor.name}
-                      src={sponsor.logoUrl}
-                      alt={sponsor.name}
-                      className="w-40 h-24 object-contain bg-white rounded-lg p-1 shadow-md transition-transform hover:scale-110 animate-bob"
-                    />
-                  ))}
+                  {/* Container for logos in this category */}
+                  <div className="flex flex-wrap justify-center items-center gap-10">
+                    {/* Loop through the sponsors in the current category */}
+                    {sponsorList.map((sponsor) => (
+                      <img
+                        key={sponsor.name}
+                        src={sponsor.logoUrl}
+                        alt={sponsor.name}
+                        className="w-40 h-24 object-contain bg-white rounded-lg p-1 shadow-md transition-transform hover:scale-110 animate-bob"
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
             </div>
           </div>
 
           {/* Community Partners */}
-          <div>
-            <h3 className="text-2xl font-heading text-neon-glow mb-6 text-center">Community Partners</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <img
-                  key={i}
-                  src={`https://via.placeholder.com/100x100?text=Logo+${i + 1}`}
-                  alt={`Community Partner ${i + 1}`}
-                  className="w-40 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob"
-                />
-              ))}
+          <div className="mb-8">
+            <h3 className="text-xl font-heading text-neon-glow mb-3 text-center">Community Partners</h3>
+            <div className="flex flex-wrap justify-center items-center gap-10">
+              <img src={timelogo}
+                alt="Triumphant Institute of Management Education Pvt. Ltd"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                alt="Amazon Web Services"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                alt="Microsoft"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                alt="Microsoft"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
             </div>
           </div>
         </div>

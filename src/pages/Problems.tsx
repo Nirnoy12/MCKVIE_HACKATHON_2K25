@@ -3,53 +3,243 @@ import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Clock, Users, Trophy, Code, X } from 'lucide-react';
+import { Clock, Trophy, Code, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+type ProblemCategory = {
+  id: number;
+  title: string;
+  difficulty: string;
+  duration: string;
+  teamSize: string;
+  description: string;
+  details: string;
+  techStack: string[];
+  problemStatement?: string;
+  requirements?: string[];
+  constraints?: string[];
+  useCases?: string[];
+  evaluation?: string[];
+};
 
 const Problems = () => {
   const [openProblem, setOpenProblem] = useState<number | null>(null);
 
-  const problemCategories = [
+  const problemCategories: ProblemCategory[] = [
     {
       id: 1,
-      title: "Web Development Spook",
-      difficulty: "Beginner",
+      title: "PS1 — Document Formatter & Exporter WebApp",
+      difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
-      description: "Create a haunted web application that showcases innovative UI/UX design with Halloween themes. Perfect for frontend enthusiasts!",
-      details: "In this problem, you’ll craft a spooky-themed web app with ghostly animations, neon glows, and chilling interactions. The challenge is to balance performance, accessibility, and creative UI/UX for a truly spine-tingling experience.",
+      description: "Problem Statement: ",
+      details: "Create a web app to compose, import, standardize, and export documents with consistent templates and metadata.",
+      problemStatement: "Build a web app that formats and exports documents (PDF/DOCX/MD/HTML) with consistent styles and metadata.",
+      requirements: [
+        "Rich-text editing with headings, lists, tables, and images",
+        "Import DOCX/Markdown; export PDF/DOCX/Markdown/HTML",
+        "Template-based styling and validation (heading hierarchy, captions)",
+      ],
+      constraints: [
+        "Client-first processing; no server without consent",
+        "Handle docs up to ~10MB; fast exports",
+        "Latest Chrome/Edge/Firefox support",
+      ],
+      useCases: [
+        "Student applies APA template and exports PDF",
+        "HR standardizes resumes into corporate PDF",
+      ],
+      evaluation: [
+        "Formatting fidelity between editor and exports",
+        "Usability and accessibility",
+        "Code quality and error handling",
+      ],
       techStack: ["React", "JavaScript", "CSS", "HTML"],
     },
     {
       id: 2,
-      title: "AI Phantom Challenge",
-      difficulty: "Intermediate",
+      title: "PS2 — Resume Ranker (ATS-Friendly)",
+      difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
-      description: "Develop an AI-powered solution that can identify and classify spooky objects, sounds, or behaviors using machine learning.",
-      details: "This challenge focuses on AI models that detect and classify Halloween-themed datasets—like bats, pumpkins, or eerie sounds. Bonus points for creative applications such as real-time ghost detectors or spooky AR filters.",
-      techStack: ["Python", "TensorFlow", "OpenCV", "Scikit-learn"],
+      description: "Problem Statement: ",
+      details: "Build a tool to parse resumes and job descriptions, then rank resumes based on match.",
+      problemStatement: "Create an ATS-like web app that scores resumes against a JD and suggests improvements.",
+      requirements: [
+        "Upload resume (PDF/DOCX) and paste JD",
+        "Extract skills, keywords, and experience",
+        "Provide match score and actionable suggestions",
+      ],
+      constraints: [
+        "All parsing on client where possible",
+        "Privacy-first; no storing files by default",
+      ],
+      useCases: [
+        "Candidate optimizes resume for a role",
+        "Recruiter quickly screens multiple resumes",
+      ],
+      evaluation: [
+        "Accuracy of extracted entities",
+        "Clarity of suggestions",
+        "Performance on varied resume formats",
+      ],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
     },
     {
       id: 3,
-      title: "Blockchain Boo",
-      difficulty: "Advanced",
+      title: "PS3 — Event Planner Dashboard",
+      difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
-      description: "Create a decentralized application (DApp) for a Halloween-themed marketplace or gaming platform using blockchain technology.",
-      details: "Participants will build DApps leveraging smart contracts, ensuring security and transparency. Ideas could include NFT-based costumes, spooky token economies, or trustless ghost-hunting games.",
-      techStack: ["Solidity", "Web3.js", "Ethereum", "Smart Contracts"],
+      description: "Problem Statement: ",
+      details: "Plan events with tasks, schedules, budgets, and vendor management in one dashboard.",
+      problemStatement: "Build a dashboard to organize event timelines, budgets, tasks, and stakeholders.",
+      requirements: [
+        "Task boards with deadlines and assignees",
+        "Calendar view and reminders",
+        "Budget tracking and vendor contacts",
+      ],
+      constraints: ["Offline-friendly local storage", "Responsive layout for mobile"],
+      useCases: ["College fest planning", "Wedding vendor coordination"],
+      evaluation: ["UX of planning flows", "Data persistence and reliability"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
     },
     {
       id: 4,
-      title: "Mobile Monster Maker",
-      difficulty: "Intermediate",
+      title: "PS4 — Campus Navigator",
+      difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
-      description: "Build a cross-platform mobile application with Halloween features like AR filters, spooky games, or social sharing.",
-      details: "The goal is to create engaging mobile apps with interactive Halloween vibes. Use AR filters to make users look like zombies, add spooky mini-games, or implement haunted social sharing features.",
-      techStack: ["React Native", "Flutter", "Firebase", "AR Kit"],
-    }
+      description: "Problem Statement: ",
+      details: "Interactive campus map with buildings, schedules, and route suggestions for newcomers.",
+      problemStatement: "Create a campus guide with searchable locations, schedules, and optimal walking routes.",
+      requirements: ["Map with POIs", "Search and filters", "Basic routing and ETA"],
+      constraints: ["Work without GPS", "Accessible color contrast"],
+      useCases: ["Freshers find classrooms", "Visitors locate facilities"],
+      evaluation: ["Map usability", "Performance on low-end devices"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+    {
+      id: 5,
+      title: "PS5 — Personal Budget Tracker",
+      difficulty: "",
+      duration: "10 hours",
+      teamSize: "2 members",
+      description: "Problem Statement: ",
+      details: "Track expenses, set budgets, and visualize spending trends.",
+      problemStatement: "Build a simple finance app to categorize expenses and monitor budgets.",
+      requirements: ["Manual entry and CSV import", "Category tags", "Charts for trends"],
+      constraints: ["Data encrypted locally", "Works offline"],
+      useCases: ["Monthly expense tracking", "Budget alerts"],
+      evaluation: ["Data viz clarity", "Edge case handling in imports"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+    {
+      id: 6,
+      title: "PS6 — Fitness Logger",
+      difficulty: "",
+      duration: "10 hours",
+      teamSize: "2 members",
+      description: "Problem Statement: ",
+      details: "Log workouts, track progress, and generate simple plans.",
+      problemStatement: "Create a tracker for workouts with progress charts and plan templates.",
+      requirements: ["Exercise library", "Workout templates", "Progress graphs"],
+      constraints: ["Mobile-first UI", "No backend required"],
+      useCases: ["Beginner strength plan", "Cardio tracking"],
+      evaluation: ["Consistency of UX", "Data model simplicity"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+    {
+      id: 7,
+      title: "PS7 — Recipe Manager",
+      difficulty: "",
+      duration: "10 hours",
+      teamSize: "2 members",
+      description: "Problem Statement: ",
+      details: "Save recipes, auto-generate shopping lists, and plan meals.",
+      problemStatement: "Build a cookbook app with tagging, shopping lists, and weekly plans.",
+      requirements: ["Tagging and search", "Ingredient scaling", "Grocery list export"],
+      constraints: ["Offline-ready PWA", "Image compression for photos"],
+      useCases: ["Meal prep", "Share recipes"],
+      evaluation: ["Search quality", "Offline behavior"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+    {
+      id: 8,
+      title: "PS8 — Kanban Task Board",
+      difficulty: "",
+      duration: "10 hours",
+      teamSize: "2 members",
+      description: "Problem Statement: ",
+      details: "Organize tasks with columns, drag-and-drop, and labels.",
+      problemStatement: "Create a minimal Kanban with persistence and team-friendly features.",
+      requirements: ["Columns and cards", "Drag and drop", "Labels and filters"],
+      constraints: ["Local storage first", "Keyboard accessibility"],
+      useCases: ["Project planning", "Personal backlog"],
+      evaluation: ["DnD smoothness", "A11y compliance"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+    {
+      id: 9,
+      title: "PS9 — Weather Dashboard",
+      difficulty: "",
+      duration: "10 hours",
+      teamSize: "2 members",
+      description: "Problem Statement: ",
+      details: "City-based weather with forecasts and alerts.",
+      problemStatement: "Build a weather UI showing current conditions, hourly and 7-day forecasts.",
+      requirements: ["Search city", "Favorites", "Charts for temp/precip"],
+      constraints: ["API quota handling", "Caching results"],
+      useCases: ["Daily planning", "Travel prep"],
+      evaluation: ["Loading states", "Error handling"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+    {
+      id: 10,
+      title: "PS10 — Minimal Chat App",
+      difficulty: "",
+      duration: "10 hours",
+      teamSize: "2 members",
+      description: "Problem Statement: ",
+      details: "Realtime messages in rooms with presence indicators.",
+      problemStatement: "Create a basic chat with rooms, typing indicators, and message history.",
+      requirements: ["Rooms and users", "Typing indicators", "Persisted history"],
+      constraints: ["Simple backend or mock server", "Rate limiting UI"],
+      useCases: ["Study group chat", "Event coordination"],
+      evaluation: ["Realtime UX", "Message rendering performance"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+    {
+      id: 11,
+      title: "PS11 — Quiz Builder",
+      difficulty: "",
+      duration: "10 hours",
+      teamSize: "2 members",
+      description: "Problem Statement: ",
+      details: "Create and take quizzes with scoring and analytics.",
+      problemStatement: "Build a quiz creator with question types, timed tests, and results.",
+      requirements: ["MCQ/short answer", "Timer", "Result breakdown"],
+      constraints: ["Prevent accidental reload loss", "Keyboard-only flow"],
+      useCases: ["Practice tests", "Classroom quizzes"],
+      evaluation: ["Scoring correctness", "UX under time pressure"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+    {
+      id: 12,
+      title: "PS12 — Developer Portfolio Builder",
+      difficulty: "",
+      duration: "10 hours",
+      teamSize: "2 members",
+      description: "Problem Statement: ",
+      details: "Generate a portfolio site from structured data and templates.",
+      problemStatement: "Create a builder that turns project data into a themed portfolio with exports.",
+      requirements: ["Sections: About/Projects/Contact", "Theme switcher", "Static export"],
+      constraints: ["No server required", "SEO-friendly HTML"],
+      useCases: ["Student portfolio", "Hackathon showcase"],
+      evaluation: ["Theme quality", "Lighthouse scores"],
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+    },
+
   ];
 
   const getDifficultyColor = (difficulty: string) => {
@@ -109,41 +299,6 @@ const Problems = () => {
                   <Code className="w-8 h-8 text-halloween-orange animate-bob" />
                 </div>
 
-                {/* Meta Info */}
-                <div className="flex flex-wrap gap-4 text-sm text-spooky-muted">
-                  <div className="flex items-center space-x-2">
-                    <Clock className="w-4 h-4 text-halloween-orange" />
-                    <span>{problem.duration}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Users className="w-4 h-4 text-halloween-orange" />
-                    <span>{problem.teamSize}</span>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-spooky-light leading-relaxed">
-                  {problem.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div>
-                  <h4 className="text-sm font-semibold text-halloween-orange mb-2">
-                    Suggested Tech Stack:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {problem.techStack.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="outline"
-                        className="border-halloween-orange text-spooky-light hover:bg-halloween-purple-muted"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Details Button */}
                 <div>
                   <Button
@@ -182,10 +337,85 @@ const Problems = () => {
               </h2>
 
               {/* Modal Content */}
-              <div className="space-y-4 text-sm leading-relaxed">
-                <p>
-                  {problemCategories.find(p => p.id === openProblem)?.details}
-                </p>
+              <div className="space-y-6 text-sm leading-relaxed">
+                {(() => {
+                  const selected = problemCategories.find((p) => p.id === openProblem);
+                  if (!selected) return null;
+                  return (
+                    <div className="space-y-6">
+                      <section>
+                        <h3 className="text-base font-semibold text-halloween-orange mb-2">Problem Statement</h3>
+                        <p className="text-spooky-light">{selected.problemStatement || selected.details || selected.description}</p>
+                      </section>
+
+                      <section>
+                        <h3 className="text-base font-semibold text-halloween-orange mb-2">Requirements & Features</h3>
+                        {Array.isArray(selected.requirements) ? (
+                          <ul className="list-disc pl-6 space-y-1 text-spooky-light">
+                            {selected.requirements.map((req, i) => (
+                              <li key={i}>{req}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <ul className="list-disc pl-6 space-y-1 text-spooky-light">
+                            <li>Add key functional and non-functional requirements here.</li>
+                            <li>List expected features, flows, or modules.</li>
+                            <li>Note any integration points or libraries to consider.</li>
+                          </ul>
+                        )}
+                      </section>
+
+                      <section>
+                        <h3 className="text-base font-semibold text-halloween-orange mb-2">Constraints</h3>
+                        {Array.isArray(selected.constraints) ? (
+                          <ul className="list-disc pl-6 space-y-1 text-spooky-light">
+                            {selected.constraints.map((c, i) => (
+                              <li key={i}>{c}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <ul className="list-disc pl-6 space-y-1 text-spooky-light">
+                            <li>State technical, time, or resource constraints.</li>
+                            <li>Define supported browsers/devices or performance targets.</li>
+                          </ul>
+                        )}
+                      </section>
+
+                      <section>
+                        <h3 className="text-base font-semibold text-halloween-orange mb-2">Example Use Cases</h3>
+                        {Array.isArray(selected.useCases) ? (
+                          <ul className="list-disc pl-6 space-y-1 text-spooky-light">
+                            {selected.useCases.map((u, i) => (
+                              <li key={i}>{u}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <ul className="list-disc pl-6 space-y-1 text-spooky-light">
+                            <li>Use Case 1: Briefly describe a primary user flow.</li>
+                            <li>Use Case 2: Another representative scenario.</li>
+                          </ul>
+                        )}
+                      </section>
+
+                      <section>
+                        <h3 className="text-base font-semibold text-halloween-orange mb-2">Evaluation Criteria</h3>
+                        {Array.isArray(selected.evaluation) ? (
+                          <ul className="list-disc pl-6 space-y-1 text-spooky-light">
+                            {selected.evaluation.map((e, i) => (
+                              <li key={i}>{e}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <ul className="list-disc pl-6 space-y-1 text-spooky-light">
+                            <li>Functionality completeness and correctness.</li>
+                            <li>UI/UX quality, performance, and accessibility.</li>
+                            <li>Code quality, structure, and documentation.</li>
+                          </ul>
+                        )}
+                      </section>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           </div>

@@ -8,7 +8,11 @@ export interface RegistrationFormData {
   teamLeaderName: string;
   teamLeaderEmail: string;
   teamLeaderPhone: string;
-  institution: string;
+  teamLeaderInstitution: string;
+  teammateName: string;
+  teammateEmail: string;
+  teammatePhone: string;
+  teammateInstitution: string;
   teamSize: string;
   problemCategory: string;
   experience: string;
