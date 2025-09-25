@@ -518,18 +518,16 @@ const Register = () => {
                           <SelectValue placeholder="Choose your challenge" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="web">A</SelectItem>
-                          <SelectItem value="web">B</SelectItem>
-                          <SelectItem value="web">C</SelectItem>
-                          <SelectItem value="web">D</SelectItem>
-                          <SelectItem value="web">E</SelectItem>
-                          <SelectItem value="web">F</SelectItem>
-                          <SelectItem value="web">G</SelectItem>
-                          <SelectItem value="web">H</SelectItem>
-                          <SelectItem value="web">I</SelectItem>
-                          <SelectItem value="web">J</SelectItem>
-                          <SelectItem value="web">K</SelectItem>
-                          <SelectItem value="web">L</SelectItem>
+                          <SelectItem value="PSA">PSA</SelectItem>
+                          <SelectItem value="PSB">PSB</SelectItem>
+                          <SelectItem value="PSC">PSC</SelectItem>
+                          <SelectItem value="PSD">PSD</SelectItem>
+                          <SelectItem value="PSE">PSE</SelectItem>
+                          <SelectItem value="PSF">PSF</SelectItem>
+                          <SelectItem value="PSG">PSG</SelectItem>
+                          <SelectItem value="PSH">PSH</SelectItem>
+                          <SelectItem value="PSI">PSI</SelectItem>
+                          <SelectItem value="PSJ">PSJ</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
