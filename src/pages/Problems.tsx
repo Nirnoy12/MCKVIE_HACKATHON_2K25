@@ -28,7 +28,7 @@ const Problems = () => {
   const problemCategories: ProblemCategory[] = [
     {
       id: 1,
-      title: "PS1 — Document Formatter & Exporter WebApp",
+      title: "PS A — Document Formatter & Exporter WebApp",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -80,7 +80,7 @@ Bonus Features (Optional for Extra Points)
     },
     {
       id: 2,
-      title: "PS2 — Vibe Coding Problem: Scholarship Finder & Manager WebApp",
+      title: "PS B — Vibe Coding Problem: Scholarship Finder & Manager WebApp",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -144,7 +144,7 @@ Bonus Features (Optional for Extra Points)
     },
     {
       id: 3,
-      title: "PS3 — Vibe Coding Problem: Grievance Redressal Portal for Education Institute",
+      title: "PS C — Vibe Coding Problem: Grievance Redressal Portal for Education Institute",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -205,7 +205,7 @@ Bonus Features (Optional for Extra Points)
     },
     {
       id: 4,
-      title: "PS4 — EduScore: Smart Faculty Appraisal System",
+      title: "PS D — EduScore: Smart Faculty Appraisal System",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -268,7 +268,7 @@ Your task is to build a web-based system that allows educational institutions to
     },
     {
       id: 5,
-      title: "PS5 — Event Ease: Smart College Event & Report Manager",
+      title: "PS E — Event Ease: Smart College Event & Report Manager",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -332,7 +332,7 @@ Your task is to build a comprehensive web-based platform for end-to-end event ma
     },
     {
       id: 6,
-      title: "PS6 — Hire Smart: Faculty Recruitment Manager",
+      title: "PS F — Hire Smart: Faculty Recruitment Manager",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -396,7 +396,7 @@ Your task is to build a web-based recruitment management system that digitizes a
     },
     {
       id: 7,
-      title: "PS7 — Smart Academic Assessor",
+      title: "PS G — Smart Academic Assessor",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -452,7 +452,7 @@ Bonus Features (Optional for Extra Points)
     },
     {
       id: 8,
-      title: "PS8 — Select Emergency: Serious Patient Selection for Facilities",
+      title: "PS H  — Select Emergency: Serious Patient Selection for Facilities",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -495,7 +495,7 @@ Bonus Features (Optional for Extra Points)
     },
     {
       id: 9,
-      title: "PS9 — Smart Document Management System (DMS) for Academic Institutions",
+      title: "PS I — Smart Document Management System (DMS) for Academic Institutions",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -556,7 +556,7 @@ Bonus Features (Optional for Extra Points)
     },
     {
       id: 10,
-      title: "PS10 — Smart Classroom & Timetable Scheduler WebApp",
+      title: "PS J — Smart Classroom & Timetable Scheduler WebApp",
       difficulty: "",
       duration: "10 hours",
       teamSize: "2 members",
@@ -661,7 +661,7 @@ The challenge is to design a web application that can automatically generate and
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <div className="flex items-center space-x-2 text-spooky-light">
               <Clock className="w-5 h-5 text-halloween-orange animate-flicker" />
-              <span>Registration Deadline: Sep 27th</span>
+              <span>Registration Deadline: Oct 3rd</span>
             </div>
             <div className="flex items-center space-x-2 text-spooky-light">
               <Trophy className="w-5 h-5 text-neon-green animate-glow" />
