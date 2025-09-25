@@ -15,6 +15,7 @@ import {
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/halloween-hero-bg.jpg';
 import timelogo from '@/assets/timelogo.jpg';
+import imperialLogo from '@/assets/imperial logo web-01.jpg';
 import Countdown from '@/components/ui/countdown';
 
 const Index = () => {
@@ -244,11 +245,8 @@ const Index = () => {
               <img src={timelogo}
                 alt="Triumphant Institute of Management Education Pvt. Ltd"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src=""
-                alt="Amazon Web Services"
-                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src=""
-                alt="Microsoft"
+              <img src={imperialLogo}
+                alt="Imperial"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
             </div>
           </div>
@@ -286,18 +284,10 @@ const Index = () => {
           <div className="mb-8">
             <h3 className="text-xl font-heading text-neon-glow mb-3 text-center">Community Partners</h3>
             <div className="flex flex-wrap justify-center items-center gap-10">
-              <img src=""
+              <img src="/gdg.jpeg"
                 alt="Triumphant Institute of Management Education Pvt. Ltd"
-                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src=""
-                alt="Amazon Web Services"
-                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src=""
-                alt="Microsoft"
-                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              <img src=""
-                alt="Microsoft"
-                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+                className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              
             </div>
           </div>
         </div>
