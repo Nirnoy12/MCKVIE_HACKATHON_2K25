@@ -69,7 +69,7 @@ const Contact = () => {
   },
   {
     question: "Can I participate across different departments and years?",
-    answer: "Yes, participation across departments and years is allowed. Cross-college participation is also permitted.",
+    answer: "Yes, participation across departments and years is allowed. However, teams must consist of members from the same college only.",
   },
   {
     question: "Can I participate across different colleges?",
@@ -81,7 +81,7 @@ const Contact = () => {
   },
   {
     question: "What is the last day to register?",
-    answer: "The last date for registration is 27th of September, 2025.",
+    answer: "The last date for registration is October 3rd, 2025.",
   },
 
   {

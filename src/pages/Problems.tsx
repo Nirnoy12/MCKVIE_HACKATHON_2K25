@@ -267,7 +267,7 @@ const Problems = () => {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <div className="flex items-center space-x-2 text-spooky-light">
               <Clock className="w-5 h-5 text-halloween-orange animate-flicker" />
-              <span>Registration Deadline: Sep 27th</span>
+              <span>Registration Deadline: Oct 3rd</span>
             </div>
             <div className="flex items-center space-x-2 text-spooky-light">
               <Trophy className="w-5 h-5 text-neon-green animate-glow" />
