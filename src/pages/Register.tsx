@@ -327,6 +327,19 @@ const Register = () => {
           </div>
         </div>
 
+        <div className="max-w-6xl mx-auto mb-8">
+            <Alert className="border-neon-green">
+              <AlertDescription className="text-neon-white text-2xl">
+                Note: Registration Fees
+                Fees will be collected only after Round 1 selection.
+                Rs. 200 per team (Internal Students).
+                Rs. 300 per team (External Students).
+                Payment details will be shared with shortlisted teams via email.
+                Non-payment within the given deadline will lead to disqualification.
+              </AlertDescription>
+            </Alert>
+          </div>
+
         {/* Authentication Welcome Banner */}
         {authState?.userEmail && (
           <div className="max-w-6xl mx-auto mb-8">

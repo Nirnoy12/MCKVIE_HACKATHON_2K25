@@ -109,7 +109,7 @@ const Schedule = () => {
     
     <Layout>
       
-      <div className="bg-[url('/public/spooky-bg-2.png')] bg-cover bg-center bg-fixed" >
+      <div className="bg-[url('/spooky-bg-2.png')] bg-cover bg-center bg-fixed" >
       
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
