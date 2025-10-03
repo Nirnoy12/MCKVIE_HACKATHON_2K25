@@ -6,7 +6,7 @@ import { Clock, MapPin, Trophy, Users, Zap } from 'lucide-react';
 const Schedule = () => {
   const events = [
     {
-  date: "Before October 3, 2025",
+  date: "Before October 9, 2025",
   title: "Idea Submission & Registration",
   type: "Online",
   events: [
@@ -20,7 +20,7 @@ const Schedule = () => {
   ]
 },
 {
-  date: "October 9-10, 2025",
+  date: "October 13-14, 2025",
   title: "Online Screening Phase",
   type: "Online",
   events: [
@@ -53,7 +53,7 @@ const Schedule = () => {
       location: "A317 and A318"
     },
     {
-      time: "10:00 PM",
+      time: "10:00 AM",
       title: "Breakfast Break",
       description: "Breakfast with networking opportunities",
       icon: MapPin,

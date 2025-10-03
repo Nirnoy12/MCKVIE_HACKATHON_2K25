@@ -50,7 +50,7 @@ const Index = () => {
   ];
 
   const timeline = [
-    { date: "Oct 9-10", title: "First Screening", imageUrl: "/ghost plan.png" },
+    { date: "Oct 13-14", title: "First Screening", imageUrl: "/ghost plan.png" },
     { date: "Oct 17, 9 AM", title: "Hackathon Begins", imageUrl: "/ghost code.png" },
     { date: "Oct 17, 8 PM", title: "Results Announced", imageUrl: "/ghost trophy.png" },
   ];
@@ -284,7 +284,7 @@ const Index = () => {
           <div className="mb-8">
             <h3 className="text-xl font-heading text-neon-glow mb-3 text-center">Community Partners</h3>
             <div className="flex flex-wrap justify-center items-center gap-10">
-              <img src="/gdg.jpeg"
+              <img src="./gdg.jpeg"
                 alt="Triumphant Institute of Management Education Pvt. Ltd"
                 className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
               

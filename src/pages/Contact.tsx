@@ -69,19 +69,19 @@ const Contact = () => {
   },
   {
     question: "Can I participate across different departments and years?",
-    answer: "Yes, participation across departments and years is allowed. However, teams must consist of members from the same college only.",
+    answer: "Yes, participation across departments and years is allowed.",
   },
   {
     question: "Can I participate across different colleges?",
-    answer: "Yes, participation from different colleges is permitted, but not in teams mixed with MCKVIE students.",
+    answer: "Yes, participation from different colleges is permitted.",
   },
   {
     question: "What is the registration fee for the hackathon?",
-    answer: "There is no registration fee! The MCKVIE Halloween Hackathon is completely free to participate. We believe in making coding accessible to everyone.",
+    answer: "There is registration fee! You can view the details on the registration page.",
   },
   {
     question: "What is the last day to register?",
-    answer: "The last date for registration is October 3rd, 2025.",
+    answer: "The last date for registration is October 9th, 2025.",
   },
 
   {
