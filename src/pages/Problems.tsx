@@ -564,19 +564,22 @@ Bonus Features (Optional for Extra Points)
       details: "",
       problemStatement: `Educational institutions often face challenges in managing classrooms, faculty schedules, and course timetables efficiently. Manual timetable creation is time-consuming, prone to conflicts (teacher, classroom, or subject overlaps), and inflexible when adjustments are needed. The absence of a smart scheduling system leads to wasted resources, student dissatisfaction, and teacher overload.
 
-The challenge is to design a web application that can automatically generate and manage timetables, optimize classroom utilization, and ensure conflict-free scheduling while allowing manual adjustments when required. The system should provide real-time visibility of class schedules, handle rescheduling dynamically, and generate insights for administrators, faculty, and students.`,
+The challenge is to design a web application that can automatically generate and manage timetables, optimize classroom utilization, and ensure conflict-free scheduling while allowing manual adjustments when required.
+
+The system should provide real-time visibility of class schedules, handle rescheduling dynamically, and generate insights for administrators, faculty, and students.`,
       requirements: `Read Carefully
 
 1. User Input Options
-• Admin/Faculty Inputs:
-    o Number of courses/subjects.
-    o Faculty availability and teaching load preferences.
-    o Classroom/lab resources (capacity, type: smart-classroom, lab, seminar hall).
-    o Institution working hours and break times.
-    o Constraints (e.g., max 3 consecutive classes per teacher, avoid evening slots for certain faculties).
-• Student Preferences (Optional):
-    o Elective choices.
-    o Preferred batch timings (if multiple options exist).
+• Admin/Faculty Inputs: 
+    o Number of courses/subjects. 
+    o Faculty availability and teaching load preferences. 
+    o Classroom/lab resources (capacity, type: smart-classroom, lab, seminar hall). 
+    o Institution working hours and break times. 
+    o Constraints (e.g., max 3 consecutive classes per teacher, avoid evening slots for 
+    certain faculties). 
+• Student Preferences (Optional): 
+    o Elective choices. 
+    o Preferred batch timings (if multiple options exist). 
 
 2. Smart Timetable Generation
 • Automatic Scheduling Algorithm:
