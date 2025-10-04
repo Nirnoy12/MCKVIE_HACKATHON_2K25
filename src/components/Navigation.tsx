@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -67,6 +67,18 @@ const Navigation = () => {
               </Link>
             ))}
 
+            {/* Admin Login Button */}
+            <Link to="/admin/login">
+              <Button
+                variant="ghost_spooky"
+                size="sm"
+                className="animate-flicker"
+              >
+                <Shield className="w-4 h-4 mr-2" />
+                Admin
+              </Button>
+            </Link>
+
             {/* Rule Book Button */}
             <Button
               variant="ghost_spooky"
@@ -107,6 +119,21 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
+
+              <Link
+                to="/admin/login"
+                className="mx-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Button
+                  variant="ghost_spooky"
+                  size="sm"
+                  className="w-full animate-flicker"
+                >
+                  <Shield className="w-4 h-4 mr-2" />
+                  Admin Login
+                </Button>
+              </Link>
 
               <Button
                 variant="ghost_spooky"

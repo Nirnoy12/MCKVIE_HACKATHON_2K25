@@ -1,25 +1,37 @@
 import emailjs from '@emailjs/browser';
-import { getFirestore, collection, getDocs, query } from 'firebase/firestore';
-import { getApps, getApp } from 'firebase/app';
+import { collection, getDocs, query } from 'firebase/firestore';
+import { getFirebaseDB } from '@/firebase';
 
 // EmailJS configuration
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-// Problem category mappings
+// Problem category mappings - maps problem statement IDs to their last character
 const PROBLEM_CATEGORY_MAP: Record<string, string> = {
-  "web": "W",
-  "ai": "A", 
-  "blockchain": "B",
-  "mobile": "M"
+  "PSA": "A",
+  "PSB": "B", 
+  "PSC": "C",
+  "PSD": "D",
+  "PSE": "E",
+  "PSF": "F",
+  "PSG": "G",
+  "PSH": "H",
+  "PSI": "I",
+  "PSJ": "J"
 };
 
 const PROBLEM_CATEGORY_DISPLAY: Record<string, string> = {
-  "web": "Web Development Spook",
-  "ai": "AI Phantom Challenge", 
-  "blockchain": "Blockchain Boo",
-  "mobile": "Mobile Monster Maker"
+  "PSA": "PS A — Document Formatter & Exporter WebApp",
+  "PSB": "PS B — Vibe Coding Problem: Scholarship Finder & Manager WebApp",
+  "PSC": "PS C — Vibe Coding Problem: Grievance Redressal Portal for Education Institute",
+  "PSD": "PS D — EduScore: Smart Faculty Appraisal System",
+  "PSE": "PS E — Event Ease: Smart College Event & Report Manager",
+  "PSF": "PS F — Hire Smart: Faculty Recruitment Manager",
+  "PSG": "PS G — Smart Academic Assessor",
+  "PSH": "PS H — Select Emergency: Serious Patient Selection for Facilities",
+  "PSI": "PS I — Smart Document Management System (DMS) for Academic Institutions",
+  "PSJ": "PS J — Smart Classroom & Timetable Scheduler WebApp"
 };
 
 const EXPERIENCE_DISPLAY: Record<string, string> = {
@@ -43,22 +55,11 @@ export const generateTeamId = (teamNumber: number, problemCategory: string): str
  */
 export const getNextTeamNumber = async (): Promise<number> => {
   try {
-    // Get Firebase app and Firestore instance
-    const app = getApps().length > 0 ? getApp() : null;
-    if (!app) {
-      console.warn('Firebase app not initialized, using fallback counter');
-      // Fallback to localStorage if Firebase isn't available
-      const currentCount = parseInt(localStorage.getItem('teamCounter') || '0');
-      const nextCount = currentCount + 1;
-      localStorage.setItem('teamCounter', nextCount.toString());
-      return nextCount;
-    }
-
-    const db = getFirestore(app);
-    const appId = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
+    // Use centralized Firebase instance with lazy initialization
+    const db = getFirebaseDB();
     
     // Query all registrations to count them
-    const registrationsRef = collection(db, `artifacts/${appId}/public/data/registrations`);
+    const registrationsRef = collection(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`);
     const registrationsQuery = query(registrationsRef);
     const querySnapshot = await getDocs(registrationsQuery);
     

@@ -12,9 +12,9 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
-import { Users, Mail, Phone, Code, Trophy, CheckCircle, AlertTriangle, X } from 'lucide-react';
-import { getApps, getApp, FirebaseApp, initializeApp } from "firebase/app";
-import { Firestore, getFirestore, collection, addDoc, serverTimestamp, setLogLevel } from "firebase/firestore";
+import { Users, Mail, Code, Trophy, CheckCircle, AlertTriangle } from 'lucide-react';
+import { collection, addDoc, serverTimestamp, setLogLevel } from "firebase/firestore";
+import { getFirebaseDB } from '@/firebase';
 
 const Register = () => {
   // Get authentication state from previous page
@@ -55,46 +55,34 @@ const Register = () => {
 
   // --- Firebase Configuration ---
   // Reads variables from your .env file
-  const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_FIREBASE_APP_ID
-  };
 
   // --- App ID for Firestore Path ---
-  const appId: string = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
+  // const appId: string = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
 
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
   // Firebase state
-  const [db, setDb] = useState<Firestore | null>(null);
+  const [db, setDb] = useState<any | null>(null);
 
   // --- Firebase Initialization Effect ---
   useEffect(() => {
     // Initialize EmailJS
     initializeEmailJS();
 
-    // Initialize Firebase
-    if (Object.keys(firebaseConfig).length > 0) {
-      try {
-        const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-        const firestoreDb = getFirestore(app);
-        setDb(firestoreDb);
-        setLogLevel('debug');
-      } catch (error) {
-        console.error("Error initializing Firebase:", error);
-        toast({
-          title: "Connection Error",
-          description: "Could not connect to the backend.",
-          variant: "destructive"
-        });
-      }
-    } else {
-      console.warn("Firebase config is empty. Running in offline mode.");
+    // Use centralized Firebase instance with lazy initialization
+    try {
+      const db = getFirebaseDB();
+      setDb(db);
+      setLogLevel('debug');
+      console.log('Using centralized Firebase instance');
+    } catch (error) {
+      console.error("Error using Firebase:", error);
+      toast({
+        title: "Connection Error",
+        description: "Could not connect to the backend.",
+        variant: "destructive"
+      });
     }
   }, []);
 
@@ -198,7 +186,7 @@ const Register = () => {
 
       // Store in Firestore
       if (db) {
-        await addDoc(collection(db, `artifacts/${appId}/public/data/registrations`), registrationData);
+        await addDoc(collection(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`), registrationData);
       } else {
         console.warn("Firestore not available - storing locally for demo");
       }
@@ -326,6 +314,20 @@ const Register = () => {
             </Badge>
           </div>
         </div>
+
+        <div className="max-w-6xl mx-auto mb-8">
+            <Alert className="border-neon-green">
+              <AlertDescription className="text-neon-white text-2xl">
+                ----------------------------------------NOTE---------------------------------------------
+                <div >Registration Fees will be collected only after Round 1 selection.
+                <p>Rs. 200 per team (Internal Students).</p>
+                <p>Rs. 300 per team (External Students).</p>
+                <p>Rs. 300 per team (Mix Team of Internal Students and External Students)</p>
+                Payment details will be shared with shortlisted teams via email.
+                Non-payment within the given deadline will lead to disqualification.</div>
+              </AlertDescription>
+            </Alert>
+          </div>
 
         {/* Authentication Welcome Banner */}
         {authState?.userEmail && (
@@ -518,18 +520,16 @@ const Register = () => {
                           <SelectValue placeholder="Choose your challenge" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="web">A</SelectItem>
-                          <SelectItem value="web">B</SelectItem>
-                          <SelectItem value="web">C</SelectItem>
-                          <SelectItem value="web">D</SelectItem>
-                          <SelectItem value="web">E</SelectItem>
-                          <SelectItem value="web">F</SelectItem>
-                          <SelectItem value="web">G</SelectItem>
-                          <SelectItem value="web">H</SelectItem>
-                          <SelectItem value="web">I</SelectItem>
-                          <SelectItem value="web">J</SelectItem>
-                          <SelectItem value="web">K</SelectItem>
-                          <SelectItem value="web">L</SelectItem>
+                          <SelectItem value="PSA">PSA</SelectItem>
+                          <SelectItem value="PSB">PSB</SelectItem>
+                          <SelectItem value="PSC">PSC</SelectItem>
+                          <SelectItem value="PSD">PSD</SelectItem>
+                          <SelectItem value="PSE">PSE</SelectItem>
+                          <SelectItem value="PSF">PSF</SelectItem>
+                          <SelectItem value="PSG">PSG</SelectItem>
+                          <SelectItem value="PSH">PSH</SelectItem>
+                          <SelectItem value="PSI">PSI</SelectItem>
+                          <SelectItem value="PSJ">PSJ</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
