@@ -327,6 +327,20 @@ const Register = () => {
           </div>
         </div>
 
+        <div className="max-w-6xl mx-auto mb-8">
+            <Alert className="border-neon-green">
+              <AlertDescription className="text-neon-white text-2xl">
+                ----------------------------------------NOTE---------------------------------------------
+                <div >Registration Fees will be collected only after Round 1 selection.
+                <p>Rs. 200 per team (Internal Students).</p>
+                <p>Rs. 300 per team (External Students).</p>
+                <p>Rs. 300 per team (Mix Team of Internal Students and External Students)</p>
+                Payment details will be shared with shortlisted teams via email.
+                Non-payment within the given deadline will lead to disqualification.</div>
+              </AlertDescription>
+            </Alert>
+          </div>
+
         {/* Authentication Welcome Banner */}
         {authState?.userEmail && (
           <div className="max-w-6xl mx-auto mb-8">
@@ -518,18 +532,16 @@ const Register = () => {
                           <SelectValue placeholder="Choose your challenge" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="web">A</SelectItem>
-                          <SelectItem value="web">B</SelectItem>
-                          <SelectItem value="web">C</SelectItem>
-                          <SelectItem value="web">D</SelectItem>
-                          <SelectItem value="web">E</SelectItem>
-                          <SelectItem value="web">F</SelectItem>
-                          <SelectItem value="web">G</SelectItem>
-                          <SelectItem value="web">H</SelectItem>
-                          <SelectItem value="web">I</SelectItem>
-                          <SelectItem value="web">J</SelectItem>
-                          <SelectItem value="web">K</SelectItem>
-                          <SelectItem value="web">L</SelectItem>
+                          <SelectItem value="PSA">PSA</SelectItem>
+                          <SelectItem value="PSB">PSB</SelectItem>
+                          <SelectItem value="PSC">PSC</SelectItem>
+                          <SelectItem value="PSD">PSD</SelectItem>
+                          <SelectItem value="PSE">PSE</SelectItem>
+                          <SelectItem value="PSF">PSF</SelectItem>
+                          <SelectItem value="PSG">PSG</SelectItem>
+                          <SelectItem value="PSH">PSH</SelectItem>
+                          <SelectItem value="PSI">PSI</SelectItem>
+                          <SelectItem value="PSJ">PSJ</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
