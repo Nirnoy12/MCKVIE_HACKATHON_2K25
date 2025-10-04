@@ -7,19 +7,31 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-// Problem category mappings
+// Problem category mappings - maps problem statement IDs to their last character
 const PROBLEM_CATEGORY_MAP: Record<string, string> = {
-  "web": "W",
-  "ai": "A", 
-  "blockchain": "B",
-  "mobile": "M"
+  "PSA": "A",
+  "PSB": "B", 
+  "PSC": "C",
+  "PSD": "D",
+  "PSE": "E",
+  "PSF": "F",
+  "PSG": "G",
+  "PSH": "H",
+  "PSI": "I",
+  "PSJ": "J"
 };
 
 const PROBLEM_CATEGORY_DISPLAY: Record<string, string> = {
-  "web": "Web Development Spook",
-  "ai": "AI Phantom Challenge", 
-  "blockchain": "Blockchain Boo",
-  "mobile": "Mobile Monster Maker"
+  "PSA": "PS A — Document Formatter & Exporter WebApp",
+  "PSB": "PS B — Vibe Coding Problem: Scholarship Finder & Manager WebApp",
+  "PSC": "PS C — Vibe Coding Problem: Grievance Redressal Portal for Education Institute",
+  "PSD": "PS D — EduScore: Smart Faculty Appraisal System",
+  "PSE": "PS E — Event Ease: Smart College Event & Report Manager",
+  "PSF": "PS F — Hire Smart: Faculty Recruitment Manager",
+  "PSG": "PS G — Smart Academic Assessor",
+  "PSH": "PS H — Select Emergency: Serious Patient Selection for Facilities",
+  "PSI": "PS I — Smart Document Management System (DMS) for Academic Institutions",
+  "PSJ": "PS J — Smart Classroom & Timetable Scheduler WebApp"
 };
 
 const EXPERIENCE_DISPLAY: Record<string, string> = {
@@ -55,10 +67,9 @@ export const getNextTeamNumber = async (): Promise<number> => {
     }
 
     const db = getFirestore(app);
-    const appId = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
     
     // Query all registrations to count them
-    const registrationsRef = collection(db, `artifacts/${appId}/public/data/registrations`);
+    const registrationsRef = collection(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`);
     const registrationsQuery = query(registrationsRef);
     const querySnapshot = await getDocs(registrationsQuery);
     

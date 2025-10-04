@@ -12,8 +12,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
-import { Users, Mail, Phone, Code, Trophy, CheckCircle, AlertTriangle, X } from 'lucide-react';
-import { getApps, getApp, FirebaseApp, initializeApp } from "firebase/app";
+import { Users, Mail, Code, Trophy, CheckCircle, AlertTriangle } from 'lucide-react';
+import { getApps, getApp, initializeApp } from "firebase/app";
 import { Firestore, getFirestore, collection, addDoc, serverTimestamp, setLogLevel } from "firebase/firestore";
 
 const Register = () => {
@@ -65,7 +65,7 @@ const Register = () => {
   };
 
   // --- App ID for Firestore Path ---
-  const appId: string = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
+  // const appId: string = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
 
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
@@ -198,7 +198,7 @@ const Register = () => {
 
       // Store in Firestore
       if (db) {
-        await addDoc(collection(db, `artifacts/${appId}/public/data/registrations`), registrationData);
+        await addDoc(collection(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`), registrationData);
       } else {
         console.warn("Firestore not available - storing locally for demo");
       }
