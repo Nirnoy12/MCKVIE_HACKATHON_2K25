@@ -284,10 +284,12 @@ const Index = () => {
           <div className="mb-8">
             <h3 className="text-xl font-heading text-neon-glow mb-3 text-center">Community Partners</h3>
             <div className="flex flex-wrap justify-center items-center gap-10">
-              <img src="./gdg.jpeg"
-                alt="Triumphant Institute of Management Education Pvt. Ltd"
+              <img src="./gdgocmckvie.jpeg"
+                alt="GDG on Campus MCKV Institute of Engineering"
                 className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
-              
+              <img src="./gdgocaot.png"
+                alt="GDG on Campus MCKV Institute of Engineering"
+                className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
             </div>
           </div>
         </div>
