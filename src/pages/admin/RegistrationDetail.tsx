@@ -20,8 +20,8 @@ import {
   Send,
   RefreshCw
 } from 'lucide-react';
-import { getFirestore, doc, getDoc, deleteDoc } from 'firebase/firestore';
-import { getApps, getApp } from 'firebase/app';
+import { doc, getDoc, deleteDoc } from 'firebase/firestore';
+import { getFirebaseDB } from '@/firebase';
 import { sendRegistrationEmail } from '@/services/emailService';
 
 interface RegistrationData {
@@ -66,14 +66,7 @@ const RegistrationDetail = () => {
   const fetchRegistration = async (registrationId: string) => {
     setLoading(true);
     try {
-      const app = getApps().length > 0 ? getApp() : null;
-      if (!app) {
-        console.warn('Firebase app not initialized');
-        setLoading(false);
-        return;
-      }
-
-      const db = getFirestore(app);
+      const db = getFirebaseDB();
       
       const registrationRef = doc(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`, registrationId);
       const registrationSnap = await getDoc(registrationRef);
@@ -101,12 +94,7 @@ const RegistrationDetail = () => {
 
     setDeleting(true);
     try {
-      const app = getApps().length > 0 ? getApp() : null;
-      if (!app) {
-        throw new Error('Firebase app not initialized');
-      }
-
-      const db = getFirestore(app);
+      const db = getFirebaseDB();
       
       await deleteDoc(doc(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`, registration.id));
       

@@ -18,8 +18,8 @@ import {
   CheckCircle,
   XCircle
 } from 'lucide-react';
-import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { getApps, getApp } from 'firebase/app';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { getFirebaseDB } from '@/firebase';
 import emailjs from '@emailjs/browser';
 
 interface RegistrationData {
@@ -59,14 +59,7 @@ const SendBulkEmail = () => {
   const fetchRegistrations = async () => {
     setLoading(true);
     try {
-      const app = getApps().length > 0 ? getApp() : null;
-      if (!app) {
-        console.warn('Firebase app not initialized');
-        setLoading(false);
-        return;
-      }
-
-      const db = getFirestore(app);
+      const db = getFirebaseDB();
       
       const registrationsRef = collection(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`);
       const registrationsQuery = query(registrationsRef, orderBy('submittedAt', 'desc'));

@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
-import { getFirestore, collection, getDocs, query } from 'firebase/firestore';
-import { getApps, getApp } from 'firebase/app';
+import { collection, getDocs, query } from 'firebase/firestore';
+import { getFirebaseDB } from '@/firebase';
 
 // EmailJS configuration
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -55,18 +55,8 @@ export const generateTeamId = (teamNumber: number, problemCategory: string): str
  */
 export const getNextTeamNumber = async (): Promise<number> => {
   try {
-    // Get Firebase app and Firestore instance
-    const app = getApps().length > 0 ? getApp() : null;
-    if (!app) {
-      console.warn('Firebase app not initialized, using fallback counter');
-      // Fallback to localStorage if Firebase isn't available
-      const currentCount = parseInt(localStorage.getItem('teamCounter') || '0');
-      const nextCount = currentCount + 1;
-      localStorage.setItem('teamCounter', nextCount.toString());
-      return nextCount;
-    }
-
-    const db = getFirestore(app);
+    // Use centralized Firebase instance with lazy initialization
+    const db = getFirebaseDB();
     
     // Query all registrations to count them
     const registrationsRef = collection(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`);

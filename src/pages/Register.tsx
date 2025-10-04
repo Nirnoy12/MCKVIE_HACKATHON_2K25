@@ -13,8 +13,8 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import { Users, Mail, Code, Trophy, CheckCircle, AlertTriangle } from 'lucide-react';
-import { getApps, getApp, initializeApp } from "firebase/app";
-import { Firestore, getFirestore, collection, addDoc, serverTimestamp, setLogLevel } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp, setLogLevel } from "firebase/firestore";
+import { getFirebaseDB } from '@/firebase';
 
 const Register = () => {
   // Get authentication state from previous page
@@ -55,14 +55,6 @@ const Register = () => {
 
   // --- Firebase Configuration ---
   // Reads variables from your .env file
-  const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_FIREBASE_APP_ID
-  };
 
   // --- App ID for Firestore Path ---
   // const appId: string = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
@@ -71,30 +63,26 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
 
   // Firebase state
-  const [db, setDb] = useState<Firestore | null>(null);
+  const [db, setDb] = useState<any | null>(null);
 
   // --- Firebase Initialization Effect ---
   useEffect(() => {
     // Initialize EmailJS
     initializeEmailJS();
 
-    // Initialize Firebase
-    if (Object.keys(firebaseConfig).length > 0) {
-      try {
-        const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-        const firestoreDb = getFirestore(app);
-        setDb(firestoreDb);
-        setLogLevel('debug');
-      } catch (error) {
-        console.error("Error initializing Firebase:", error);
-        toast({
-          title: "Connection Error",
-          description: "Could not connect to the backend.",
-          variant: "destructive"
-        });
-      }
-    } else {
-      console.warn("Firebase config is empty. Running in offline mode.");
+    // Use centralized Firebase instance with lazy initialization
+    try {
+      const db = getFirebaseDB();
+      setDb(db);
+      setLogLevel('debug');
+      console.log('Using centralized Firebase instance');
+    } catch (error) {
+      console.error("Error using Firebase:", error);
+      toast({
+        title: "Connection Error",
+        description: "Could not connect to the backend.",
+        variant: "destructive"
+      });
     }
   }, []);
 

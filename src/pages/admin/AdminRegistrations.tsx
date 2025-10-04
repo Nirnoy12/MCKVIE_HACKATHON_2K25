@@ -19,8 +19,8 @@ import {
   Phone,
   User
 } from 'lucide-react';
-import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { getApps, getApp, initializeApp } from 'firebase/app';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { getFirebaseDB } from '@/firebase';
 
 interface RegistrationData {
   id: string;
@@ -63,30 +63,9 @@ const AdminRegistrations = () => {
   const fetchRegistrations = async () => {
     setLoading(true);
     try {
-      // Initialize Firebase if not already initialized
-      let app;
-      if (getApps().length === 0) {
-        const firebaseConfig = {
-          apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-          authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-          projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-          storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-          messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-          appId: import.meta.env.VITE_FIREBASE_APP_ID,
-        };
-        app = initializeApp(firebaseConfig);
-        console.log('🔧 AdminRegistrations: Firebase initialized');
-      } else {
-        app = getApp();
-      }
-
-      if (!app) {
-        console.error('Firebase app not initialized');
-        setLoading(false);
-        return;
-      }
-
-      const db = getFirestore(app);
+      // Use the centralized Firebase instance with lazy initialization
+      const db = getFirebaseDB();
+      console.log('🔧 AdminRegistrations: Using centralized Firebase instance');
       
       const registrationsRef = collection(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`);
       const registrationsQuery = query(registrationsRef, orderBy('submittedAt', 'desc'));

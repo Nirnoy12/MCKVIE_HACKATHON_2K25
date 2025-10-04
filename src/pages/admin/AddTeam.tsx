@@ -15,8 +15,8 @@ import {
   RefreshCw,
   CheckCircle
 } from 'lucide-react';
-import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, orderBy } from 'firebase/firestore';
-import { getApps, getApp } from 'firebase/app';
+import { collection, addDoc, serverTimestamp, getDocs, query, orderBy } from 'firebase/firestore';
+import { getFirebaseDB } from '@/firebase';
 import { generateTeamId, sendRegistrationEmail } from '@/services/emailService';
 
 const AddTeam = () => {
@@ -50,16 +50,7 @@ const AddTeam = () => {
 
   const getNextTeamNumber = async (): Promise<number> => {
     try {
-      const app = getApps().length > 0 ? getApp() : null;
-      if (!app) {
-        console.warn('Firebase app not initialized, using fallback counter');
-        const currentCount = parseInt(localStorage.getItem('teamCounter') || '0');
-        const nextCount = currentCount + 1;
-        localStorage.setItem('teamCounter', nextCount.toString());
-        return nextCount;
-      }
-
-      const db = getFirestore(app);
+      const db = getFirebaseDB();
       const appId = import.meta.env.VITE_FIREBASE_APP_ID || 'default-app-id';
       
       const registrationsRef = collection(db, `artifacts/${appId}/public/data/registrations`);
@@ -111,12 +102,7 @@ const AddTeam = () => {
       };
 
       // Store in Firestore
-      const app = getApps().length > 0 ? getApp() : null;
-      if (!app) {
-        throw new Error('Firebase app not initialized');
-      }
-
-      const db = getFirestore(app);
+      const db = getFirebaseDB();
       
       const docRef = await addDoc(collection(db, `artifacts/1:146843278185:web:88bc36b127a2b2a5df3bf8/public/data/registrations`), registrationData);
 
