@@ -251,34 +251,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Printing, Food, Media Sponsorship */}
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-around items-start gap-8">
-
-              {/* Loop through each category */}
-              {Object.entries(sponsorsByCategory).map(([categoryTitle, sponsorList]) => (
-                <div key={categoryTitle} className="mb-8">
-                  {/* Category Heading */}
-                  <h3 className="text-2xl font-heading text-neon-glow mb-8 text-center">
-                    {categoryTitle}
-                  </h3>
-
-                  {/* Container for logos in this category */}
-                  <div className="flex flex-wrap justify-center items-center gap-10">
-                    {/* Loop through the sponsors in the current category */}
-                    {sponsorList.map((sponsor) => (
-                      <img
-                        key={sponsor.name}
-                        src={sponsor.logoUrl}
-                        alt={sponsor.name}
-                        className="w-40 h-24 object-contain bg-white rounded-lg p-1 shadow-md transition-transform hover:scale-110 animate-bob"
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          
 
           {/* Community Partners */}
           <div className="mb-8">
