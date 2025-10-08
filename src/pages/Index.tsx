@@ -290,6 +290,18 @@ const Index = () => {
               <img src="./gdgocaot.png"
                 alt="GDG on Campus MCKV Institute of Engineering"
                 className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="./gdgtms.jpg"
+                alt="GDG on Campus MCKV Institute of Engineering"
+                className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="./gdgiem.png"
+                alt="GDG on Campus MCKV Institute of Engineering"
+                className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="./gdgrcc.png"
+                alt="GDG on Campus MCKV Institute of Engineering"
+                className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="./gdgst.png"
+                alt="GDG on Campus MCKV Institute of Engineering"
+                className="w-40 h-35 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
             </div>
           </div>
         </div>
