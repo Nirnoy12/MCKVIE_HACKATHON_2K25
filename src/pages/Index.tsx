@@ -110,13 +110,13 @@ const Index = () => {
               Where ideas spark, prototypes shine, and Vibe Coding turns vision into reality — welcome to MCKVIE Hackathon 2K25!
             </p>
 
-            <p className="text-2xl md:text-3xl text-[#A3FF03] mb-4 font-light">Registration Ends In:</p>
+            <p className="text-2xl md:text-3xl text-[#A3FF03] mb-4 font-light">Registration Ended</p>
             <Countdown />
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <Link to="/auth">
+              <Link to="">
                 <Button variant="neon" size="xl" className="text-xl px-12 py-4 animate-glow">
-                  Register Now
+                  Register Closed
                 </Button>
               </Link>
               <Link to="/problems">
@@ -292,9 +292,9 @@ const Index = () => {
               and be part of the most exciting hackathon experience at MCKVIE.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/auth">
+              <Link to="">
                 <Button variant="haunted" size="xl" className="text-xl px-12 py-4 bg-spooky-dark border-spooky-dark text-spooky-light hover:bg-spooky-light hover:text-spooky-dark glow-green">
-                  Register Your Team
+                  Register Closed
                 </Button>
               </Link>
               <Link to="/contact">
