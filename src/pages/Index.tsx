@@ -248,9 +248,23 @@ const Index = () => {
               <img src={imperialLogo}
                 alt="Imperial"
                 className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="./ktech1.png"
+                alt="K-Tech Solutions"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              <img src="./perplexity.png"
+                alt="Perplexity"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
             </div>
           </div>
-
+            
+          <div className="mb-8">
+            <h3 className="text-2xl font-heading text-neon-glow mb-3 text-center">PRINTING</h3>
+            <div className="flex flex-wrap justify-center items-center gap-10">
+              <img src="COMPATH .png"
+                alt="Triumphant Institute of Management Education Pvt. Ltd"
+                className="w-32 h-20 object-contain bg-white rounded-lg p-2 shadow-md animate-bob" />
+              </div>
+          </div>
           
 
           {/* Community Partners */}
