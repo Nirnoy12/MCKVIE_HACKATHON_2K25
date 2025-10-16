@@ -67,28 +67,28 @@ const Schedule = () => {
       location: "Institute Cafeteria"
     },
     {
-      time: "6:00 PM",
+      time: "5:00 PM",
       title: "Final Submission Deadline",
       description: "Submit your projects and prepare for presentations",
       icon: Clock,
       location: "Online Portal"
     },
     {
-      time: "6:30 PM",
+      time: "5:30 PM",
       title: "Project Presentations",
       description: "Present your  projects to judges",
       icon: Zap,
       location: "Departmental Library (A307A)"
     },
     {
-      time: "7:00 PM",
+      time: "6:00 PM",
       title: "Evening Snack",
       description: "Snack break and Judge Discussions",
       icon: Users,
       location: "A317 and A318"
     },
     {
-      time: "8:00 PM",
+      time: "6:30 PM",
       title: "Results & Closing Ceremony",
       description: "Winner announcement and prize distribution",
       icon: Trophy,
